@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from demo.interface.club/limitless/demo/Template/layout_1/LTR/default/full/components_tabs.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Apr 2020 07:57:29 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<!-- /Added by HTTrack -->
+
+{% include 'head.html' %}
+
+
+
+
+
+
+
+<body>
+
+    <!-- Main navbar -->
+   {% include 'header.html' %}
+    <!-- /main navbar -->
+
+
+    <!-- Page content -->
+    <div class="page-content">
+
+        <!-- Main content -->
+        <div class="content-wrapper">
+
+            <!-- Page header -->
+            <div class="page-header page-header-light">
+
+                   <div class="row">
+
+                    <div class="col-sm-6 col-xl-4">
+                <div class="page-header-content header-elements-md-inline">
+                    <div class="page-title d-flex">
+                        <h3><span class="font-weight-semibold text-right"></span>Dashboard</span>
+                        </h3>
+
+                    </div>
+
+                </div>
+
+                </div>
+
+                
+
+                  <div class="col-sm-6 col-xl-4">
+
+
+            
+                           
+                        </div>
+
+
+                          <div class="col-sm-6 col-xl-4">
+                <div class="page-header-content header-elements-md-inline">
+                    <div class="page-title d-flex">
+
+                        <div class="breadcrumb">
+                            <h4>
+                                    <a href="#" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>Home</a>
+                                    
+                                    </h4>
+									<!-- <a href="components_breadcrumbs.html" class="breadcrumb-item">Components</a>
+									<span class="breadcrumb-item active">Breadcrumbs</span> -->
+                                </div>
+                                
+                       
+                        </h3>
+
+                    </div>
+
+                </div>
+
+                </div>
+                            </div>
+            </div>
+            <!-- /page header -->
+
+
+            <!-- Content area -->
+            <div class="content">
+
+
+               
+          
+                <!-- Simple statistics -->
+                <div class="mb-3">
+                    <h6 class="mb-0 font-weight-semibold">
+                        <!-- Overall Application statsus    -->
+                    </h6>
+
+                </div>
+
+                <div class="row">
+                   <a href="{% url  'admin_url2' %}"><div class="col-sm-6 col-xl-4"> 
+                        <div class="card card-body bg-blue-400 has-bg-image">
+                            <div class="media">
+                                <div class="media-body">
+                                    <h3 class="mb-0">{{app_count}}</h3>
+                                    <span class="text-uppercase font-size-xs">total applications</span>
+                                </div>
+
+                                <div class="ml-3 align-self-center">
+                                    <i class="icon-bubbles4 icon-3x opacity-75"></i>
+                                </div>
+                            </div>
+                        </div>
+</a>
+                    </div>
+
+
+      <a href="{% url  'admin_url2' %}">
+                    <div class="col-sm-6 col-xl-4">
+                        <div class="card card-body bg-success-400 has-bg-image">
+                            <div class="media">
+                                <div class="mr-3 align-self-center">
+                                    <i class="icon-pointer icon-3x opacity-75"></i>
+                                </div>
+
+                                <div class="media-body text-right">
+                                    <h3 class="mb-0">{{active_app_count}}</h3>
+                                    <span class="text-uppercase font-size-xs">active applications</span>
+                                </div>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+
+
+
+ <a href="{% url  'admin_url2' %}">
+                    <div class="col-sm-6 col-xl-4">
+                        <div class="card card-body bg-indigo-400 has-bg-image">
+                            <div class="media">
+                                <div class="media-body">
+                                    <h3 class="mb-0">{{p_info_count}}</h3>
+                                    <span class="text-uppercase font-size-xs">registered users</span>
+                                </div>
+
+                                <div class="ml-3 align-self-center">
+                                    <i class="icon-enter6 icon-3x opacity-75"></i>
+                                </div>
+                            </div>
+                        </div>
+                            </a>
+                    </div>
+
+                
+
+                </div>
+                <!-- /simple statistics -->
+                <div class="row">
+                    <div class="col-sm-6 col-xl-6">
+                        <script src="https://code.highcharts.com/highcharts.js"></script>
+                        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+                        <script src="https://code.highcharts.com/modules/export-data.js"></script>
+                        <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+                        <figure class="highcharts-figure1">
+                            <div id="container1"></div>
+                            <!-- <p class="highcharts-description">
+                                Chart showing stacked columns for comparing quantities. Stacked charts are often used to visualize data that accumulates to a sum. This chart is showing data labels for each individual section of the stack.
+                            </p> -->
+                        </figure>
+                    </div>
+
+
+                    <div class="col-sm-6 col-xl-6">
+                        <!-- <script src="https://code.highcharts.com/highcharts.js"></script> -->
+                        <script src="https://code.highcharts.com/modules/data.js"></script>
+                        <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+                        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+                        <!-- <script src="https://code.highcharts.com/modules/export-data.js"></script> -->
+                        <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+                        <figure class="highcharts-figure">
+                            <div id="container"></div>
+                            <!-- <p class="highcharts-description">
+                                Chart showing browser market shares. Clicking on individual columns brings up more detailed data. This chart makes use of the drilldown feature in Highcharts to easily switch between datasets.
+                            </p> -->
+                        </figure>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <!-- /content area -->
+
+
+            <!-- Footer -->
+            <div class="navbar navbar-expand-lg navbar-light">
+                <div class="text-center d-lg-none w-100">
+                    <button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse" data-target="#navbar-footer">
+						<i class="icon-unfold mr-2"></i>
+						Footer
+					</button>
+                </div>
+
+                <div class="navbar-collapse collapse" id="navbar-footer">
+                    <span class="navbar-text">
+						Copyright &copy; 2020. Powered by <a href="http://www.techin.gov.et" target="_blank">Techin&#178</a>, All rights reserved.
+					</span>
+
+                    <ul class="navbar-nav ml-lg-auto">
+                        <li class="nav-item"><a href="http://www.techin.gov.et" class="navbar-nav-link" target="_blank"><i class="icon-lifebuoy mr-2"></i>Home</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /footer -->
+
+        </div>
+        <!-- /main content -->
+
+    </div>
+    <!-- /page content -->
+    <script>
+        Highcharts.chart('container1', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'List of Applications'
+            },
+            xAxis: {
+                categories: [        {% for his  in app_obj  %}
+                    '{{his.title}}',
+                {% endfor %}
+                    
+]
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Total fruit consumption'
+                },
+                stackLabels: {
+                    enabled: true,
+                    style: {
+                        fontWeight: 'bold',
+                        color: ( // theme
+                            Highcharts.defaultOptions.title.style &&
+                            Highcharts.defaultOptions.title.style.color
+                        ) || 'gray'
+                    }
+                }
+            },
+            legend: {
+                align: 'right',
+                x: -30,
+                verticalAlign: 'top',
+                y: 25,
+                floating: true,
+                backgroundColor: Highcharts.defaultOptions.legend.backgroundColor || 'white',
+                borderColor: '#CCC',
+                borderWidth: 1,
+                shadow: false
+            },
+            tooltip: {
+                headerFormat: '<b>{point.x}</b><br/>',
+                pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
+            },
+            plotOptions: {
+                column: {
+                    stacking: 'normal',
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            series: [{
+                name: 'Male',
+                data: [      {% for his  in app_obj  %}
+                    {{his.application_male}},
+                {% endfor %}  ]
+            }, {
+                name: 'Female',
+                data: [    {% for his  in app_obj  %}
+                    {{his.application_female}},
+                {% endfor %}]
+            }]
+        });  
+    </script>
+    <script>
+        // Create the chart
+        Highcharts.chart('container', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Applicantion Count '
+            },
+
+            accessibility: {
+                announceNewData: {
+                    enabled: true
+                }
+            },
+            xAxis: {
+                type: 'category'
+            },
+            yAxis: {
+                title: {
+                    text: 'Total percent market share'
+                }
+
+            },
+            legend: {
+                enabled: false
+            },
+            plotOptions: {
+                series: {
+                    borderWidth: 0,
+                    dataLabels: {
+                        enabled: true,
+                        format: '{point.y:.1f}'
+                    }
+                }
+            },
+
+            tooltip: {
+                headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+                pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}</b> of total<br/>'
+            },
+
+
+
+            series: [{
+                name: "Applicants Count",
+                colorByPoint: true,
+                data: [{
+                    name: "Total Application",
+                    y: {{app_count}},
+                    drilldown: null
+                }, {
+                    name: "Active Application",
+                    y: {{active_app_count}},
+                    drilldown: null
+                },{
+                    name: "Registered User",
+                    y: {{p_info_count}},
+                    drilldown: null
+                }]
+            }],
+          
+        });
+    </script>
+</body>
+
+<!-- Mirrored from demo.interface.club/limitless/demo/Template/layout_1/LTR/default/full/components_tabs.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Apr 2020 07:57:29 GMT -->
+
+</html>

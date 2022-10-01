@@ -1,0 +1,597 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from demo.interface.club/limitless/demo/Template/layout_1/LTR/default/full/components_tabs.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Apr 2020 07:57:29 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<!-- /Added by HTTrack -->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Techin&#178 Recruit | Application Form</title>
+
+    <!-- Global stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet"
+        type="text/css">
+    <link href="{% static 'global_assets/css/icons/icomoon/styles.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/bootstrap_limitless.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/layout.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/components.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/colors.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'global_assets/css/icons/fontawesome/styles.min.css' %}" rel="stylesheet" type="text/css">
+    <!-- /global stylesheets -->
+
+    <!-- Core JS files -->
+    <script src="{% static 'global_assets/js/main/jquery.min.js' %}"></script>
+    <script src="{% static 'global_assets/js/main/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'global_assets/js/plugins/loaders/blockui.min.js' %}"></script>
+    <!-- /core JS files -->
+
+    <!-- Theme JS files -->
+    <script src="{% static 'assets/js/app.js' %}"></script>
+    <script src="{% static 'global_assets/js/plugins/forms/selects/select2.min.js' %}"></script>
+    <script src="{% static 'global_assets/js/plugins/forms/styling/uniform.min.js' %}"></script>
+    <!-- <script src="../../../../global_assets/js/demo_pages/form_layouts.js' %}"></script> -->
+    <script src="{% static 'global_assets/js/demo_pages/form_checkboxes_radios.js' %}"></script>
+    <script src="{% static 'global_assets/js/plugins/forms/wizards/steps.min.js' %}"></script>
+    <script src="{% static 'global_assets/js/demo_pages/form_wizard.js' %}"></script>
+    <script src="{% static 'global_assets/js/plugins/forms/inputs/inputmask.js' %}"></script>
+
+    <script src="{% static 'global_assets/js/plugins/extensions/cookie.js' %}"></script>
+    <!-- /theme JS files -->
+
+</head>
+
+<body>
+
+    <!-- Main navbar -->
+    <div class="navbar navbar-expand-md navbar-dark">
+        <div class="navbar-brand">
+            <a href="index.html" class="d-inline-block">
+                <img src="{% static 'global_assets/images/logg.png' %}" alt="" style="margin-left: 50px;">
+            </a>
+        </div>
+
+        <div class="d-md-none">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-mobile">
+                <i class="icon-tree5"></i>
+            </button>
+            <!-- <button class="navbar-toggler sidebar-mobile-main-toggle" type="button">
+				<i class="icon-paragraph-justify3"></i>
+			</button> -->
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-mobile">
+
+
+            <span class="ml-md-3 mr-md-auto" style="font-size:1.25rem">TECHIN&#178 JOB PORTAL</span>
+
+            <ul class="navbar-nav">
+
+                <li class="nav-item dropdown dropdown-user">
+                    <a href="#" class="navbar-nav-link d-flex align-items-center dropdown-toggle"
+                        data-toggle="dropdown">
+                        <img src="{% static 'global_assets/images/demo/users/face11.jpg' %}" class="rounded-circle mr-2"
+                            height="34" alt="">
+                        <span>Victoria</span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a href="#" class="dropdown-item"><i class="icon-user-plus"></i> My profile</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item"><i class="icon-cog5"></i> Account settings</a>
+                        <a href="#" class="dropdown-item"><i class="icon-switch2"></i> Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- /main navbar -->
+
+
+    <!-- Page content -->
+    <div class="page-content">
+
+        <!-- Main content -->
+        <div class="content-wrapper">
+
+            <!-- Page header -->
+            <div class="page-header page-header-light">
+                <div class="page-header-content header-elements-md-inline">
+                    <div class="page-title d-flex">
+                        <h4><span class="font-weight-semibold text-right"></span>Application Form</span>
+                        </h4>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- /page header -->
+
+
+            <!-- Saving state -->
+            <div class="card" style="margin: 20px;">
+
+                <br><br>
+                <form method="POST" action="" id="my_form" enctype="multipart/form-data"
+                    class="wizard-form steps-state-saving">
+                    {% csrf_token %}
+                    <h6>Personal Information</h6>
+                    <fieldset>
+                        <div class="row">
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>First name:</label>
+                                    {{perform.Fname}}
+                                    <!-- <input type="text" placeholder="Name" class="form-control"> -->
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Middle name:</label>
+                                    {{perform.Mname}}
+                                    <!-- <input type="text" placeholder="Father" class="form-control"> -->
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Last name:</label>
+                                    {{perform.Lname}}
+                                    <!-- <input type="text" placeholder="G/Father" class="form-control"> -->
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Email:</label>
+                                    {{perform.Email}}
+                                    <!-- <input type="text" placeholder="eugene@kopyov.com" class="form-control"> -->
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Phone Number:</label>
+                                    {{perform.PhoneNo}}
+                                    <!-- <input type="text" class="form-control" placeholder="+251-XX-XXX-XXXX"> -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Nationality:</label>
+                                    {{perform.Nationality}}
+                                    <!-- <input type="text" placeholder="Ethiopian" class="form-control"> -->
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>City:</label>
+                                    {{perform.City}}
+                                    <!-- <input type="text" placeholder="Addis Ababa" class="form-control"> -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Gender:</label>
+                                <div class="form-group">
+
+                                    {{perform.Gender}}
+                                    <!-- <select class="custom-select">
+			                                <option value="opt1">Choose your Gender</option>
+			                                
+			                                <option value="opt3">Female</option>
+			                                <option value="opt4">Male</option>
+			                                
+			                            </select> -->
+
+                                </div>
+
+
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Date of Birth:</label>
+                                    {{perform.DateofBirth}}
+                                    <!-- <input class="form-control" type="date" name="date"> -->
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Place of Birth:</label>
+                                    {{perform.PlaceofBirth}}
+                                    <!-- <input type="text" placeholder="Munich" class="form-control"> -->
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </fieldset>
+
+                    <h6>Educational Background</h6>
+                    <fieldset>
+                        {{ eduset.management_form }}
+                        {% for form in eduset %}
+                        <div class="row">
+                            <legend class="text-center font-size-lg font-weight-bold">Educuational Background&nbsp;
+                                <a href="#" id="add-edu"
+                                    class="btn bg-transparent border-teal text-teal rounded-round border-2 btn-icon mr-3">
+                                    <i class="icon-plus3"></i>
+                                </a>
+                            </legend>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>University:</label>
+                                    {{form.University}}
+                                    <!-- <input type="text" name="university" placeholder="University name" class="form-control"> -->
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Qualification:</label>
+                                    {{form.FieldofStudy}}
+                                    <!-- <input type="text" name="university" placeholder="field of study" class="form-control"> -->
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label>Degree Level:</label>
+                                <div class="form-group">
+
+
+                                    {{form.Degree_level}}
+                                    <!-- <select class="custom-select">
+                                        <option value="opt1">Select your level</option>
+                                        <option value="opt2">BSc</option>
+                                        <option value="opt3">MSc</option>
+                                        <option value="opt4">PHD</option>
+
+                                    </select> -->
+
+                                </div>
+
+
+                            </div>
+
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label>From:</label>
+                                    <div class="form-group">
+                                        {{form.From}}
+
+                                        <!-- <input class="form-control" type="date" name="date"> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label>To:</label>
+                                    <div class="form-group">
+                                        {{form.To}}
+                                        <!-- <input class="form-control" type="date" name="date"> -->
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div id="new_edu"></div>
+                        {% endfor %}
+                    </fieldset>
+
+
+                    <h6>Language Skills & Work Experience:</h6>
+                    <fieldset>
+                        {{ lanset.management_form }}
+                        {% for form in lanset %}
+                        <div class="row">
+
+                            <legend class="text-center font-size-lg font-weight-bold">Language Skills&nbsp;
+                                <a href="#" id="add-language"
+                                    class="btn bg-transparent border-teal text-teal rounded-round border-2 btn-icon mr-3">
+                                    <i class="icon-plus3"></i>
+                                </a>
+                            </legend>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Language:</label>
+                                    {{form.Language}}
+                                    <!-- <input type="text" name="experience-company" placeholder="input the language" class="form-control"> -->
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label>Listening:</label>
+                                <div class="form-group">
+                                    {{form.Listening}}
+                                    <!-- <select class="custom-select">
+			                                <option value="opt1">Select your level</option>
+			                                <option value="opt2">Excellent</option>
+			                                <option value="opt3">Very Good</option>
+                                            <option value="opt4">Good</option>
+                                            <option value="opt5">Poor</option>
+			                                
+			                            </select> -->
+
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label>Writing:</label>
+                                <div class="form-group">
+                                    {{form.Writing}}
+                                    <!-- <select class="custom-select">
+			                                <option value="opt1">Select your level</option>
+			                                <option value="opt2">Excellent</option>
+			                                <option value="opt3">Very Good</option>
+                                            <option value="opt4">Good</option>
+                                            <option value="opt5">Poor</option>
+			                                
+			                            </select> -->
+
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label>Speaking:</label>
+                                <div class="form-group">
+                                    {{form.Speaking}}
+                                    <!-- <select class="custom-select">
+			                                <option value="opt1">Select your level</option>
+			                                <option value="opt2">Excellent</option>
+			                                <option value="opt3">Very Good</option>
+                                            <option value="opt4">Good</option>
+                                            <option value="opt5">Poor</option>
+			                                
+			                            </select> -->
+
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label>Reading:</label>
+                                <div class="form-group">
+                                    {{form.Reading}}
+                                    <!-- <select class="custom-select">
+			                                <option value="opt1">Select your level</option>
+			                                <option value="opt2">Excellent</option>
+			                                <option value="opt3">Very Good</option>
+                                            <option value="opt4">Good</option>
+                                            <option value="opt5">Poor</option>
+			                                
+			                            </select> -->
+
+                                </div>
+                            </div>
+                        </div>
+                        <div id="new_language"></div>
+
+                        {% endfor %}
+
+
+                        {{ expset.management_form }}
+                        {% for form in expset %}
+                        <div class="row">
+                            <legend class="text-center font-size-lg font-weight-bold">Work Experience&nbsp;
+                                <a href="#" id="add-exprince"
+                                    class="btn bg-transparent border-teal text-teal rounded-round border-2 btn-icon mr-3">
+                                    <i class="icon-plus3"></i>
+                                </a>
+                            </legend>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Organinzation/Company</label>
+                                    {{form.Company}}
+                                    <!-- <input type="text" name="experience-company" placeholder="input the organization/Company" class="form-control"> -->
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Position</label>
+                                    {{form.Position}}
+                                    <!-- <input type="text" name="position" placeholder="job position" class="form-control"> -->
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label>Years of experience:</label>
+                                <div class="form-group">
+                                    {{form.YearofExp}}
+                                    <!-- <select class="custom-select">
+			                                <option value="opt1">Select years of experience</option>
+			                                <option value="opt2">0-2 Years</option>
+			                                <option value="opt3">3-4 Years</option>
+                                            <option value="opt4">5-9 Years</option>
+                                            <option value="opt5">10+ Years</option>
+			                                
+			                            </select> -->
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label>Start Date:</label>
+                                    {{form.Start}}
+
+                                    <!-- <input class="form-control" type="date" name="date"> -->
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label>End Date:</label>
+                                    {{form.End}}
+                                    <!-- <input class="form-control" type="date" name="date"> -->
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                        <div id="new_exprince"></div>
+
+                    </fieldset>
+
+
+
+                    <h6>References</h6>
+                    <fieldset>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <legend class="font-weight-semibold font-size-lg">Reference #1 information</legend>
+                                <div class="form-group">
+                                    <label>Name:</label>
+                                    {{perform.Name}}
+                                    <!-- <input type="text" class="form-control" placeholder="name"> -->
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label>Phone Number:</label>
+                                    {{perform.PhoneNumber}}
+                                    <!-- <input type="text" value="09" class="form-control"> -->
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label>Email:</label>
+                                    {{perform.Email}}
+                                    <!-- <input type="text" placeholder="eugene@kopyov.com" class="form-control"> -->
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+                    </fieldset>
+
+                    <h6>Cover Letter & Attachments</h6>
+                    <fieldset>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+
+                                    <label>Your Degree:</label>
+                                    {{perform.cv}}
+
+                                    <!-- <input type="file" class="form-input-styled" data-fouc> -->
+
+                                    <span class="form-text text-muted">Accepted formats: pdf, doc. Max file size
+                                        2Mb</span>
+                                </div>
+                                <div class="form-group">
+                                    <label>Cover Letter:</label>
+                                    {{perform.CoverLetter}}
+                                    <!-- <textarea name="experience-description" rows="10" cols="6" placeholder="your application letter" class="form-control"></textarea> -->
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </fieldset>
+                    <button type="submit" class="btn btn-block btn-primary">Create</button>
+                </form>
+            </div>
+            <!-- /saving state -->
+            <!-- Footer -->
+            <div class="navbar navbar-expand-lg navbar-light">
+                <div class="text-center d-lg-none w-100">
+                    <button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse"
+                        data-target="#navbar-footer">
+                        <i class="icon-unfold mr-2"></i>
+                        Footer
+                    </button>
+                </div>
+
+                <div class="navbar-collapse collapse" id="navbar-footer">
+                    <span class="navbar-text">
+                        Copyright &copy; 2020. Powered by <a href="http://www.techin.gov.et"
+                            target="_blank">Techin&#178</a>, All rights reserved.
+                    </span>
+
+                    <ul class="navbar-nav ml-lg-auto">
+                        <li class="nav-item"><a href="http://www.techin.gov.et" class="navbar-nav-link"
+                                target="_blank"><i class="icon-lifebuoy mr-2"></i>Home</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /footer -->
+
+        </div>
+        <!-- /main content -->
+
+    </div>
+    <!-- /page content -->
+
+</body>
+
+<!-- Mirrored from demo.interface.club/limitless/demo/Template/layout_1/LTR/default/full/components_tabs.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Apr 2020 07:57:29 GMT -->
+
+</html>
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        var j = 1;
+        var m = 1;
+        var x = 1;
+        
+        //add more language
+        $('#add-language').click(function() {
+            j++;
+            $('#new_language').append('{{ lanset.management_form }} {% for form in lanset %} <div id="row' + j + 'language" ><div class="row">   <div class="col-md-4"> <div class="form-group"><label>Language:</label>{{form.Language}}</div></div><div class="col-md-2"><label>Listening:</label><div class="form-group">{{form.Listening}}</div></div><div class="col-md-2"><label>Writing:</label><div class="form-group">{{form.Writing}}</div></div><div class="col-md-2"><label>Speaking:</label><div class="form-group">{{form.Speaking}}</div></div><div class="col-md-1.75"><label>Reading:</label><div class="form-group">{{form.Reading}}</div></div> {% endfor %} <div class="col-md-0.25">&nbsp;&nbsp; <button type="button" style="background:red" id="' + j + 'language" name="remove-language" class="btn btn-danger btn-sm btn_remove-language " ><i  class="fas fa-window-close mr-1 fa-1x"></i></button></div></div></div>');
+
+        });
+
+        $(document).on('click', '.btn_remove-language', function() {
+            var button_id = $(this).attr("id");
+
+            $('#row' + button_id + '').remove();
+        });
+
+
+        //add work exprince
+
+
+        $('#add-exprince').click(function() {
+            m++;
+            $('#new_exprince').append(' {{ expset.management_form }} {% for form in expset %} <div id="row' + m + 'work_experience">  <div class="row">  <div class="col-md-3"><div class="form-group"><label>Organinzation/Company</label>{{form.Company}}</div></div><div class="col-md-3"><div class="form-group"><label>Position</label>{{form.Position}}</div></div><div class="col-md-2"><label>Years of experience:</label><div class="form-group">{{form.YearofExp}}</div></div><div class="col-md-2"><div class="form-group"><label>Start Date:</label>{{form.Start}}</div></div><div class="col-md-1.5"><div class="form-group"><label>End Date:</label>{{form.End}}</div></div> {% endfor %} <div class="col-md-0.5">&nbsp;<button type="button" style="background:red" id="' + m + 'work_experience" name="remove-work_experience" class=" btn_remove-work_experience" ><i style="color: white"  class="fas fa-window-close mr-1 fa-1x"></i></button></div></div></div>');
+
+        });
+
+        $(document).on('click', '.btn_remove-work_experience', function() {
+            var button_id = $(this).attr("id");
+
+            $('#row' + button_id + '').remove();
+        });
+
+
+           //add Educational Background
+
+
+        $('#add-edu').click(function() {[]
+            x++;
+            $('#new_edu').append('{{ eduset.management_form }} {% for form in eduset %} <div id="row' + x + 'education" > <div class="row">  <div class="col-md-3"> <div class="form-group"><label>University:</label>{{form.University}}</div></div><div class="col-md-3"><div class="form-group"><label>Qualification:</label>{{form.FieldofStudy}}</div></div><div class="col-md-2"><label>Degree Level:</label><div class="form-group">{{form.Degree_level}}</div></div><div class="col-md-2"><div class="form-group"><label>From:</label><div class="form-group">{{form.From}}</div></div></div><div class="col-md-1.75"><div class="form-group"><label>To:</label><div class="form-group">{{form.To}}</div></div></div> {% endfor %} <div class="col-md-0.25">&nbsp;&nbsp; <button type="button" style="background:red" id="' + x + 'education" name="remove-education" class="btn btn-danger btn-sm btn_remove-education " ><i  class="fas fa-window-close mr-1 fa-1x"></i></button></div></div></div>');
+
+        });
+
+        $(document).on('click', '.btn_remove-education', function() {
+            var button_id = $(this).attr("id");
+
+            $('#row' + button_id + '').remove();
+        });
+    });
+</script>

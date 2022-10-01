@@ -1,0 +1,518 @@
+{% load static %}
+<html>
+<head>
+  
+
+  
+
+ {% include 'head.html' %}
+    <script src="{% static 'assets/js/app.js' %}"></script>
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css"/>
+    <!-- <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.css"/> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+    
+       <script src="{% static 'global_assets/js/demo_pages/table_responsive.js' %}"></script>
+
+    <script src="{% static 'global_assets/js/plugins/tables/datatables/extensions/fixed_columns.min.js' %}"></script>
+    <script src="{% static 'global_assets/js/demo_pages/datatables_extension_fixed_columns.js' %}"></script>
+    
+
+    <script src="{% static 'global_assets/js/demo_pages/datatables_advanced.js' %}"></script>
+
+
+    <style>
+        #calendar {
+  width: 80%;
+  
+}
+
+
+/* ------- Agenda View ------- */
+#agendaView > table{
+    width: 100%;
+    min-height: 500px;
+    background: #FFF;
+    
+}
+
+#agendaView .fc-agendaView-event-start,
+#agendaView .fc-agendaView-event-end{
+    width: 20%;
+}
+
+#agendaView .fc-agendaView-event-title{
+    width: 60%;
+}
+#agendaView th{
+    height: 30px;
+    font-size: 14px;
+    vertical-align: text-bottom;
+    font-weight: bold;
+    padding: 10px 0 0 10px;
+}
+
+#agendaView td{
+    height: 30px;
+    padding: 10px 0 0 10px;
+    font-size: 14px;
+    vertical-align: text-bottom;    
+}
+
+    </style>
+</head>
+<body>
+    {% include 'header.html' %}
+
+    <div class="page-content">
+
+        <!-- Main content -->
+        <div class="content-wrapper">
+
+            <!-- Page header -->
+             <div class="page-header page-header-light">
+
+                   <div class="row">
+
+                    <div class="col-sm-6 col-xl-4">
+                <div class="page-header-content header-elements-md-inline">
+                    <div class="page-title d-flex">
+                        <h3><span class="font-weight-semibold text-right"></span>List of Applicants</span>
+                        </h3>
+
+                    </div>
+
+                </div>
+
+                </div>
+
+                
+
+                  <div class="col-sm-6 col-xl-2">
+
+
+            
+                           
+                        </div>
+
+
+                          <div class="col-sm-6 col-xl-6">
+                <div class="page-header-content header-elements-md-inline">
+                    <div class="page-title d-flex">
+
+                        <div class="breadcrumb">
+                            <h4>
+									<a href="{% url 'adminR' %}" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>Home</a>
+                                    <a href="{% url 'admin_url2' %}" class="breadcrumb-item">Applications</a>
+                                    <a href="{% url 'list_url' app_idx %}" class="breadcrumb-item">List of Applicants</a>
+                                    <span class="breadcrumb-item active">Schedule Interview</span> 
+                                    </h4>
+                                </div>
+                            
+                                
+                       
+                        </h3>
+
+                    </div>
+
+                </div>
+
+                </div>
+                            </div>
+            </div>
+
+    <div class="content">
+                <!-- Tabs with bottom line -->
+
+                
+
+	<div id="modal_form_horizontal" class="modal fade" tabindex="-1">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title">Schedule Interview Date For Single User</h5>
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+							</div>
+
+							<form  method="POST" id="post-form" class="form-horizontal">
+                                {% csrf_token %}
+								<div class="modal-body">
+									
+
+
+                                    <div class="form-group row">
+                                        <label class="col-form-label col-lg-2">interview  Title</label>
+                                        <div class="col-lg-6">
+                                             {{interview_form.name}}
+                                            <!-- <input type="text" class="form-control"> -->
+
+                                                   {% if interview_form.name.errors %}
+                    
+              
+                    
+    
+                <div class="alert alert-danger alert-dismissible">
+									<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+									<span class="font-weight-semibold">Oh snap!</span>  {{interview_form.name.errors}} <a href="#" class="alert-link">try submitting again</a>.
+                                </div>
+                                  {% endif %}
+                                        </div>
+                                    </div>
+
+                                     <div class="form-group row">
+                                        <label class="col-form-label col-lg-2">Starting Time</label>
+                                        <div class="col-lg-6">
+                                             {{interview_form.start}}
+                                            <!-- <input type="text" class="form-control"> -->
+                                        </div>
+
+                                              {% if interview_form.start.errors %}
+                    
+              
+                    
+    
+                <div class="alert alert-danger alert-dismissible">
+									<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+									<span class="font-weight-semibold">Oh snap!</span>  {{interview_form.start.errors}} <a href="#" class="alert-link">try submitting again</a>.
+                                </div>
+                                  {% endif %}
+                                    </div>
+
+                                
+
+                                     <div class="form-group row">
+                                        <label class="col-form-label col-lg-2">Ending Time</label>
+                                        <div class="col-lg-6">
+                                             {{interview_form.end}}
+                                            <!-- <input type="text" class="form-control"> -->
+                                        </div>
+
+                                              {% if interview_form.end.errors %}
+                    
+              
+                    
+    
+                <div class="alert alert-danger alert-dismissible">
+									<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+									<span class="font-weight-semibold">Oh snap!</span>  {{interview_form.end.errors}} <a href="#" class="alert-link">try submitting again</a>.
+                                </div>
+                                  {% endif %}
+                                    </div>
+
+                                      <div class="form-group row">
+                                        <label class="col-form-label col-lg-2">User Schedule</label>
+                                        <div class="col-lg-6">
+                                             {{interview_form.history_userx_f}}
+                                            <!-- <input type="text" class="form-control"> -->
+
+                                                   {% if interview_form.history_userx_f.errors %}
+                    
+              
+                    
+    
+                <div class="alert alert-danger alert-dismissible">
+									<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+									<span class="font-weight-semibold">Oh snap!</span>  {{interview_form.history_userx_f.errors}} <a href="#" class="alert-link">try submitting again</a>.
+                                </div>
+                                  {% endif %}
+                                        </div>
+                                    </div>
+                                            <p id='par'></p>
+								</div>
+                                 
+								<div class="modal-footer">
+                                    <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                                    
+									<button type="submit" class="btn bg-primary"><span class="dashicons dashicons-schedule"></span>Schedule Date</button>
+								</div>
+							</form>
+						</div>
+					</div>
+                </div>
+                    
+<div class="card"> 
+<div class="row">
+    
+          <div style="margin-left: 2vw; margin-bottom: 2vw;" class="col-lg-12">
+
+                                        
+<hr>
+<button   class="btn btn-outline bg-pink-400 text-pink-400 border-pink-400" type="button" id="prev">
+
+<i class="icon-arrow-left7"></i>
+</button>
+<button   class="btn btn-outline bg-pink-400 text-pink-400 border-pink-400" type="button" id="next">
+<i class="icon-arrow-right7"></i>
+</button>
+<button   class="btn btn-outline bg-pink-400 text-pink-400 border-pink-400" type="button" id="today">
+Today
+</button>
+
+<button   class="btn btn-outline bg-pink-400 text-pink-400 border-pink-400" data-toggle="modal" data-target="#modal_form_horizontal" type="button" id="toggle_modal">
+Create Interview Schedule
+</button>  
+<hr/>    
+                            
+<div id="calendar" class="fullcalendar-agenda">
+
+    
+</div>
+ 
+ 
+   </div> 
+   
+   
+
+
+    <div class="col-lg-12">
+  <div   class="col-sm-6 col-md-8">
+
+                              <table class="table datatable-pagination" >
+
+
+                                                    
+
+                                                <thead>
+                                                    <tr>
+                                                                                                    <th>User Name</th>
+
+                                                                                                  
+                                                                                                   
+			                                                                                        <th>Quiz</th>
+			                                                                                         <th>Completed Date </th>
+			                                                                                    
+                                                                                                    <!-- <th>Experience</th>
+                                                                                                                                                                                                                <th>CGPA</th> -->
+                                                                                                  
+                                                                                                    <th><button  class="btn btn-outline bg-indigo-400 text-indigo-400 border-indigo-400"  >Set Interview Status </button>    </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                    
+                                                
+
+			<tr>
+		
+            <td>Not Completed </td>
+      <td>Not Completed </td>
+            <td>Not Completed </td>
+                  <td>Not Completed </td>
+                                                                                                             
+                
+            </tr>
+            
+
+            
+
+            
+
+                                                </tbody>
+                                            </table>
+                                                </div>
+    </div>
+
+    
+</div>
+
+  </div>  
+
+
+
+
+
+
+   
+
+ 
+ 
+
+</div>
+ 
+ </div>
+  </div>
+<script>
+
+    $('#post-formx').on('submit', function(event){
+    event.preventDefault();
+    console.log("form submitted!")  // sanity check
+    
+});
+
+
+</script>
+<script>
+   $('#post-form').on('submit', function(event){
+            title = $('#id_form12-name').val(),
+            starting = $('#id_form12-start').val(),
+            ending = $('#id_form12-end').val(),
+            his_id = $('#id_form12-history_userx_f').val(),
+           // d1 = new Date();
+           // console.log(d1.getTime()>starting.getTime())
+      //      var start = $.fullCalendar.formatDate(starting, "Y-MM-DD HH:mm:ss");
+            //console.log(start)
+
+
+       
+    $.ajax({
+        type:'POST',
+        url:'/create_post/',
+        data:{
+            title:$('#id_form12-name').val(),
+            starting:$('#id_form12-start').val(),
+            ending:$('#id_form12-end').val(),
+            app_id:{{app_idx}},
+            his_id:$('#id_form12-history_userx_f').val(),
+            csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+            action: 'post'
+        },
+        
+        success:function(json){
+            //document.getElementById("post-form").reset();
+
+            if(json.is_right){
+
+                document.getElementById("post-form").reset();
+                document.getElementById('par').innerText = json.error_message
+                alert("Added Successfully");
+
+            }
+            else{
+            alert(json.error_message);
+            
+            
+             document.getElementById('par').innerText = json.error_message
+            }
+
+        },
+        error : function(xhr,errmsg,err) {
+        console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+    }
+    });
+    return false;
+});
+
+</script>
+
+    <script>
+
+        $(document).ready(function () {
+            var calendar = $('#calendar').fullCalendar({
+
+                
+          header: {
+  left: '', //note no "buttons
+  center: 'title',
+  right: 'month,agendaWeek,agendaDay'
+},
+                events: [
+                    {% for event in events %}
+                        {
+                            title: "{{ event.name}}",
+                            start: '{{ event.start|date:"Y-m-d H:i" }}',
+                            end: '{{ event.end|date:"Y-m-d H:i" }}',
+                            id: '{{ event.id }}',
+                        },
+                    {% endfor %}
+                ],
+                selectable: true,
+                selectHelper: true,
+                editable: true,
+                eventLimit: true,
+                defaultView: 'agendaWeek',
+                minTime: '08:00:00',
+                maxTime: '24:00:00',
+                
+                select: function (start, end, allDay) {
+                           var startx = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm").replace(' ','T');
+                           var endx = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm").replace(' ','T');
+                          // document.getElementById("id_form12-start").value  = "2013-03-18 13:00"
+                         //  $("#publishDate").val("2013-03-18T13:00");
+                           console.log(startx,'hello')
+                           document.getElementById("toggle_modal").click();
+                           document.getElementById("id_form12-start").value  = startx
+                           document.getElementById("id_form12-end").value  = endx
+                    
+                   
+                       // var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
+                      //  var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
+                           
+                         
+                   
+                },
+                eventResize: function (event) {
+                      new Noty({
+                text:'<b>  &#x1F610; ' + '</b> the date picked is in the future  OR  , please follow the  chronological order of the date, invalid date ',
+                type: 'error'
+            }).show();
+                    var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
+                    var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
+                    var title = event.title;
+                    var id = event.id;
+                    $.ajax({
+                        type: "GET",
+                        url: '/update',
+                        data: {'title': title, 'start': start, 'end': end, 'id': id},
+                        dataType: "json",
+                        success: function (data) {
+                            calendar.fullCalendar('refetchEvents');
+                              
+
+      }
+
+                        },
+                        failure: function (data) {
+                            alert('There is a problem!!!');
+                        }
+                    });
+                },
+
+                eventDrop: function (event) {
+                    var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
+                    var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
+                    var title = event.title;
+                    var id = event.id;
+                    $.ajax({
+                        type: "GET",
+                        url: '/update',
+                        data: {'title': title, 'start': start, 'end': end, 'id': id},
+                        dataType: "json",
+                        success: function (data) {
+                            calendar.fullCalendar('refetchEvents');
+                            alert('Event Update');
+                        },
+                        failure: function (data) {
+                            alert('There is a problem!!!');
+                        }
+                    });
+                },
+
+             
+
+            
+            });
+
+                    $("#next").click(function() {
+      $('#calendar').fullCalendar("next");
+    });
+    
+    $("#prev").click(function() {
+      $('#calendar').fullCalendar("prev");
+    });
+
+	  $("#today").click(function() {
+      $('#calendar').fullCalendar("today");
+    });
+
+
+
+        });
+
+    </script>
+
+  
+</body>
+</html>

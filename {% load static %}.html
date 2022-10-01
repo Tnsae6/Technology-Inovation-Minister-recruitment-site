@@ -1,0 +1,919 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from demo.interface.club/limitless/demo/Template/layout_1/LTR/default/full/components_tabs.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Apr 2020 07:57:29 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<!-- /Added by HTTrack -->
+
+
+{% include 'head.html' %}
+
+
+
+<body>
+
+    <!-- Main navbar -->
+    <div class="navbar navbar-expand-md navbar-dark">
+
+        {% if request.user.is_staff %}
+
+        <div class="navbar-brand">
+            <a href="{% url 'login'  %}" class="d-inline-block">
+                <img src="{% static 'global_assets/images/logg.png' %}" alt="" style="margin-left: 50px;">
+            </a>
+        </div>
+
+
+        {% elif request.user.is_active %}
+
+
+        <div class="navbar-brand">
+            <a href="{% url 'dash_url'  %}" class="d-inline-block">
+                <img src="{% static 'global_assets/images/logg.png' %}" alt="" style="margin-left: 50px;">
+            </a>
+        </div>
+
+        {% else %}
+
+        <div class="navbar-brand">
+            <a href="{% url 'login'  %}" class="d-inline-block">
+                <img src="{% static 'global_assets/images/logg.png' %}" alt="" style="margin-left: 50px;">
+            </a>
+        </div>
+
+        {% endif %}
+        <div class="d-md-none">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-mobile">
+                <i class="icon-tree5"></i>
+            </button>
+            <button class="navbar-toggler sidebar-mobile-main-toggle" type="button">
+                <i class="icon-paragraph-justify3"></i>
+            </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-mobile">
+
+            <span class="ml-md-3 mr-md-auto" style="font-size:1.25rem">TECHIN&#178 JOB PORTAL</span>
+
+            <ul class="navbar-nav">
+
+                <li class="nav-item dropdown dropdown-user">
+                    <a href="#" class="navbar-nav-link d-flex align-items-center dropdown-toggle"
+                        data-toggle="dropdown">
+
+                        {% if user.is_authenticated %}
+                        <!-- <img src="{% static 'global_assets/images/demo/users/face11.jpg' %}" class="rounded-circle mr-2" height="34" alt=""> -->
+                        <span>{{request.user}}</span>
+                        {% else%}
+                        <!-- <img src="{% static 'global_assets/images/demo/users/face11.jpg' %}" class="rounded-circle mr-2" height="34" alt="">
+<span>Not Loged In</span> -->
+                        {%endif%}
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a href="#" class="dropdown-item"><i class="icon-user-plus"></i> My profile</a>
+                        <div class="dropdown-divider"></div>
+                        <!-- <a href="#" class="dropdown-item"><i class="icon-cog5"></i> Account settings</a> -->
+                        <a href="{%url 'logout' %}" class="dropdown-item"><i class="icon-switch2"></i> Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- /main navbar -->
+
+
+    <!-- Page content -->
+    <div class="page-content">
+
+        <!-- Main content -->
+        <div class="content-wrapper">
+
+            <!-- Page header -->
+            <div class="page-header page-header-light">
+                <div class="page-header-content header-elements-md-inline">
+                    <div class="page-title d-flex">
+                        <h4><span class="font-weight-semibold text-right"></span>Application Form</span>
+                        </h4>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- /page header -->
+
+
+            <!-- Saving state -->
+            <div>
+
+
+                <div>
+
+                    <br><br>
+                    <div>
+                        <div class="card" style="margin-left: 20px; margin-right:20px">
+
+
+                            <form method="POST " action=" " name="perform " onsubmit="return validateForm() "
+                                enctype="multipart/form-data ">
+                                {% csrf_token %}
+                                <h3 style="margin:20px">Personal Information</h3>
+                                <fieldset>
+                                    <div class="row" style="margin-left: 20px; margin-right:20px">
+
+                                        <div class="col-md-4 ">
+                                            <div class="form-group ">
+                                                <label>First name:<span
+                                                        style="color: red; font-size:larger ">*</span></label>
+                                                {{perform.Fname}}
+                                                <!-- <input type="text " placeholder="Name " class="form-control "> -->
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4 ">
+                                            <div class="form-group ">
+                                                <label>Middle name:<span
+                                                        style="color: red; font-size:larger ">*</span></label>
+                                                {{perform.Mname}}
+                                                <!-- <input type="text " placeholder="Father " class="form-control "> -->
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4 ">
+                                            <div class="form-group ">
+                                                <label>Last name:<span
+                                                        style="color: red; font-size:larger ">*</span></label>
+                                                {{perform.Lname}}
+                                                <!-- <input type="text " placeholder="G/Father " class="form-control "> -->
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row" style="margin-left: 20px; margin-right:20px">
+                                        <div class="col-md-6 ">
+                                            <div class="form-group ">
+                                                <label>Email:<span
+                                                        style="color: red; font-size:larger ">*</span></label>
+                                                {{perform.Email}}
+                                                <!-- <input type="text " placeholder="eugene@kopyov.com " class="form-control "> -->
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 ">
+                                            <div class="form-group ">
+                                                <label>Phone Number:<span
+                                                        style="color: red; font-size:larger ">*</span></label>
+                                                {{perform.PhoneNo}}
+                                                <!-- <input type="text " class="form-control " placeholder="+251-XX-XXX-XXXX "> -->
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row" style="margin-left: 20px; margin-right:20px">
+                                        <div class="col-md-4 ">
+                                            <div class="form-group ">
+                                                <label>Nationality:<span
+                                                        style="color: red; font-size:larger ">*</span></label>
+                                                {{perform.Nationality}}
+                                                <!-- <input type="text " placeholder="Ethiopian " class="form-control "> -->
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4 ">
+                                            <div class="form-group ">
+                                                <label>City:<span style="color: red; font-size:larger ">*</span></label>
+                                                {{perform.City}}
+                                                <!-- <input type="text " placeholder="Addis Ababa " class="form-control "> -->
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 ">
+                                            <label>Gender:<span style="color: red; font-size:larger ">*</span></label>
+                                            <div class="form-group ">
+
+                                                {{perform.Gender}}
+                                                <!-- <select class="custom-select ">
+			                                <option value="opt1 ">Choose your Gender</option>
+			                                
+			                                <option value="opt3 ">Female</option>
+			                                <option value="opt4 ">Male</option>
+			                                
+			                            </select> -->
+
+                                            </div>
+
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row" style="margin-left: 20px; margin-right:20px">
+
+                                        <div class="col-md-4 ">
+                                            <div class="form-group ">
+                                                <label>Date of Birth:<span
+                                                        style="color: red; font-size:larger ">*</span></label>
+                                                {{perform.DateofBirth}}
+                                                <!-- <input class="form-control " type="date " name="date "> -->
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4 ">
+                                            <div class="form-group ">
+                                                <label>Place of Birth:<span
+                                                        style="color: red; font-size:larger ">*</span></label>
+                                                {{perform.PlaceofBirth}}
+                                                <!-- <input type="text " placeholder="Munich " class="form-control "> -->
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 ">
+                                            <div class="form-group ">
+                                                <label class="d-block ">Disability:<span
+                                                        style="color: red; font-size:larger ">*</span></label>
+
+
+                                                        <div class="custom-control custom-control-right custom-checkbox custom-control-inline">
+                                                            <!-- <input type="checkbox" class="custom-control-input" id="custom_checkbox_inline_right_unchecked"> -->
+                                                            <!-- {{perform.disablity}} -->
+                                                            <label class="custom-control-label position-static" for="custom_checkbox_inline_right_unchecked">
+                                                                Disabled</label>
+                                                        </div>
+
+
+                                                
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                 
+
+                                </fieldset>
+                        </div>
+                        <div class="card" style="margin: 20px;">
+                            <h3 style="margin: 20px;">Educational Background</h3>
+                            <fieldset>
+                                <h6 style="margin-left: 20px; margin-right:20px">Elementary School</h6>
+                                <div class="row" style="margin-left: 20px; margin-right:20px">
+
+                                    <div class="col-md-4">
+
+                                        <div class="form-group ">
+                                            <label>Name of School:<span
+                                                    style="color: red; font-size:larger ">*</span></label>
+                                            {{elementary.School_name}}
+                                            <!-- <input type="text" name="university" placeholder="University name"
+                                                class="form-control"> -->
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>From:<span style="color: red; font-size:larger ">*</span></label>
+                                            <div class="form-group">
+                                                {{elementary.starting_date}}
+
+                                                <!-- <input class="form-control" type="date" name="date"> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>To:<span style="color: red; font-size:larger ">*</span></label>
+                                            <div class="form-group">
+                                                {{elementary.end_date}}
+                                                <!-- <input class="form-control" type="date" name="date"> -->
+                                            </div>
+                                        </div>
+                                    </div>
+{{elementary.errors}}
+                                </div>
+                                <h6 style="margin-left: 20px; margin-right:20px">Secondary School</h6>
+                                <div class="row" style="margin-left: 20px; margin-right:20px">
+
+
+                                    <div class="col-md-4">
+
+                                        <div class="form-group">
+                                            <label>Name of School:<span
+                                                    style="color: red; font-size:larger ">*</span></label>
+                                            {{secondary.School_names}}
+                                            <!-- <input type="text" name="university" placeholder="University name"
+                                                class="form-control"> -->
+                                        </div>
+                                    </div>
+{{secondary.errors}}
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>From:<span style="color: red; font-size:larger ">*</span></label>
+                                            <div class="form-group">
+                                                {{secondary.starting_dates}}
+
+                                                <!-- <input class="form-control" type="date" name="date"> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>To:<span style="color: red; font-size:larger ">*</span></label>
+                                            <div class="form-group">
+                                                {{secondary.end_dates}}
+                                                <!-- <input class="form-control" type="date" name="date"> -->
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <h6 style="margin-left: 20px; margin-right:20px">Preparatory School</h6>
+                                <div class="row " style="margin-left: 20px; margin-right:20px">
+
+                                    <div class="col-md-4">
+
+                                        <div class="form-group">
+                                            <label>Name of School:<span
+                                                    style="color: red; font-size:larger ">*</span></label>
+                                            {{preparatory.School_namep}}
+                                            <!-- <input type="text" name="university" placeholder="University name"
+                                                class="form-control"> -->
+                                        </div>
+                                    </div>
+{{preparatory.errors}}
+                                    <div class="col-md-4">
+                                        <div class="form-group ">
+                                            <label>From:<span style="color: red; font-size:larger ">*</span></label>
+                                            <div class="form-group ">
+                                                {{preparatory.starting_datep}}
+
+                                                <!-- <input class="form-control" type="date" name="date"> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>To:<span style="color: red; font-size:larger ">*</span></label>
+                                            <div class="form-group">
+                                                {{preparatory.end_datesp}}
+                                                <!-- <input class="form-control" type="date" name="date"> -->
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                {{ eduset.management_form }} {% for form in eduset %}
+                                <div class="row form-row spacer" style="margin-left: 20px; margin-right:20px">
+                                    <legend class="text-center font-size-lg font-weight-bold ">Higher Educations (From
+                                        Recent to Older)&nbsp;
+                                        <a href="# " id="add-edu "
+                                            class="btn bg-transparent border-teal text-teal rounded-round border-2 btn-icon mr-3 add-form-row ">
+                                            <i class="icon-plus3 "></i>
+                                        </a>
+                                    </legend>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label>University/Institution:<span
+                                                    style="color: red; font-size:larger ">*</span></label>
+                                            {{form.University}}
+                                            <!-- <input type="text " name="university " placeholder="University name " class="form-control "> -->
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label>Qualification:<span
+                                                    style="color: red; font-size:larger ">*</span></label>
+                                            {{form.FieldofStudy}}
+                                            <!-- <input type="text " name="university " placeholder="field of study " class="form-control "> -->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label>CGPA:<span style="color: red; font-size:larger ">*</span></label>
+                                            {{form.cumulative_gpa}}
+                                            <!-- <input type="text " name="university " placeholder="field of study " class="form-control "> -->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label>Degree Level:<span style="color: red; font-size:larger ">*</span></label>
+                                        <div class="form-group ">
+
+
+                                            {{form.Degree_level}}
+                                            <!-- <select class="custom-select ">
+                                        <option value="opt1 ">Select your level</option>
+                                        <option value="opt2 ">BSc</option>
+                                        <option value="opt3 ">MSc</option>
+                                        <option value="opt4 ">PHD</option>
+
+                                    </select> -->
+
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label>From:<span style="color: red; font-size:larger ">*</span></label>
+                                            <div class="form-group ">
+                                                {{form.From}}
+
+                                                <!-- <input class="form-control " type="date " name="date "> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label>To:<span style="color: red; font-size:larger ">*</span></label>
+                                            <div class="form-group ">
+                                                {{form.To}}
+                                                <!-- <input class="form-control " type="date " name="date "> -->
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div id="new_edu" style="margin-left: 20px; margin-right:20px"></div>
+                                {{perform.errors}} {% endfor %}
+                            </fieldset>
+
+                        </div>
+                        <div class="card" style="margin: 20px;">
+                            <h3 style="margin: 20px;">Language Skills & Work Experience</h3>
+                            <fieldset>
+                                {{ lanset.management_form }} {% for form in lanset %}
+
+
+                                <div class="row form-row1 spacer" style="margin-left: 20px; margin-right:20px">
+
+                                    <legend class="text-center font-size-lg font-weight-bold ">Language Skills&nbsp;
+                                        <a href="# " id="add-language "
+                                            class="btn bg-transparent border-teal text-teal rounded-round border-2 btn-icon mr-3 add-form-row1 ">
+                                            <i class="icon-plus3 "></i>
+                                        </a>
+                                    </legend>
+
+                                    <div class="col-md-4 ">
+                                        <div class="form-group ">
+                                            <label>Language:<span style="color: red; font-size:larger ">*</span></label>
+                                            {{form.Language}}
+                                            <!-- <input type="text " name="experience-company " placeholder="input the language " class="form-control "> -->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 ">
+                                        <label>Listening:<span style="color: red; font-size:larger ">*</span></label>
+                                        <div class="form-group ">
+                                            {{form.Listening}}
+                                            <!-- <select class="custom-select ">
+			                                <option value="opt1 ">Select your level</option>
+			                                <option value="opt2 ">Excellent</option>
+			                                <option value="opt3 ">Very Good</option>
+                                            <option value="opt4 ">Good</option>
+                                            <option value="opt5 ">Poor</option>
+			                                
+			                            </select> -->
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 ">
+                                        <label>Writing:<span style="color: red; font-size:larger ">*</span></label>
+                                        <div class="form-group ">
+                                            {{form.Writing}}
+                                            <!-- <select class="custom-select ">
+			                                <option value="opt1 ">Select your level</option>
+			                                <option value="opt2 ">Excellent</option>
+			                                <option value="opt3 ">Very Good</option>
+                                            <option value="opt4 ">Good</option>
+                                            <option value="opt5 ">Poor</option>
+			                                
+			                            </select> -->
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 ">
+                                        <label>Speaking:<span style="color: red; font-size:larger ">*</span></label>
+                                        <div class="form-group ">
+                                            {{form.Speaking}}
+                                            <!-- <select class="custom-select ">
+			                                <option value="opt1 ">Select your level</option>
+			                                <option value="opt2 ">Excellent</option>
+			                                <option value="opt3 ">Very Good</option>
+                                            <option value="opt4 ">Good</option>
+                                            <option value="opt5 ">Poor</option>
+			                                
+			                            </select> -->
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 ">
+                                        <label>Reading:<span style="color: red; font-size:larger ">*</span></label>
+                                        <div class="form-group ">
+                                            {{form.Reading}}
+                                            <!-- <select class="custom-select ">
+			                                <option value="opt1 ">Select your level</option>
+			                                <option value="opt2 ">Excellent</option>
+			                                <option value="opt3 ">Very Good</option>
+                                            <option value="opt4 ">Good</option>
+                                            <option value="opt5 ">Poor</option>
+			                                
+			                            </select> -->
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="new_language "></div>
+                                {{perform.errors}} {% endfor %} {{ expset.management_form }} {% for form in expset %}
+                                <div class="row form-row2 spacer" style="margin-left: 20px; margin-right:20px">
+                                    <legend class="text-center font-size-lg font-weight-bold ">Work Experience&nbsp;
+                                        <a href="# " id="add-form-row "
+                                            class="btn bg-transparent border-teal text-teal rounded-round border-2 btn-icon mr-3 add-form-row2 ">
+                                            <i class="icon-plus3 "></i>
+                                        </a>
+                                    </legend>
+                                    <div class="col-md-3 ">
+                                        <div class="form-group ">
+                                            <label>Organinzation/Company:<span
+                                                    style="color: red; font-size:larger ">*</span></label>
+                                            {{form.Company}}
+                                            <!-- <input type="text " name="experience-company " placeholder="input the organization/Company " class="form-control "> -->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 ">
+                                        <div class="form-group ">
+                                            <label>Position:<span style="color: red; font-size:larger ">*</span></label>
+                                            {{form.Position}}
+                                            <!-- <input type="text " name="position " placeholder="job position " class="form-control "> -->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 ">
+                                        <label>Years of experience:<span
+                                                style="color: red; font-size:larger ">*</span></label>
+                                        <div class="form-group ">
+                                            {{form.YearofExp}}
+                                            <!-- <select class="custom-select ">
+			                                <option value="opt1 ">Select years of experience</option>
+			                                <option value="opt2 ">0-2 Years</option>
+			                                <option value="opt3 ">3-4 Years</option>
+                                            <option value="opt4 ">5-9 Years</option>
+                                            <option value="opt5 ">10+ Years</option>
+			                                
+			                            </select> -->
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2 ">
+                                        <div class="form-group ">
+                                            <label>Start Date:<span
+                                                    style="color: red; font-size:larger ">*</span></label>
+                                            {{form.Start}}
+
+                                            <!-- <input class="form-control " type="date " name="date "> -->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 ">
+                                        <div class="form-group ">
+                                            <label>End Date:<span style="color: red; font-size:larger ">*</span></label>
+                                            {{form.End}}
+                                            <!-- <input class="form-control " type="date " name="date "> -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {{perform.errors}} {% endfor %}
+
+                                <div id="new_exprince "></div>
+
+                            </fieldset>
+                        </div>
+
+                        <div class="card" style="margin: 20px;">
+                            <h3 style="margin: 20px;">References</h3>
+                            <fieldset>
+
+                                <div class="row" style="margin-left: 20px; margin-right:20px">
+                                    <div class="col-md-4">
+                                        <legend class="font-weight-semibold font-size-lg">Reference #1 Information
+                                        </legend>
+                                        <div class="form-group">
+                                            <label>Full Name:<span
+                                                    style="color: red; font-size:larger ">*</span></label>
+                                            {{perform.Name}}
+                                            <!-- <input type="text " class="form-control " placeholder="name "> -->
+                                        </div>
+
+
+                                        <div class="form-group ">
+                                            <label>Phone Number:<span
+                                                    style="color: red; font-size:larger ">*</span></label>
+                                            {{perform.PhoneNumber}}
+                                            <!-- <input type="text " value="09 " class="form-control "> -->
+                                        </div>
+
+
+                                        <div class="form-group ">
+                                            <label>Email:<span style="color: red; font-size:larger ">*</span></label>
+                                            {{perform.EmailAdd}}
+                                            <!-- <input type="text " placeholder="eugene@kopyov.com " class="form-control "> -->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 ">
+                                        <legend class="font-weight-semibold font-size-lg ">Reference #2 Information
+                                        </legend>
+                                        <div class="form-group ">
+                                            <label>Full Name:<span
+                                                    style="color: red; font-size:larger ">*</span></label>
+                                            {{perform.Name_r}}
+                                            <!-- <input type="text " class="form-control " placeholder="name "> -->
+                                        </div>
+
+
+                                        <div class="form-group ">
+                                            <label>Phone Number:<span
+                                                    style="color: red; font-size:larger ">*</span></label>
+                                            {{perform.PhoneNumber_r}}
+                                            <!-- <input type="text " value="09 " class="form-control "> -->
+                                        </div>
+
+
+                                        <div class="form-group ">
+                                            <label>Email:<span style="color: red; font-size:larger ">*</span></label>
+                                            {{perform.EmailAdd_r}}
+                                            <!-- <input type="text " placeholder="eugene@kopyov.com " class="form-control "> -->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 ">
+                                        <legend class="font-weight-semibold font-size-lg ">Reference #3 Information
+                                        </legend>
+                                        <div class="form-group ">
+                                            <label>Full Name:<span
+                                                    style="color: red; font-size:larger ">*</span></label>
+                                            {{perform.Name_r1}}
+                                            <!-- <input type="text " class="form-control " placeholder="name "> -->
+                                        </div>
+
+
+                                        <div class="form-group ">
+                                            <label>Phone Number:<span
+                                                    style="color: red; font-size:larger ">*</span></label>
+                                            {{perform.PhoneNumber_r1}}
+                                            <!-- <input type="text " value="09 " class="form-control "> -->
+                                        </div>
+
+
+                                        <div class="form-group ">
+                                            <label>Email:<span style="color: red; font-size:larger ">*</span></label>
+                                            {{perform.EmailAdd_r1}}
+                                            <!-- <input type="text " placeholder="eugene@kopyov.com " class="form-control "> -->
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+
+                            </fieldset>
+                        </div>
+                        <div class="card" style="margin: 20px;">
+                            <h3 style="margin: 20px;">Cover Letter & Attachments</h3>
+                            <fieldset>
+                                <div class="row" style="margin-left: 20px; margin-right:20px">
+                                    <div class="col-md-12">
+                                        <div class="form-group ">
+                                            <label>Cover Letter:<span
+                                                    style="color: red; font-size:larger ">*</span></label>
+                                            {{perform.CoverLetter}}
+                                            <!-- <textarea name="experience-description " rows="10 " cols="6 " placeholder="your application letter " class="form-control "></textarea> -->
+                                        </div>
+
+
+
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group ">
+
+                                            <label>Your Degree:<span
+                                                    style="color: red; font-size:larger ">*</span></label>
+                                            {{perform.cv}}
+
+                                            <!-- <input type="file " class="form-input-styled " data-fouc> -->
+
+                                            <span class="form-text text-muted ">Accepted formats: pdf, doc. Max file
+                                                size 2Mb</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group ">
+
+                                            <label>Other Supportive Docs:</label> {{perform.docs}}
+
+                                            <!-- <input type="file " class="form-input-styled " data-fouc> -->
+
+                                            <span class="form-text text-muted ">Accepted formats: pdf, doc. Max file
+                                                size 2Mb</span>
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+
+
+
+                                {{perform.errors}}
+
+                            </fieldset>
+                            <button type="submit" onsubmit="return validateForm()"
+                                class="btn btn-block btn-primary">Submit your Application</button>
+                            </form>
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <!-- /saving state -->
+                <!-- Footer -->
+                <div class="navbar navbar-expand-lg navbar-light ">
+                    <div class="text-center d-lg-none w-100 ">
+                        <button type="button " class="navbar-toggler dropdown-toggle " data-toggle="collapse "
+                            data-target="#navbar-footer ">
+                            <i class="icon-unfold mr-2 "></i>
+                            Footer
+                        </button>
+                    </div>
+
+                    <div class="navbar-collapse collapse " id="navbar-footer ">
+                        <span class="navbar-text ">
+                            Copyright &copy; 2020. Powered by <a href="http://www.techin.gov.et "
+                                target="_blank ">Techin&#178</a>, All rights reserved.
+                        </span>
+
+                        <ul class="navbar-nav ml-lg-auto ">
+                            <li class="nav-item "><a href="http://www.techin.gov.et " class="navbar-nav-link "
+                                    target="_blank "><i class="icon-lifebuoy mr-2 "></i>Home</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /footer -->
+
+            </div>
+            <!-- /main content -->
+
+        </div>
+        <!-- /page content -->
+
+</body>
+
+
+<!-- Mirrored from demo.interface.club/limitless/demo/Template/layout_1/LTR/default/full/components_tabs.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Apr 2020 07:57:29 GMT -->
+
+</html>
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+<script type="text/javascript">
+function updateElementIndex(el, prefix, ndx) {
+    var id_regex = new RegExp('(' + prefix + '-\\d+)');
+    var replacement = prefix + '-' + ndx;
+    if ($(el).attr("for")) $(el).attr("for", $(el).attr("for").replace(id_regex, replacement));
+    if (el.id) el.id = el.id.replace(id_regex, replacement);
+    if (el.name) el.name = el.name.replace(id_regex, replacement);
+}
+function cloneMore(selector, prefix , forset) {
+    var newElement = $(selector).clone(true);
+    var total = $('#id_' + prefix + '-TOTAL_FORMS').val();
+    newElement.find(':input:not([type=button]):not([type=submit]):not([type=reset])').each(function() {
+        var name = $(this).attr('name')
+        if(name) {
+            name = name.replace('-' + (total-1) + '-', '-' + total + '-');
+            var id = 'id_' + name;
+            $(this).attr({'name': name, 'id': id}).val('').removeAttr('checked');
+        }
+    });
+    newElement.find('label').each(function() {
+        var forValue = $(this).attr('for');
+        if (forValue) {
+          forValue = forValue.replace('-' + (total-1) + '-', '-' + total + '-');
+          $(this).attr({'for': forValue});
+        }
+    });
+    total++;
+    $('#id_' + prefix + '-TOTAL_FORMS').val(total);
+    $(selector).after(newElement);
+    var conditionRow = $('.' + forset+':not(:last)');
+    conditionRow.find('.btn.add-' + forset)
+    .removeClass('btn-success').addClass('btn-danger')
+    .removeClass('add-' + forset).addClass('remove-' + forset)
+    .html('-');
+    return false;
+}
+function deleteForm(prefix, btn, forset) {
+    var total = parseInt($('#id_' + prefix + '-TOTAL_FORMS').val());
+    if (total > 1){
+        btn.closest('.'+forset).remove();
+        var forms = $('.'+forset);
+        $('#id_' + prefix + '-TOTAL_FORMS').val(forms.length);
+        for (var i=0, formCount=forms.length; i<formCount; i++) {
+            $(forms.get(i)).find(':input').each(function() {
+                updateElementIndex(this, prefix, i);
+            });
+        }
+    }
+    return false;
+}
+$(document).on('click', '.add-form-row', function(e){
+    e.preventDefault();
+    cloneMore('.form-row:last', 'form2','form-row');
+    return false;
+});
+$(document).on('click', '.remove-form-row', function(e){
+    e.preventDefault();
+    deleteForm('form2', $(this),'form-row');
+    return false;
+});
+    $(document).on('click', '.add-form-row1', function (e) {
+        e.preventDefault();
+        cloneMore('.form-row1:last', 'form3','form-row1');
+        return false;
+    });
+    $(document).on('click', '.remove-form-row1', function (e) {
+        e.preventDefault();
+        deleteForm('form3', $(this),'form-row1');
+        return false;
+    });
+    $(document).on('click', '.add-form-row2', function (e) {
+            e.preventDefault();
+            cloneMore('.form-row2:last', 'form4','form-row2');
+            return false;
+        });
+        $(document).on('click', '.remove-form-row2', function (e) {
+            e.preventDefault();
+            deleteForm('form4', $(this),'form-row2');
+            return false;
+        });
+
+</script>
+
+
+<script>
+    function validateForm() {
+        var x = document.forms["perform"]["form1-Fname"].value;
+        if ((x == "" || x < 65 || x > 90) && (x < 97 || x > 123) && x != 32 && x != 8 && x != 9) {
+            alert("Name must be filled out");
+            return false;
+        }
+    }
+</script>
+
+<script language="javascript">
+    function isNumberKey(evt) {
+        var charCode = (evt.which) ? evt.which : event.keyCode
+        if (charCode > 31 && (charCode < 48 || charCode > 57))
+
+            return false;
+
+    }
+    function ValidateAlpha(evt) {
+        var keyCode = (evt.which) ? evt.which : evt.keyCode
+        if ((keyCode < 65 || keyCode > 90) && (keyCode < 97 || keyCode > 123) && keyCode != 32 && keyCode != 8 && keyCode != 9) {
+
+            return false;
+        }
+    }
+</script>
+
+<script>
+    function process(input) {
+        let value = input.value;
+        let letters = value.replace(/[^a-z]/gi, "");
+        input.value = letters;
+    }
+
+    function processx(input) {
+            let value = input.value;
+            let letters = value.replace(/[^0-9]+/gi, "");
+            input.value = letters;
+        }
+</script>
+
+    <script>
+
+ $("#seeAnotherField").change(function() {
+  if ($(this).val() == "Doctor of Philosophy") {
+        $('#otherFieldDiv').hide();
+    $('#otherField').removeAttr('required');
+    
+
+  } else {
+      
+
+    $('#otherFieldDiv').show();
+    $('#otherField').attr('required', '');
+    
+
+  }
+});
+</script>

@@ -1,0 +1,264 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from demo.interface.club/limitless/demo/Template/layout_1/LTR/default/full/components_tabs.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Apr 2020 07:57:29 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<!-- /Added by HTTrack -->
+
+{% include 'head.html' %}
+
+<body>
+
+    <!-- Main navbar -->
+{% include 'header.html' %}
+    <!-- /main navbar -->
+
+
+    <!-- Page content -->
+    <div class="page-content">
+
+        <!-- Main content -->
+        <div class="content-wrapper">
+
+            <!-- Page header -->
+            <div class="page-header page-header-light">
+                <div class="page-header-content header-elements-md-inline">
+                    <div class="page-title d-flex">
+                        <h4><span class="font-weight-semibold text-right"></span>List of Applicants</span>
+                        </h4>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- /page header -->
+
+
+            <!-- Content area -->
+            <div class="content">
+            
+                <!-- Widgets list -->
+                <div class="row">
+                
+            
+                   
+            
+                    <div class="col-md-6 col-xl-12">
+                        <div class="card">
+                            <div class="card-header bg-transparent header-elements-inline">
+                                <div class="card-header bg-transparent header-elements-inline">
+                                    <h3 class="card-title font-weight-semibold">
+                                        <i class="icon-mail_box mr-2"></i>
+                                        Application List
+                                    </h3>
+            
+                                    <div class="header-elements">
+                                        <!-- <span class="text-muted">(93)</span> -->
+                                    </div>
+                                </div>
+                                <div class="header-elements">
+                                    <div class="list-icons">
+                                        <a class="list-icons-item" data-action="collapse"></a>
+                                        <a class="list-icons-item" data-action="reload"></a>
+                                        <a class="list-icons-item" data-action="remove"></a>
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <table class="table tasks-list table-lg">
+                                <thead>
+
+                                    
+                                  
+                                   
+                                    
+                                    
+                                    <tr>
+            
+            
+                                        <th>title</th>
+            
+     
+                                        <th>types</th>
+                                        <th>endingdate</th>
+                                        <th>starting_date</th>
+                                        <th>endingdate</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                  
+                                    
+                                    
+                                    
+                                    
+                                    
+
+                                    
+                                    {% for app  in apps  %}
+                                             <tr>
+                                        
+                                        
+                                            <td>
+                                                <div class="font-weight-semibold"><a data-toggle="modal" data-target="#modal_scrollable{{ forloop.counter}}">
+                                                        </a></div>
+                                                <!-- <div class="text-muted">{{</div> -->
+                                                    <button type="button" data-toggle="modal" data-target="#modal_scrollable{{ forloop.counter}}" class="btn bg-primary">{{app.title}}</button>
+                                            </td>
+                                        <td>
+                                            <div class="font-weight-semibold"><a data-toggle="modal"
+                                                    data-target="#modal_scrollable{{ forloop.counter}}">{{app.types}}
+                                                </a></div>
+                                        </td>
+                                            <td>
+                                                <div class="d-inline-flex align-items-center">
+                                                    <i class="icon-calendar2 mr-2"></i>
+                                                    <input type="text" class="form-control datepicker p-0 border-0 bg-transparent" value="{{app.starting_date| date:"F d Y" }}">
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <div class="d-inline-flex align-items-center">
+                                                    <i class="icon-calendar2 mr-2"></i>
+                                                    <input type="text" class="form-control datepicker p-0 border-0 bg-transparent"
+                                                        value="{{app.endingdate| date:"F d Y" }}">
+                                                </div>
+                                            </td>
+                                            <td>
+
+                                                {% if app.is_past_due %}
+                                                <div class="btn-group">
+                                                    <a href="{% url 'list_url' app.id %}" class="badge bg-primary" >Expired</a>
+                                                
+                                                </div>
+                                                {% else %}
+
+                                                 
+                                                     
+                                                            <div class="btn-group">
+                                                                <a href="{% url 'list_url' app.id %}" class="badge bg-primary " >APPLIED</a>
+                                                            
+                                                            </div>
+
+                                                
+
+                                                   {% endif %}
+                                         
+                                    
+                                               
+                                                               
+                                               
+
+
+                                              
+
+                                                <!-- {{ listing.date|date:"d M Y" }} -->
+                                              
+
+                                            </td>
+ 
+                                        </tr>
+
+                                        <div id="modal_scrollable{{forloop.counter}}" class="modal fade" tabindex="-1">
+                                            <div class="modal-dialog modal-dialog-scrollable">
+                                                <div class="modal-content">
+                                                    <div class="modal-header pb-3">
+                                                        <h5 class="modal-title">Scrollable modal</h5>
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                        
+                                                    <div class="modal-body py-0">
+                                        
+                                                        <p>{{app.description}}</p>
+                                                    </div>
+                                        
+                                                    <div class="modal-footer pt-3">
+                                                        <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn bg-primary">APPLY</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                        
+                        
+                                   
+            
+            
+            
+            
+                                </tbody>
+                            </table>
+                        </div>
+            
+
+                           
+
+
+
+                            
+                  
+            
+            
+            
+                        <!-- /support ticket widget -->
+            
+            
+                        <!-- Thumbnail with social icons -->
+            
+                        <!-- /thumbnail with social icons -->
+            
+            
+            
+                        <!-- /accordion widget -->
+            
+                    </div>
+                    
+            
+            
+                </div>
+                <!-- /widgets list -->
+            
+            </div>
+            <!-- /content area -->
+
+
+            <!-- Footer -->
+            <div class="navbar navbar-expand-lg navbar-light">
+                <div class="text-center d-lg-none w-100">
+                    <button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse"
+                        data-target="#navbar-footer">
+                        <i class="icon-unfold mr-2"></i>
+                        Footer
+                    </button>
+                </div>
+
+                <div class="navbar-collapse collapse" id="navbar-footer">
+                    <span class="navbar-text">
+                        Copyright &copy; 2020. Powered by <a href="http://www.techin.gov.et"
+                            target="_blank">Techin&#178</a>, All rights reserved.
+                    </span>
+
+                    <ul class="navbar-nav ml-lg-auto">
+                        <li class="nav-item"><a href="http://www.techin.gov.et" class="navbar-nav-link"
+                                target="_blank"><i class="icon-lifebuoy mr-2"></i>Home</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /footer -->
+
+        </div>
+        <!-- /main content -->
+
+    </div>
+    <!-- /page content -->
+
+</body>
+
+<!-- Mirrored from demo.interface.club/limitless/demo/Template/layout_1/LTR/default/full/components_tabs.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Apr 2020 07:57:29 GMT -->
+
+</html>

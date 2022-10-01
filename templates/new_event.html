@@ -1,0 +1,471 @@
+{% load custom_tags %}
+{% load static %}
+
+<html>
+<head>
+  
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+	<link href="{% static 'global_assets/css/icons/icomoon/styles.min.css' %}" rel="stylesheet" type="text/css">
+	<link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+	<link href="{% static 'assets/css/bootstrap_limitless.min.css' %}" rel="stylesheet" type="text/css">
+	<link href="{% static 'assets/css/layout.min.css' %}" rel="stylesheet" type="text/css">
+	<link href="{% static 'assets/css/components.min.css' %}" rel="stylesheet" type="text/css">
+	<link href="{% static 'assets/css/colors.min.css' %}" rel="stylesheet" type="text/css">
+	<!-- /global stylesheets -->
+
+	<!-- Core JS files -->
+	<script src="{% static 'global_assets/js/main/jquery.min.js' %}"></script>
+	<script src="{% static 'global_assets/js/main/bootstrap.bundle.min.js' %}"></script>
+	<script src="{% static 'global_assets/js/plugins/loaders/blockui.min.js' %}"></script>
+	<!-- /core JS files -->
+
+	<!-- Theme JS files -->
+
+
+    	<script src="{% static 'global_assets/js/plugins/forms/styling/switchery.min.js' %}"></script>
+
+    
+    
+
+	<script src="{% static 'global_assets/js/plugins/ui/fullcalendar/core/main.min.js' %}"></script>
+	<script src="{% static 'global_assets/js/plugins/ui/fullcalendar/daygrid/main.min.js' %}"></script>
+	<script src="{% static 'global_assets/js/plugins/ui/fullcalendar/timegrid/main.min.js' %}"></script>
+	<script src="{% static 'global_assets/js/plugins/ui/fullcalendar/list/main.min.js' %}"></script>
+    <script src="{% static 'global_assets/js/plugins/ui/fullcalendar/interaction/main.min.js' %}"></script>
+    <script src="{% static 'global_assets/js/plugins/ui/fullcalendar/core/locales/ar.js' %}"></script>
+    
+    	<script src="{% static 'global_assets/js/plugins/notifications/pnotify.min.js' %}"></script>
+   <script src="{% static 'assets/js/app.js' %}"></script>
+	<script src="{% static 'global_assets/js/demo_pages/extra_pnotify.js' %}"></script>
+
+ 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
+	<!-- <script src="{% static 'global_assets/js/demo_pages/fullcalendar_basic.js' %}"></script> -->
+
+</head>
+<body>
+    {% include 'header.html' %}
+<br/>
+
+<!-- <h2 align="center"><a href="#">title</a></h2> -->
+<br/>
+
+        <div class="content-wrapper">
+
+            <!-- Page header -->
+             <div class="page-header page-header-light">
+
+                   <div class="row">
+
+                    <div class="col-sm-6 col-xl-4">
+                <div class="page-header-content header-elements-md-inline">
+                    <div class="page-title d-flex">
+                        <h3><span class="font-weight-semibold text-right"></span>Applicants Interview Scheduling</span>
+                        </h3>
+
+                    </div>
+
+                </div>
+
+                </div>
+
+                
+
+                  <div class="col-sm-6 col-xl-2">
+
+
+            
+                           
+                        </div>
+
+
+                          <div class="col-sm-6 col-xl-6">
+                <div class="page-header-content header-elements-md-inline">
+                    <div class="page-title d-flex">
+
+                        <div class="breadcrumb">
+                            <h4>
+									<a href="{% url 'adminR' %}" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>Home</a>
+                                    <a href="{% url 'admin_url2' %}" class="breadcrumb-item">Applications</a>
+                                    <a href="{% url 'list_url' app_idx %}" class="breadcrumb-item">List of Applicants</a>
+                                    <span class="breadcrumb-item active">Schedule Interview</span> 
+                                    </h4>
+                                </div>
+                            
+                                
+                       
+                        </h3>
+
+                    </div>
+
+                </div>
+
+                </div>
+                            </div>
+            </div>
+
+<div class="content">
+    
+
+				<!-- External events -->
+				<div class="card">
+					<div class="card-header header-elements-inline">
+						<h5 class="card-title">Interview Scheduling</h5>
+						<div class="header-elements">
+							<div class="list-icons">
+		                		<a class="list-icons-item" data-action="collapse"></a>
+		                		<a class="list-icons-item" data-action="reload"></a>
+		                		<a class="list-icons-item" data-action="remove"></a>
+		                	</div>
+	                	</div>
+					</div>
+					 
+           
+					<div class="card-body">
+						
+
+						<div class="row">
+							<div class="col-md-3">
+								<div class="mb-3" id="external-events">
+									<h6>Candidates</h6>
+									<div class="bg-light border rounded p-2 mb-3">
+
+                                        
+                                        {% if interview %}
+                                            
+                                
+                                            
+                                        {% for interviewx  in interview %}
+                                            <div class="fc-event" id = "{{interviewx.id}}" data-color="#546E7A">{{interviewx.profile.Fname}}</div>
+                                               
+                                            
+                                        {% endfor %}
+
+                                         {% endif %}
+										<!-- <div class="fc-event" data-color="#546E7A">Sauna and stuff</div>
+										<div class="fc-event" data-color="#26A69A">Lunch time</div>
+										<div class="fc-event" data-color="#546E7A">Meeting with Fred</div>
+										<div class="fc-event" data-color="#FF7043">Shopping</div>
+										<div class="fc-event" data-color="#5C6BC0">Restaurant</div>
+										<div class="fc-event">Basketball</div>
+										<div class="fc-event">Daily routine</div> -->
+									</div>
+
+									<div class="form-check form-check-right form-check-switchery">
+										<label class="form-check-label">
+											<input type="hidden" type="checkbox" class="form-check-input-switchery" checked id="drop-remove" data-fouc>
+										
+										</label>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-9">
+								<div id="calx" class="fullcalendar-external"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+ </div>
+
+ </div>
+
+
+
+
+ 
+ <script>
+     /* ------------------------------------------------------------------------------
+ *
+ *  # Fullcalendar advanced options
+ *
+ *  Demo JS code for extra_fullcalendar_advanced.html page
+ *
+ * ---------------------------------------------------------------------------- */
+
+
+// Setup module
+// ------------------------------
+
+var FullCalendarAdvanced = function() {
+
+
+    //
+    // Setup module components
+    //
+
+    // External events
+    var _componentFullCalendarEvents = function() {
+        if (typeof FullCalendar == 'undefined' || typeof Switchery == 'undefined') {
+            console.warn('Warning - Fullcalendar or Switchery files are not loaded.');
+            return;
+        }
+
+
+        //
+        // External events
+        //
+
+        // Define components
+        var Calendar = FullCalendar.Calendar;
+        var Draggable = FullCalendarInteraction.Draggable;
+
+        // Define elements
+        var calendarEventsContainerElement = document.getElementById('external-events');
+        var calendarEventsElement = document.querySelector('.fullcalendar-external');
+
+        // Add switcher for events removal
+        var checkboxElement = document.getElementById('drop-remove');
+        var checkboxInit = new Switchery(checkboxElement);
+
+        // Use custom colors for external events
+        var two = calendarEventsContainerElement.querySelectorAll('.fc-event');
+        two.forEach(function(element) {
+            element.style.borderColor = element.getAttribute('data-color');
+            element.style.backgroundColor = element.getAttribute('data-color');
+        });
+
+        // Initialize
+        if(calendarEventsElement) {
+
+            // Initialize the external events
+            new Draggable(calendarEventsContainerElement, {
+                itemSelector: '.fc-event',
+                   // will cause the event to go back to its
+            
+                eventData: function(eventEl) {
+                    return {
+                        title: eventEl.innerText,
+                        stick: true,
+                        color: eventEl.getAttribute('data-color'),
+                   
+                    };
+                },
+        
+            });
+
+
+            // Initialize the calendar k
+            var calendarEventsInit = new Calendar(calendarEventsElement, {
+                plugins: [ 'interaction', 'dayGrid', 'timeGrid', 'list'  ],
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'timeGridWeek,listMonth,dayGridDay',
+                },
+                editable: true,
+                droppable: true,
+                defaultView: 'timeGridWeek',
+               // defaultTimedEventDuration: '01:00',
+                minTime: '08:00:00',
+                maxTime: '20:00:00',
+                
+                allDaySlot: false,// this allows things to be dropped onto the calendar
+               
+             
+           
+                events: [
+                  {% for event in events %}
+                        {
+                            title: "{{ event.name}}",
+                            start: '{{ event.start|date:"Y-m-d H:i" }}',
+                            end: '{{ event.end|date:"Y-m-d H:i" }}',
+                            id: '{{ event.id }}',
+                        },
+                    {% endfor %}
+                ],
+                  drop: function (info,date, jsEvent, ui, resourceId,allDay) {
+                
+                        info.draggedEl.parentNode.removeChild(info.draggedEl);
+                  
+           
+                
+                end = new Date(info.date.getTime()+1800000);
+
+                title = info.draggedEl.textContent
+                starting = info.date.toLocaleString('en-CA').replace(',',' ');
+                ending = end.toLocaleString('en-CA').replace(',',' ');
+                app_id = {{app_idx}};
+                his_id = info.draggedEl.getAttribute('id');
+  if (confirm("Are you sure you want to Schedule Interview?")) {
+    $.ajax({
+        type: "GET",
+        url:'/create_post/',
+        data:{
+            title:title,
+            starting:starting,
+            ending:ending,
+            app_id:app_id,
+            his_id:his_id,
+           
+           
+        },
+        
+        success:function(json,allDay){
+            //document.getElementById("post-form").reset();
+
+            if(json.is_right){
+
+              
+              //  document.getElementById('par').innerText = json.error_message
+                 new PNotify({
+                title: 'Success Notice',
+                text: json.error_message,
+                icon: 'icon-checkmark3',
+                type: 'success'
+            });
+               
+
+            }
+            else{
+
+                   new PNotify({
+                title: 'Success Notice',
+                text: json.error_message,
+                icon: 'icon-checkmark3',
+                type: 'error'
+            });
+            
+              location.reload(true);
+            
+        
+           
+            }
+        }
+
+              });
+
+
+                
+            }
+       
+	        },
+                eventResize: function (event, delta, revertFunc,allDay) {
+
+                    var title = event.event.title;
+                    var id = event.event.id;
+                    var start = event.event.start.toLocaleString('en-CA').replace(',',' ');
+                    var end  =  event.event.end .toLocaleString('en-CA').replace(',',' ');
+                    console.log(start,end)
+                    $.ajax({
+                        type: "GET",
+                        url: '/update',
+                        data: {'title': title, 'start': start, 'end': end, 'id': id},
+                        dataType: "json",                        
+                      success:function(json){
+            //document.getElementById("post-form").reset();
+
+            if(json.is_right){
+
+                new PNotify({
+                title: 'Success Notice',
+                text: json.error_message,
+                icon: 'icon-checkmark3',
+                type: 'success'
+            });
+              //  document.getElementById('par').innerText = json.error_message
+          
+               //   location.reload(true);
+                // calendar.fullCalendar('refetchEvents');
+                
+
+            }
+            else{
+
+                   new PNotify({
+                title: 'Unsuccess Notice',
+                text: json.error_message,
+                addclass: 'alert bg-danger border-danger alert-styled-right',
+                type: 'error'
+            });
+            
+           //   location.reload(true);
+           // calendar.fullCalendar('refetchEvents');
+           
+           
+           
+            }
+        }
+                    });
+                },
+        eventDrop: function (event, delta, revertFunc,allDay) {
+                
+             
+                
+                    var title = event.event.title;
+                    var id = event.event.id;
+                    var start = event.event.start.toLocaleString('en-CA').replace(',',' ');
+                    var end  =  event.event.end .toLocaleString('en-CA').replace(',',' ');
+                    $.ajax({
+                        type: "GET",
+                        url: '/update',
+                        data: {'title': title, 'start': start, 'end': end, 'id': id},
+                        dataType: "json",
+                          success:function(json){
+            //document.getElementById("post-form").reset();
+
+            if(json.is_right){
+
+              
+              //  document.getElementById('par').innerText = json.error_message
+                    new PNotify({
+                title: 'Success Notice',
+                text: json.error_message,
+                icon: 'icon-checkmark3',
+                type: 'success'
+            });
+               //   location.reload(true);
+
+            }
+            else{
+                new PNotify({
+                title: 'Success Notice',
+                text: json.error_message,
+                icon: 'icon-checkmark3',
+                type: 'error'
+            });
+            location.reload(true);
+            
+            
+           
+            }
+        }
+                       
+                    });
+                },
+                
+
+
+
+                
+            }).render();
+        }
+    };
+
+   
+
+    //
+    // Return objects assigned to module
+    //
+
+    return {
+        init: function() {
+            _componentFullCalendarEvents();
+            //_componentFullCalendarRTL();
+        }
+    }
+}();
+
+
+// Initialize module
+// ------------------------------
+
+document.addEventListener('DOMContentLoaded', function() {
+    FullCalendarAdvanced.init();
+});
+
+ </script>
+
+</body>
+</html>

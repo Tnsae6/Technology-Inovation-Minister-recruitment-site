@@ -1,0 +1,426 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from demo.interface.club/limitless/demo/Template/layout_1/LTR/default/full/components_tabs.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Apr 2020 07:57:29 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<!-- /Added by HTTrack -->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,">
+    <title>TECHIN&#178 JOB PORTAL</title>
+
+    <!-- Global stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+    <link href="{% static 'global_assets/css/icons/icomoon/styles.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/bootstrap_limitless.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/layout.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/components.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/colors.min.css' %}" rel="stylesheet" type="text/css">
+    <!-- /global stylesheets -->
+
+    <!-- Core JS files -->
+    <script src="{% static 'global_assets/js/main/jquery.min.js' %}"></script>
+    <script src="{% static 'global_assets/js/main/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'global_assets/js/plugins/loaders/blockui.min.js' %}"></script>
+    <script src="{% static 'global_assets/js/plugins/ui/slinky.min.js' %}"></script>
+    <!-- /core JS files -->
+
+    <script src="{% static 'global_assets/js/plugins/tables/datatables/datatables.min.js' %}"></script>
+    <script src="{% static 'global_assets/js/plugins/forms/selects/select2.min.js' %}"></script>
+    <script src="{% static 'global_assets/js/demo_pages/datatables_basic.js' %}"></script>
+
+
+
+    <!-- Theme JS files -->
+    <script src="{% static 'global_assets/js/plugins/visualization/d3/d3.min.js ' %}"></script>
+    <script src="{% static 'global_assets/js/plugins/visualization/d3/d3_tooltip.js ' %}"></script>
+    <script src="{% static 'global_assets/js/plugins/forms/styling/switchery.min.js ' %}"></script>
+    <script src="{% static 'global_assets/js/plugins/ui/moment/moment.min.js ' %}"></script>
+    <script src="{% static 'global_assets/js/plugins/pickers/daterangepicker.js ' %}"></script>
+
+    <script src="{% static 'assets/js/app.js' %}"></script>
+    <!-- <script src="{% static 'global_assets/js/demo_pages/dashboard.js ' %}"></script>
+    <script src="{% static 'global_assets/js/demo_charts/pages/dashboard/light/streamgraph.js ' %}"></script>
+    <script src="{% static 'global_assets/js/demo_charts/pages/dashboard/light/sparklines.js ' %}"></script>
+    <script src="{% static 'global_assets/js/demo_charts/pages/dashboard/light/lines.js ' %}"></script>
+    <script src="{% static 'global_assets/js/demo_charts/pages/dashboard/light/areas.js ' %}"></script>
+    <script src="{% static 'global_assets/js/demo_charts/pages/dashboard/light/donuts.js ' %}"></script>
+    <script src="{% static 'global_assets/js/demo_charts/pages/dashboard/light/bars.js ' %}"></script>
+    <script src="{% static 'global_assets/js/demo_charts/pages/dashboard/light/progress.js ' %}"></script>
+    <script src="{% static 'global_assets/js/demo_charts/pages/dashboard/light/heatmaps.js ' %}"></script>
+    <script src="{% static 'global_assets/js/demo_charts/pages/dashboard/light/pies.js ' %}"></script>
+    <script src="{% static 'global_assets/js/demo_charts/pages/dashboard/light/bullets.js ' %}"></script> -->
+    <!-- /theme JS files -->
+    <script src="{% static 'global_assets/js/demo_pages/form_inputs.js' %}"></script>
+    <script src="{% static 'global_assets/js/plugins/forms/styling/uniform.min.js' %}"></script>
+    <script src="{% static 'global_assets/js/demo_pages/widgets_content.js' %}"></script>
+
+</head>
+
+
+<body>
+
+    <!-- Main navbar -->
+    {% include 'header.html' %}
+    <!-- /main navbar -->
+
+
+    <!-- /page header -->
+
+
+    <!-- Page content -->
+    <div class="page-content pt-0">
+
+        <!-- Main content -->
+        <div class="content-wrapper">
+
+            <!-- Content area -->
+            <div class="content">
+
+                <!-- Main charts -->
+
+                <!-- /main charts -->
+
+
+                <!-- Dashboard content -->
+                <div class="content">
+
+                    <!-- Widgets list -->
+                    <div class="row">
+
+
+                        <div class="col-lg-12">
+                            {% if messages %}
+
+                            <div class="alert alert-success alert-dismissible">
+                                                             <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+                                                             <span class="font-weight-semibold"></span>   {% for message in messages %}
+                             <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                             {% endfor %} <a href="#" class="alert-link"></a>.
+                                                         </div>
+                                                         
+                         
+                         {% endif %}
+                            <div class="card">
+                                <div class="card-header header-elements-inline">
+                                    <h3 class="card-title">Applicaton status</h3>
+                                    <div class="header-elements">
+                                        <div class="list-icons">
+                                            <a class="list-icons-item" data-action="collapse"></a>
+                                            <a class="list-icons-item" data-action="reload"></a>
+                                            <a class="list-icons-item" data-action="remove"></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <table class="table datatable-basic">
+                                    <thead>
+                                        <tr>
+                                            <th>title</th>
+
+                                            <th>Types</th>
+                                            <th>Postion</th>
+                                          
+                                            <th>Starting_date</th>
+                                            <th>Endingdate</th>
+                                            <th>Applicaation Status</th>
+                                            <th>Exam Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+
+                                        {% for app in status %}
+
+                                        {% if app.application.is_past_due %}
+
+
+                                        {% else%}
+                                        <tr>
+
+
+                                            <td>
+                                                <div class="font-weight-semibold">
+                                                    <a data-toggle="modal" data-target="#modal_form_vertical">
+                                                    </a>
+                                                </div>
+                                                <!-- <div class="text-muted">{{</div> -->
+                                                <button type="button" data-toggle="modal" data-target="#modal_scrollable{{forloop.counter}}" class="btn bg-primary">{{app.application.title}}</button>
+                                            </td>
+                                            <td>
+                                                <div class="font-weight-semibold"><a data-toggle="modal" data-target="#modal_scrollable{{ forloop.counter}}">{{app.application.types}}
+            </a></div>
+                                            </td>
+
+                                                                                        <td>
+                                                                                            <div class="font-weight-semibold"><a >{{app.application.postion}}
+                                                                                                </a></div>
+                                                                                        </td>
+
+                                                                                            <!-- <td>
+                                                                                                <div class="font-weight-semibold"><a>{{app.application.qualifaction}}
+                                                                                                    </a></div>
+                                                                                            </td> -->
+                                            <td>
+                                                <div class="d-inline-flex align-items-center">
+                                                    <i class="icon-calendar2 mr-2"></i>
+                                                    <input type="text" class="form-control datepicker p-0 border-0 bg-transparent" value="{{app.application.starting_date| date:" F d Y " }}">
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <div class="d-inline-flex align-items-center"> 
+                                                    <i class="icon-calendar2 mr-2"></i>
+                                                    <input type="text" class="form-control datepicker p-0 border-0 bg-transparent" value="{{app.application.endingdate| date:" F d Y " }}">
+                                                </div>
+                                            </td>
+
+
+                                           
+
+                                               
+                                                <td>
+
+                                                    <div class="d-inline-flex align-items-center">
+                                                <div   class="btn-group">
+                                                    <a href="#" class="badge bg-primary  dropdown-toggle" data-toggle="dropdown">{{app.status}}</a>
+
+                                                </div>
+                                                </div>
+
+                                                </td>
+
+                                                
+                                                {% if app.exam_status == 'Active'   %}
+
+
+
+  <td>
+                                                 <a href="{% url 'quiz_index' %}">  <div class="font-weight-semibold">The Exam Link
+                                                                                                  </div>
+                                                                                                    </a>
+                                               </td>
+
+                                                {% else %}
+
+                                                   
+                                                
+                                                 <td>
+                                                    <div class="font-weight-semibold"><a>{{app.exam_status}}
+                                                                                                    </a></div>
+                                               </td>
+
+
+                                                {% endif %}
+                                                    
+                                              
+
+
+                                                {% endif %}
+
+                                          
+
+                                        </tr>
+
+                                        <div id="modal_scrollable{{forloop.counter}}" class="modal fade" tabindex="-1">
+                                            <div class="modal-dialog modal-dialog-scrollable">
+                                                <div class="modal-content">
+                                                    <div class="modal-header pb-3">
+                                                        <h5 class="modal-title">{{app.title}}</h5>
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+
+                                                    <div class="modal-body py-0">
+
+                                                        <!-- <p>{{app.detial|safe}}</p> -->
+                                                          <h5>{{app.application.detail|safe}} </h5>
+                                                    </div>
+
+                                                    <div class="modal-footer pt-3">
+                                                        <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                                                        <!-- <button type="button" href="{% url 'job_url' app.id  %}" class="btn bg-primary">APPLY</button> -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <!-- <div id="modal_form_vertical" class="modal fade" tabindex="-1">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title">Vertical form</h5>
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                        
+                                                    <form action="#">
+                                                        <div class="modal-body">
+                                                            <div class="form-group">
+                                                                <div class="row">
+                                                                    <div class="col-sm-6">
+                                                                        <label>First name</label>
+                                                                        <input type="text" placeholder="Eugene" class="form-control">
+                                                                    </div>
+                                        
+                                                                    <div class="col-sm-6">
+                                                                        <label>Last name</label>
+                                                                        <input type="text" placeholder="Kopyov" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                        
+                                                            <div class="form-group">
+                                                                <div class="row">
+                                                                    <div class="col-sm-6">
+                                                                        <label>Address line 1</label>
+                                                                        <input type="text" placeholder="Ring street 12" class="form-control">
+                                                                    </div>
+                                        
+                                                                    <div class="col-sm-6">
+                                                                        <label>Address line 2</label>
+                                                                        <input type="text" placeholder="building D, flat #67" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                        
+                                                            <div class="form-group">
+                                                                <div class="row">
+                                                                    <div class="col-sm-4">
+                                                                        <label>City</label>
+                                                                        <input type="text" placeholder="Munich" class="form-control">
+                                                                    </div>
+                                        
+                                                                    <div class="col-sm-4">
+                                                                        <label>State/Province</label>
+                                                                        <input type="text" placeholder="Bayern" class="form-control">
+                                                                    </div>
+                                        
+                                                                    <div class="col-sm-4">
+                                                                        <label>ZIP code</label>
+                                                                        <input type="text" placeholder="1031" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                        
+                                                            <div class="form-group">
+                                                                <div class="row">
+                                                                    <div class="col-sm-6">
+                                                                        <label>Email</label>
+                                                                        <input type="text" placeholder="eugene@kopyov.com" class="form-control">
+                                                                        <span class="form-text text-muted">name@domain.com</span>
+                                                                    </div>
+                                        
+                                                                    <div class="col-sm-6">
+                                                                        <label>Phone #</label>
+                                                                        <input type="text" placeholder="+99-99-9999-9999" data-mask="+99-99-9999-9999"
+                                                                            class="form-control">
+                                                                        <span class="form-text text-muted">+99-99-9999-9999</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                        
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                                                            <button type="submit" class="btn bg-primary">Submit form</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div> -->
+
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                        <!-- Dark header, transparent footer -->
+
+                    </div>
+                    <!-- /widgets list -->
+    
+
+
+                        <!-- <div class="col-lg-6"> -->
+
+                       	<!-- Card with image and button -->
+						<!-- <div class="card">
+							<div class="card-body text-center">
+							<i class="icon-book icon-2x text-success-400 border-success-400 border-3 rounded-round p-3 mb-3 mt-1"></i>
+								<h5 class="card-title">Knowledge Base</h5>
+								<p class="mb-3">Ouch found swore much dear conductively hid submissively hatchet vexed far</p>
+								<a href="#" class="btn bg-success-400">Browse articles</a>
+							</div>
+						</div> -->
+						<!-- /card with image and button -->
+
+                        <!-- </div>
+                        <div class="col-lg-6"> -->
+
+                     <!-- <div class="card">
+							<div class="card-body text-center">
+							<i class="icon-book icon-2x text-success-400 border-success-400 border-3 rounded-round p-3 mb-3 mt-1"></i>
+								<h5 class="card-title">Knowledge Base</h5>
+								<p class="mb-3">Ouch found swore much dear conductively hid submissively hatchet vexed far</p>
+								<a href="#" class="btn bg-success-400">Browse articles</a>
+							</div>
+						</div> -->
+						<!-- /card with image and button -->
+
+                        </div>
+                        <!-- Dark header, transparent footer -->
+
+                    <!-- </div>
+                </div> -->
+                <!-- /dashboard content -->
+
+            </div>
+            <!-- /content area -->
+
+        </div>
+        <!-- /main content -->
+
+    </div>
+    <!-- /page content -->
+
+
+    <!-- Footer -->
+    <div class="navbar navbar-expand-lg navbar-light">
+        <div class="text-center d-lg-none w-100">
+            <button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse" data-target="#navbar-footer">
+                <i class="icon-unfold mr-2"></i>
+                Footer
+            </button>
+        </div>
+
+        <div class="navbar-collapse collapse" id="navbar-footer">
+            <span class="navbar-text">
+                Copyright &copy; 2020. Powered by <a href="http://www.techin.gov.et" target="_blank">Techin&#178</a>, All
+                rights reserved.
+            </span>
+
+            <ul class="navbar-nav ml-lg-auto">
+                <li class="nav-item"><a href="http://www.techin.gov.et" class="navbar-nav-link" target="_blank"><i
+                            class="icon-lifebuoy mr-2"></i>Home</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- /footer -->
+
+
+
+</body>
+
+<!-- Mirrored from demo.interface.club/limitless/demo/Template/layout_4/LTR/default/full/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 15 Oct 2020 13:17:01 GMT -->
+
+</html>

@@ -1,0 +1,91 @@
+{% extends 'base1.html' %}
+{% load i18n %}
+{% load quiz_tags %}
+{% block title %}{% trans "All Quizzes" %}{% endblock %}
+
+{% block content %}
+<div class="row">
+<div class="col-lg-12">
+						<div class="card card-body">
+							<div class="media">
+								<div class="mr-3">
+									<a href="#"><i class="icon-file-text2 text-success-400 icon-2x mt-1"></i></a>
+								</div>
+
+								<div class="media-body">
+									<h6 class="media-title font-weight-semibold"><a href="#" class="text-default"><h2 style="text-align: center;">{% trans "List of Exams" %}</h2></a></h6>
+								
+								</div>
+							</div>
+						</div>
+					</div>
+
+	{% if quiz_list %}
+	
+	  <!-- Content area -->
+            <div class="content">
+
+                <!-- Basic datatable -->
+                <div class="card"  style="margin-left: 10px; margin-right:10px">
+		<!-- <table class="table datatable-basic">
+
+		  <thead>
+			<tr>
+			  <th>{% trans "Title" %}</th>
+			  <th>{% trans "Category" %}</th>
+			  <th>{% trans "Exam" %}</th>
+			  <th>{% trans "Single attempt" %}</th>
+			  <th></th>
+			</tr>
+		  </thead>
+
+		  <tbody> -->
+	<div class="row">
+		{% for quiz in quiz_list %}
+		
+
+			
+					<div class="col-lg-6">
+						<div style="margin-left: 20px; margin-right:20px; margin-top:20px" class="card">
+							<div class="card-body text-center">
+							<i class="icon-book icon-2x text-success-400 border-success-400 border-3 rounded-round p-3 mb-3 mt-1"></i>
+								<h5 class="card-title">{{ quiz.title }}</h5>
+								<p class="mb-3">Single Attempt:  {{ quiz.single_attempt }}</p>
+                                                           
+								<a href="{% url 'quiz_question' quiz_name=quiz.url %}" class="btn bg-success-400"> Start Exam View Exam</a>
+								
+
+
+							</div>
+						</div>
+					</div>
+					<!-- {% url 'quiz_start_page' slug=quiz.url %} -->
+
+		
+
+  			<!-- <tr>
+			  <td>{{ quiz.title }}</td>
+			  <td>{{ quiz.category }}</td>
+			  <td>{{ quiz.exam_paper }}</td>
+			  <td>{{ quiz.single_attempt }}</td>
+			  <td>
+				<a href="{% url 'quiz_start_page' slug=quiz.url %}">
+				  {% trans "View details" %}
+				</a>
+			</tr> -->
+
+        {% endfor %}
+		</div>
+
+
+
+
+
+	
+
+	{% else %}
+        <p>{% trans "There are no available quizzes" %}.</p>
+	{% endif %}
+	</div>
+</div>
+{% endblock %}

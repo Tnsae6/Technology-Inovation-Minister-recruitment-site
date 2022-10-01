@@ -1,0 +1,672 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from demo.interface.club/limitless/demo/Template/layout_1/LTR/default/full/components_tabs.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Apr 2020 07:57:29 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<!-- /Added by HTTrack -->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,">
+    <title>TECHIN&#178 JOB PORTAL</title>
+
+    <!-- Global stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet"
+        type="text/css">
+    <link href="{% static 'global_assets/css/icons/icomoon/styles.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/bootstrap_limitless.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/layout.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/components.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/colors.min.css' %}" rel="stylesheet" type="text/css">
+    <!-- /global stylesheets -->
+
+    <!-- Core JS files -->
+    <script src="{% static 'global_assets/js/main/jquery.min.js' %}"></script>
+    <script src="{% static 'global_assets/js/main/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'global_assets/js/plugins/loaders/blockui.min.js' %}"></script>
+    <script src="{% static 'global_assets/js/plugins/ui/slinky.min.js' %}"></script>
+    <!-- /core JS files -->
+
+    <script src="{% static 'global_assets/js/plugins/tables/datatables/datatables.min.js' %}"></script>
+    <script src="{% static 'global_assets/js/plugins/forms/selects/select2.min.js' %}"></script>
+    <script src="{% static 'global_assets/js/demo_pages/datatables_basic.js' %}"></script>
+
+    <!-- Theme JS files -->
+    <script src="{% static 'global_assets/js/plugins/visualization/d3/d3.min.js ' %}"></script>
+    <script src="{% static 'global_assets/js/plugins/visualization/d3/d3_tooltip.js ' %}"></script>
+    <script src="{% static 'global_assets/js/plugins/forms/styling/switchery.min.js ' %}"></script>
+    <script src="{% static 'global_assets/js/plugins/ui/moment/moment.min.js ' %}"></script>
+    <script src="{% static 'global_assets/js/plugins/pickers/daterangepicker.js ' %}"></script>
+
+    <script src="{% static 'assets/js/app.js' %}"></script>
+    <script src="{% static 'global_assets/js/demo_pages/table_responsive.js' %}"></script>
+    <!-- <script src="{% static 'global_assets/js/demo_pages/dashboard.js ' %}"></script>
+    <script src="{% static 'global_assets/js/demo_charts/pages/dashboard/light/streamgraph.js ' %}"></script>
+    <script src="{% static 'global_assets/js/demo_charts/pages/dashboard/light/sparklines.js ' %}"></script>
+    <script src="{% static 'global_assets/js/demo_charts/pages/dashboard/light/lines.js ' %}"></script>
+    <script src="{% static 'global_assets/js/demo_charts/pages/dashboard/light/areas.js ' %}"></script>
+    <script src="{% static 'global_assets/js/demo_charts/pages/dashboard/light/donuts.js ' %}"></script>
+    <script src="{% static 'global_assets/js/demo_charts/pages/dashboard/light/bars.js ' %}"></script>
+    <script src="{% static 'global_assets/js/demo_charts/pages/dashboard/light/progress.js ' %}"></script>
+    <script src="{% static 'global_assets/js/demo_charts/pages/dashboard/light/heatmaps.js ' %}"></script>
+    <script src="{% static 'global_assets/js/demo_charts/pages/dashboard/light/pies.js ' %}"></script>
+    <script src="{% static 'global_assets/js/demo_charts/pages/dashboard/light/bullets.js ' %}"></script> -->
+    <!-- /theme JS files -->
+    <script src="{% static 'global_assets/js/demo_pages/form_inputs.js' %}"></script>
+    <script src="{% static 'global_assets/js/plugins/forms/styling/uniform.min.js' %}"></script>
+
+</head>
+
+
+<body>
+
+    <!-- Main navbar -->
+    {% include 'header.html' %}
+    <!-- /main navbar -->
+
+
+    <!-- /page header -->
+
+
+    <!-- Page content -->
+    <div class="page-content pt-0">
+
+        <!-- Main content -->
+        <div class="content-wrapper">
+
+            <!-- Page header -->
+            <div class="page-header page-header-light">
+
+                   <div class="row">
+
+                    <div class="col-sm-6 col-xl-4">
+                <div class="page-header-content header-elements-md-inline">
+                    <div class="page-title d-flex">
+                        <h4><span class="font-weight-semibold text-right"></span>{{profile.Fname}} {{profile.Lname}}'S Application
+                            Detail</span>
+                        </h4>
+
+                    </div>
+
+                </div>
+
+                </div>
+
+                
+
+                  <div class="col-sm-1 col-xl-3">
+
+
+            
+                           
+                        </div>
+
+
+                          <div class="col-sm-6 col-xl-5">
+                <div class="page-header-content header-elements-md-inline">
+                    <div class="page-title d-flex">
+
+                        <div class="breadcrumb">
+                            <h4>
+									<a href="{% url 'adminR' %}" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>Home</a>
+                                    <a href="{% url 'admin_url2' %}" class="breadcrumb-item">Applications</a>
+                                    <a href="{% url 'list_url' ida %}" class="breadcrumb-item">List of Applicants</a>
+                                    <span class="breadcrumb-item active">{{profile.Fname}}</span> 
+                                    </h4>
+                                </div>
+                            
+                                
+                       
+                        </h3>
+
+                    </div>
+
+                </div>
+
+                </div>
+                            </div>
+            </div>
+            <!-- /page header -->
+
+            <!-- Content area -->
+            <div class="content">
+
+                <!-- Main charts -->
+
+                <!-- /main charts -->
+
+
+                <!-- Dashboard content -->
+                <div class="content">
+
+                    <!-- Widgets list -->
+                    <div class="row">
+                        <div class="col-md-6 col-xl-3">
+
+                            <!-- User details (with sample pattern) -->
+                            <div class="card">
+
+
+                                <div class="card-body border-top-0">
+                                    <div class="d-sm-flex flex-sm-wrap mb-3">
+                                        <div class="font-weight-semibold">
+                                            <h3>Personal Information</h3>
+                                        </div>
+
+                                    </div>
+                                    <div class="d-sm-flex flex-sm-wrap mb-3">
+                                        <div class="font-weight-semibold">Full name:</div>
+                                        <div class="ml-sm-auto mt-2 mt-sm-0">{{profile.Fname}} {{profile.Mname}}</div>
+                                    </div>
+
+                                    <div class="d-sm-flex flex-sm-wrap mb-3">
+                                        <div class="font-weight-semibold">Phone number:</div>
+                                        <div class="ml-sm-auto mt-2 mt-sm-0">{{profile.PhoneNo}}</div>
+                                    </div>
+
+
+
+                                    <div class="d-sm-flex flex-sm-wrap">
+                                        <div class="font-weight-semibold">Personal Email:</div>
+                                        <div class="ml-sm-auto mt-2 mt-sm-0"><a href="#">{{profile.Email}}</a></div>
+                                    </div>
+                                    <br>
+                                    <div class="d-sm-flex flex-sm-wrap mb-3">
+                                        <div class="font-weight-semibold">City:</div>
+                                        <div class="ml-sm-auto mt-2 mt-sm-0">{{profile.City}}</div>
+                                    </div>
+
+                                    <div class="d-sm-flex flex-sm-wrap mb-3">
+                                        <div class="font-weight-semibold">Nationality:</div>
+                                        <div class="ml-sm-auto mt-2 mt-sm-0">{{profile.Nationality}}</div>
+                                    </div>
+
+                                    <div class="d-sm-flex flex-sm-wrap">
+                                        <div class="font-weight-semibold">Gender:</div>
+                                        <div class="ml-sm-auto mt-2 mt-sm-0"><a href="#">{{profile.Gender}}</a></div>
+                                    </div>
+                                    <br>
+                                    <div class="d-sm-flex flex-sm-wrap mb-3">
+                                        <div class="font-weight-semibold">Date of Birth:</div>
+                                        <div class="ml-sm-auto mt-2 mt-sm-0">{{profile.City}}</div>
+                                    </div>
+
+                                    <div class="d-sm-flex flex-sm-wrap mb-3">
+                                        <div class="font-weight-semibold">Place of Birth:</div>
+                                        <div class="ml-sm-auto mt-2 mt-sm-0">{{profile.Nationality}}</div>
+                                    </div>
+
+                                    <div class="d-sm-flex flex-sm-wrap">
+                                        <div class="font-weight-semibold">Disability:</div>
+                                        <div class="ml-sm-auto mt-2 mt-sm-0"><a href="#">{{profile.Gender}}</a></div>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                            <div class="card">
+
+<!-- {{statusform}} -->
+
+<form method="POST" class="post-form">
+    {% csrf_token %}
+                                <div class="card-body border-top-0">
+
+                                    <div class="d-sm-flex flex-sm-wrap mb-3">
+                                        <!-- <div class="font-weight-semibold">Comments</div> -->
+
+                                    </div>
+                                    <div class="form-group row">
+
+                                        <div class="col-lg-12">
+                                      
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <!-- <label class="col-form-label col-lg-4">Status</label> -->
+                                        <div class="col-lg-8">
+                                                    
+                                            
+                                            <!-- <select class="form-control">
+                                                <option value="opt1">Not Selected</option>
+                                                <option value="opt2">Selected</option>
+
+                                            </select> -->
+                                        </div>
+                                    </div>
+
+                                    <div class="text-center">
+                                        <br><br>
+                                        <!-- <button type="submit"  class="btn btn-primary">Submit</button> -->
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+                            <!-- /user details (with sample pattern) -->
+
+                        </div>
+
+
+
+
+
+
+                        <div class="col-lg-9">
+                            <!-- lowlevel education table -->
+                          
+                            <!-- /lowlevel education table -->
+
+                            <!-- high level education table -->
+                            <div class="card">
+                                <div class="card-header header-elements-inline">
+                                    <h3 class="card-title">Higher Educational Details:</h3>
+                                    <div class="header-elements">
+                                        <div class="list-icons">
+                                            <a class="list-icons-item" data-action="collapse"></a>
+                                            <a class="list-icons-item" data-action="reload"></a>
+                                            <!-- <a class="list-icons-item" data-action="remove"></a> -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- <div class="card-body">
+                                    Low-level educational details (Elementary, Secondary and Preparatory)
+                                </div> -->
+
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead style="font-weight:bold" ;>
+                                            <tr>
+                                                <th>
+                                                    <h6 style="font-weight:bold" ;>University/Institution</h6>
+                                                </th>
+                                                <th>
+                                                    <h6 style="font-weight:bold" ;>Qualification</h6>
+                                                </th>
+                                                <th>
+                                                    <h6 style="font-weight:bold" ;>Degree Level</h6>
+                                                </th>
+                                                <th>
+                                                    <h6 style="font-weight:bold" ;>CGPA</h6>
+                                                </th>
+                                                <th>
+                                                    <h6 style="font-weight:bold" ;>From</h6>
+                                                </th>
+                                                <th>
+                                                    <h6 style="font-weight:bold" ;>To</h6>
+                                                </th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for  single  in edu  %}
+                                            <tr>
+                                                <td>{{single.University}}</td>
+                                                <td>{{single.FieldofStudy}}</td>
+                                                <td>{{single.Degree_level}}</td>
+                                                <td>{{single.cumulative_gpa}}</td>
+                                                <td>{{single.From}}</td>
+                                                <td>{{single.To}}</td>
+                                                <!-- <td>
+                                                                                                    <div class="list-icons">
+                                                                                                        <a href="#" class="list-icons-item text-primary-600"><i class="icon-pencil7"></i></a>
+                                                                                                        <a href="#" class="list-icons-item text-danger-600"><i class="icon-trash"></i></a>
+                                                                                            
+                                                                                                    </div>
+                                                                                                </td> -->
+                                            </tr>
+                                            {% endfor %}
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- /high level education table -->
+
+                            <!-- language skill table -->
+                            <div class="card">
+                                <div class="card-header header-elements-inline">
+                                    <h3 class="card-title">Language Skill Details:</h3>
+                                    <div class="header-elements">
+                                        <div class="list-icons">
+                                            <a class="list-icons-item" data-action="collapse"></a>
+                                            <a class="list-icons-item" data-action="reload"></a>
+                                            <!-- <a class="list-icons-item" data-action="remove"></a> -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- <div class="card-body">
+                                    Low-level educational details (Elementary, Secondary and Preparatory)
+                                </div> -->
+
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead style="font-weight:bold" ;>
+                                            <tr>
+                                                <th>
+                                                    <h6 style="font-weight:bold" ;>Language</h6>
+                                                </th>
+                                                <th>
+                                                    <h6 style="font-weight:bold" ;>Listening</h6>
+                                                </th>
+                                                <th>
+                                                    <h6 style="font-weight:bold" ;>Writing</h6>
+                                                </th>
+                                                <th>
+                                                    <h6 style="font-weight:bold" ;>Speaking</h6>
+                                                </th>
+                                                <th>
+                                                    <h6 style="font-weight:bold" ;>Reading</h6>
+                                                </th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                                            {% for single_lan  in  lan  %}
+                                                                            
+                                                                            
+                                                                            
+                                                                            <tr>
+                                                                                <td>{{single_lan.Language}}</td>
+                                                                                <td>{{single_lan.Writing}}</td>
+                                                                                <td>{{single_lan.Listening}}</td>
+                                                                                <td>{{single_lan.Speaking}}</td>
+                                                                                <td>{{single_lan.Reading}}</td>
+                                                                            
+                                                                                <!-- <td>
+                                                                                                                                <div class="list-icons">
+                                                                                                                                    <a href="#" class="list-icons-item text-primary-600"><i class="icon-pencil7"></i></a>
+                                                                                                                                    <a href="#" class="list-icons-item text-danger-600"><i class="icon-trash"></i></a>
+                                                                            
+                                                                                                                                </div>
+                                                                                                                            </td> -->
+                                                                            </tr>
+                                                                            {% endfor %}
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- /language skill table -->
+
+                            <!-- work exp table -->
+                            <div class="card">
+                                <div class="card-header header-elements-inline">
+                                    <h3 class="card-title">Work Experience Details:</h3>
+                                    <div class="header-elements">
+                                        <div class="list-icons">
+                                            <a class="list-icons-item" data-action="collapse"></a>
+                                            <a class="list-icons-item" data-action="reload"></a>
+                                            <!-- <a class="list-icons-item" data-action="remove"></a> -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- <div class="card-body">
+                                    Low-level educational details (Elementary, Secondary and Preparatory)
+                                </div> -->
+
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead style="font-weight:bold" ;>
+                                            <tr>
+                                                <th>
+                                                    <h6 style="font-weight:bold" ;>Employer Organization/Company</h6>
+                                                </th>
+                                                <th>
+                                                    <h6 style="font-weight:bold" ;>Job Position</h6>
+                                                </th>
+                                                <th>
+                                                    <h6 style="font-weight:bold" ;>Years of Experience</h6>
+                                                </th>
+                                                <th>
+                                                    <h6 style="font-weight:bold" ;>Start date</h6>
+                                                </th>
+                                                <th>
+                                                    <h6 style="font-weight:bold" ;>End date</h6>
+                                                </th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                                                    {% if exp  %}
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    {% for single_exp  in exp  %}
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    <tr>
+                                                                                        <td>{{single_exp.Company}}</td>
+                                                                                        <td>{{single_exp.Position}}</td>
+                                                                                        <td>{{single_exp.YearofExp}}</td>
+                                                                                        <td>{{single_exp.Start}}</td>
+                                                                                        <td>{{single_exp.End}}</td>
+                                                                                    
+                                                                                        <td>
+                                                                                            <div class="list-icons">
+                                                                                                <a href="#" class="list-icons-item text-primary-600"><i class="icon-pencil7"></i></a>
+                                                                                                <a href="#" class="list-icons-item text-danger-600"><i class="icon-trash"></i></a>
+                                                                                    
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    {% endfor %}
+                                                                                    {% endif %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- /work exp table -->
+<div class="card">
+    <div class="card-header header-elements-inline">
+        <h3 class="card-title">Low-level Educational Details:</h3>
+        <div class="header-elements">
+            <div class="list-icons">
+                <a class="list-icons-item" data-action="collapse"></a>
+                <a class="list-icons-item" data-action="reload"></a>
+                <!-- <a class="list-icons-item" data-action="remove"></a> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="card-body">
+                                    Low-level educational details (Elementary, Secondary and Preparatory)
+                                </div> -->
+
+    <div class="table-responsive">
+        <table class="table">
+            <thead style="font-weight:bold" ;>
+                <tr>
+                    <th>
+                        <h6 style="font-weight:bold" ;>School Level</h6>
+                    </th>
+                    <th>
+                        <h6 style="font-weight:bold" ;>Name of School</h6>
+                    </th>
+                    <th>
+                        <h6 style="font-weight:bold" ;>From</h6>
+                    </th>
+                    <th>
+                        <h6 style="font-weight:bold" ;>To</h6>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+
+              
+                <tr>
+                    <td>Elementary School </td>
+                    <td>{{edu1.School_name}}</td>
+                    <td>{{edu1.starting_date}}</td>
+                    <td>{{edu1.end_date}}</td>
+
+                </tr>
+
+                                <tr>
+                                    <td>Secondary School </td>
+                                    <td>{{edu2.School_names}}</td>
+                                    <td>{{edu2.starting_dates}}</td>
+                                    <td>{{edu2.end_dates}}</td>
+                                
+                                </tr>
+
+                                                <tr>
+                                                    <td>Preparatory_School </td>
+                                                    <td>{{edu3.School_namep}}</td>
+                                                    <td>{{edu3.starting_datep}}</td>
+                                                    <td>{{edu3.end_datesp}}</td>
+                                                
+                                                </tr>
+
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
+                            <!-- Degree document table -->
+                            <div class="card">
+                                <div class="card-header header-elements-inline">
+                                    <h3 class="card-title">Attached Documents:</h3>
+                                    <div class="header-elements">
+                                        <div class="list-icons">
+                                            <a class="list-icons-item" data-action="collapse"></a>
+                                            <a class="list-icons-item" data-action="reload"></a>
+                                            <!-- <a class="list-icons-item" data-action="remove"></a> -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- <div class="card-body">
+                                    Low-level educational details (Elementary, Secondary and Preparatory)
+                                </div> -->
+
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead style="font-weight:bold" ;>
+                                            <tr>
+                                                <th>
+                                                    <h6 style="font-weight:bold" ;>Documents Type</h6>
+                                                </th>
+                                                <th>
+                                                    <h6 style="font-weight:bold" ;>Attached File</h6>
+                                                </th>
+
+                                                <th>
+                                                    <h6 style="font-weight:bold" ;>Actions</h6>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+
+                                            <tr>
+                                                <td>Degree</td>
+                                                <td>{{profile.Fname}} DEGREE</td>
+                                                <td>
+                                                    <div class="list-icons">
+                                                        <a href="{{profile.cv.url}}" class="list-icons-item text-primary-600"><i
+                                                                class="icon-eye2"></i></a> <br><br>
+                                                        <a href="{{profile.cv.url}}" class="list-icons-item text-warning-600"><i
+                                                                class="icon-file-download"></i></a>
+
+                                                                <object data="{{profile.cv.url}}" type="application/pdf" width="%" height="100%">
+                                                                    <p>Alternative text - include a link <a href="{{profile.cv.url}}">to the PDF!</a></p>
+                                                                </object>
+
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>Supportive Doc</td>
+                                                <td>{{profile.Fname}} Supportive Doc</td>
+
+
+                                                 <td>
+                                                    <div class="list-icons">
+                                                        <a href="{{profile.docs.url}}" class="list-icons-item text-primary-600"><i
+                                                                class="icon-eye2"></i></a> <br><br>
+                                                        <a href="{{profile.docs.url}}" class="list-icons-item text-warning-600"><i
+                                                                class="icon-file-download"></i></a>
+
+                                                                <object data="{{profile.cv.url}}" type="application/pdf" width="%" height="100%">
+                                                                    <p>Alternative text - include a link <a href="{{profile.docs.url}}">to the PDF!</a></p>
+                                                                </object>
+
+                                                    </div>
+                                                    
+                                               
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- /Degree document table -->
+
+                        </div>
+                        <!-- Dark header, transparent footer -->
+
+                    </div>
+                    <!-- /widgets list -->
+
+                </div>
+                <!-- /dashboard content -->
+
+            </div>
+            <!-- /content area -->
+
+        </div>
+        <!-- /main content -->
+
+    </div>
+    <!-- /page content -->
+
+
+    <!-- Footer -->
+    <div class="navbar navbar-expand-lg navbar-light">
+        <div class="text-center d-lg-none w-100">
+            <button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse"
+                data-target="#navbar-footer">
+                <i class="icon-unfold mr-2"></i>
+                Footer
+            </button>
+        </div>
+
+        <div class="navbar-collapse collapse" id="navbar-footer">
+            <span class="navbar-text">
+                Copyright &copy; 2020. Powered by <a href="http://www.techin.gov.et" target="_blank">Techin&#178</a>,
+                All
+                rights reserved.
+            </span>
+
+            <ul class="navbar-nav ml-lg-auto">
+                <li class="nav-item"><a href="http://www.techin.gov.et" class="navbar-nav-link" target="_blank"><i
+                            class="icon-lifebuoy mr-2"></i>Home</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- /footer -->
+
+
+
+</body>
+
+<!-- Mirrored from demo.interface.club/limitless/demo/Template/layout_4/LTR/default/full/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 15 Oct 2020 13:17:01 GMT -->
+
+</html>

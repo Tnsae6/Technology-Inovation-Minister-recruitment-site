@@ -1,0 +1,1969 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from demo.interface.club/limitless/demo/Template/layout_1/LTR/default/full/components_tabs.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Apr 2020 07:57:29 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<!-- /Added by HTTrack -->
+
+
+{% include 'head.html' %}
+    <script src="{% static 'global_assets/js/demo_pages/form_wizard.js' %}"></script>
+    <script src="{% static 'global_assets/js/plugins/forms/inputs/inputmask.js' %}"></script>
+
+    <script src="{% static 'global_assets/js/plugins/extensions/cookie.js' %}"></script>
+        <SCRIPT type="text/javascript">
+	window.history.forward();
+	function noBack() { window.history.forward(); }
+</SCRIPT>
+
+<!-- onload="noBack();" 
+	onpageshow="if (event.persisted) noBack();" onunload="" -->
+
+<body >
+
+    <!-- Main navbar -->
+    {% include 'header.html' %}
+
+    <!-- /main navbar -->
+
+
+    <!-- Page content -->
+    <div class="page-content">
+
+        <!-- Main content -->
+        <div class="content-wrapper">
+
+            <!-- Page header -->
+            <div class="page-header page-header-light">
+                <div class="page-header-content header-elements-md-inline">
+                    <div class="page-title d-flex">
+                        <h4><span class="font-weight-semibold text-right"></span>Application Form</span>
+                        </h4>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- /page header -->
+
+
+            <!-- Saving state -->
+            <div>
+
+
+                <div class="card" style="margin: 20px;">
+
+{% if messages %}
+
+   <div class="alert alert-success alert-dismissible">
+									<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+									<span class="font-weight-semibold"></span>   {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %} <a href="#" class="alert-link"></a>.
+                                </div>
+                                
+
+{% endif %}
+                    <br><br>
+                    <div style="margin: 20px;">
+                    
+                        <form method="POST" action="" id="my_form" enctype="multipart/form-data" class="wizard-form steps-state-saving"  onsubmit="return ValidationEvent()" >
+                            {% csrf_token %}
+                            <h6>Personal Information</h6>
+                            <fieldset>
+                                <div class="row">
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>First name:<span class="text-danger">*</span></label>
+                                            {{perform.Fname}}
+                                            <!-- <input type="text" placeholder="Name" class="form-control"> -->
+                                        </div>
+
+                                        
+                                        {% if perform.Fname.errors  %}
+                                            
+                                      
+                                            
+                                        <div class="alert alert-danger alert-dismissible">
+									<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+									<span class="font-weight-semibold">Oh snap!</span>    {{perform.Fname.errors}} <a href="#" class="alert-link">try submitting again</a>.
+                                </div>
+                                
+                                  {% endif %}
+                                           <!-- {{perform.Fname.errors}} -->
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Middle name:<span class="text-danger">*</span></label>
+                                            {{perform.Mname}}
+                                            <!-- <input type="text" placeholder="Father" class="form-control"> -->
+                                        </div>
+                                         {% if perform.Mname.errors  %}
+                                          <div class="alert alert-danger alert-dismissible">
+									<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+									<span class="font-weight-semibold">Oh snap!</span>    {{perform.Mname.errors}} <a href="#" class="alert-link">try submitting again</a>.
+                                </div>
+                                {% endif %}
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Last name:<span class="text-danger">*</span></label>
+                                            {{perform.Lname}}
+                                            <!-- <input type="text" placeholder="G/Father" class="form-control"> -->
+                                        </div>
+                                           {% if perform.Lname.errors  %}
+                                          <div class="alert alert-danger alert-dismissible">
+									<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+									<span class="font-weight-semibold">Oh snap!</span>    {{perform.Lname.errors}} <a href="#" class="alert-link">try submitting again</a>.
+                                            </div>
+                                  {% endif %}
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Email:<span class="text-danger">*</span></label>
+                                            {{perform.Email}}
+                                            <!-- <input type="text" placeholder="eugene@kopyov.com" class="form-control"> -->
+                                        </div>
+                                                            {% if perform.Email.errors  %}
+                                          <div class="alert alert-danger alert-dismissible">
+									<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+									<span class="font-weight-semibold">Oh snap!</span>    {{perform.Email.errors}} <a href="#" class="alert-link">try submitting again</a>.
+                                </div>
+                                 {% endif %}
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Phone Number:<span class="text-danger">*</span></label>
+                                            {{perform.PhoneNo}}
+                                            <!-- <input type="text" class="form-control" placeholder="+251-XX-XXX-XXXX"> -->
+                                        </div>
+
+                                        {% if perform.PhoneNo.errors  %}
+
+                                        <div class="alert alert-danger alert-dismissible">
+									<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+									<span class="font-weight-semibold">Oh snap!</span>    {{perform.PhoneNo.errors}} <a href="#" class="alert-link">try submitting again</a>.
+							    </div>
+                                         {% endif %}
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Nationality:<span class="text-danger">*</span></label>
+                                            {{perform.Nationality}}
+                                            <!-- <input type="text" placeholder="Ethiopian" class="form-control"> -->
+                                        </div>
+                                         {% if perform.Nationality.errors  %}
+                                        <div class="alert alert-danger alert-dismissible">
+									<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+									<span class="font-weight-semibold">Oh snap!</span>    {{perform.Nationality.errors}} <a href="#" class="alert-link">try submitting again</a>.
+                                </div>
+                                {% endif %}
+                                        
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>City:<span class="text-danger">*</span></label>
+                                            {{perform.City}}
+                                            <!-- <input type="text" placeholder="Addis Ababa" class="form-control"> -->
+                                        </div>
+                                                    {% if perform.City.errors  %}
+                                        <div class="alert alert-danger alert-dismissible">
+									<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+									<span class="font-weight-semibold">Oh snap!</span>    {{perform.City.errors}} <a href="#" class="alert-link">try submitting again</a>.
+                                </div>
+                                 {% endif %}
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label>Gender:<span class="text-danger">*</span></label>
+                                        <div class="form-group">
+
+                                            {{perform.Gender}}
+                                            <!-- <select class="custom-select">
+			                                <option value="opt1">Choose your Gender</option>
+			                                
+			                                <option value="opt3">Female</option>
+			                                <option value="opt4">Male</option>
+			                                
+			                            </select> -->
+
+                                        </div>
+
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Date of Birth:(Gregorian Calendar)<span class="text-danger">*</span></label>
+                                            {{perform.DateofBirth}}
+                                            <!-- <input class="form-control" type="date" name="date"> -->
+                                        </div>
+                                    {% if perform.DateofBirth.errors  %}
+                                        	<div class="alert alert-danger alert-dismissible">
+									<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+									<span class="font-weight-semibold">Oh snap!</span>  {{perform.DateofBirth.errors}} <a href="#" class="alert-link">try submitting again</a>.
+							                    </div>
+                                 {% endif %}
+                                       
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Place of Birth:<span class="text-danger">*</span></label>
+                                            {{perform.PlaceofBirth}}
+                                            <!-- <input type="text" placeholder="Munich" class="form-control"> -->
+                                        </div>
+
+                                {% if perform.PlaceofBirth.errors  %}
+
+                                        	<div class="alert alert-danger alert-dismissible">
+									<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+									<span class="font-weight-semibold">Oh snap!</span>  {{perform.PlaceofBirth.errors}} <a href="#" class="alert-link">try submitting again</a>.
+                                            </div>
+                                {% endif %}
+                                    </div>
+
+<div class="col-md-4 ">
+    <div class="form-group ">
+        <label class="d-block ">Disability:<span style="color: red; font-size:larger ">*</span></label>
+
+
+        <div class="custom-control custom-control-right custom-checkbox custom-control-inline">
+            <!-- <input type="checkbox" class="custom-control-input" id="custom_checkbox_inline_right_unchecked"> -->
+            {{perform.disablity}}
+            <label class="custom-control-label position-static" for="custom_checkbox_inline_right_unchecked">
+                Disabled</label>
+        </div>
+
+
+
+    </div>
+</div>
+                                </div>
+
+                            </fieldset>
+</div>
+</div>
+                               <div class="card" style="margin-left: 20px; margin-right:20px">
+                                <h3 style="margin: 20px;">Educational Background</h3>
+                                <fieldset>
+                                    <h6 style="margin-left: 20px; margin-right:20px">Elementary School</h6>
+                                    <div class="row" style="margin-left: 20px; margin-right:20px">
+                            
+                                        <div class="col-md-4">
+                            
+                                            <div class="form-group ">
+                                                <label>Name of School:<span style="color: red; font-size:larger ">*</span></label>
+                                                {{elementary.School_name}}
+                                                <!-- <input type="text" name="university" placeholder="University name"
+                                                                            class="form-control"> -->
+                                            </div>
+                                        </div>
+                            
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>From:(Gregorian Calendar)<span style="color: red; font-size:larger ">*</span></label>
+                                                <div class="form-group">
+                                                    {{elementary.starting_date}}
+                            
+                                                    <!-- <input class="form-control" type="date" name="date"> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>To:(Gregorian Calendar)<span style="color: red; font-size:larger ">*</span></label>
+                                                <div class="form-group">
+                                                    {{elementary.end_date}}
+                                                    <!-- <input class="form-control" type="date" name="date"> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{elementary.errors}}
+                                    </div>
+                                    <h6 style="margin-left: 20px; margin-right:20px">Secondary School</h6>
+                                    <div class="row" style="margin-left: 20px; margin-right:20px">
+                            
+                            
+                                        <div class="col-md-4">
+                            
+                                            <div class="form-group">
+                                                <label>Name of School:<span style="color: red; font-size:larger ">*</span></label>
+                                                {{secondary.School_names}}
+                                                <!-- <input type="text" name="university" placeholder="University name"
+                                                                            class="form-control"> -->
+                                            </div>
+                                        </div>
+                                        {{secondary.errors}}
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>From:(Gregorian Calendar)<span style="color: red; font-size:larger ">*</span></label>
+                                                <div class="form-group">
+                                                    {{secondary.starting_dates}}
+                            
+                                                    <!-- <input class="form-control" type="date" name="date"> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>To:(Gregorian Calendar)<span style="color: red; font-size:larger ">*</span></label>
+                                                <div class="form-group">
+                                                    {{secondary.end_dates}}
+                                                    <!-- <input class="form-control" type="date" name="date"> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                            
+                                    </div>
+                                    <h6 style="margin-left: 20px; margin-right:20px">Preparatory School</h6>
+                                    <div class="row " style="margin-left: 20px; margin-right:20px">
+                            
+                                        <div class="col-md-4">
+                            
+                                            <div class="form-group">
+                                                <label>Name of School:<span style="color: red; font-size:larger ">*</span></label>
+                                                {{preparatory.School_namep}}
+                                                <!-- <input type="text" name="university" placeholder="University name"
+                                                                            class="form-control"> -->
+                                            </div>
+                                        </div>
+                                        {{preparatory.errors}}
+                                        <div class="col-md-4">
+                                            <div class="form-group ">
+                                                <label>From:(Gregorian Calendar)<span style="color: red; font-size:larger ">*</span></label>
+                                                <div class="form-group ">
+                                                    {{preparatory.starting_datep}}
+                            
+                                                    <!-- <input class="form-control" type="date" name="date"> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>To:(Gregorian Calendar)<span style="color: red; font-size:larger ">*</span></label>
+                                                <div class="form-group">
+                                                    {{preparatory.end_datesp}}
+                                                    <!-- <input class="form-control" type="date" name="date"> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                            
+                                    </fieldset>
+                            </div>
+
+
+                               <div class="card" style="margin-left: 20px; margin-right:20px">
+                                     <h3 style="margin: 20px;">Higher Educational Background</h3>
+                             <fieldset>
+                                    {{ eduset.management_form }} {% for form in eduset %}
+                                    <div class="row form-row spacer" style="margin-left: 20px; margin-right:20px">
+                                        <legend  class="text-center font-size-lg font-weight-bold ">Higher Educations (From
+                                            Recent to Older)&nbsp;
+                                            <a href="# " id="add-edu "
+                                                class="btn bg-transparent border-teal text-teal rounded-round border-2 btn-icon mr-3 add-form-row ">
+                                                <i class="icon-plus3 "></i>
+                                            </a>
+                                        </legend>
+                                        <div class="col-md-2">
+                                            <div class="form-group ">
+                                                <label>University/Institution:<span style="color: red; font-size:larger ">*</span></label>
+                                                {{form.University}}
+                                                <!-- <input type="text " name="university " placeholder="University name " class="form-control "> -->
+                                            </div>
+                                        </div>
+                            
+                                        <div class="col-md-2">
+                                            <div class="form-group ">
+                                                <label>Qualification:<span style="color: red; font-size:larger ">*</span></label>
+                                                {{form.FieldofStudy}}
+                                                <!-- <input type="text " name="university " placeholder="field of study " class="form-control "> -->
+                                            </div>
+                                        </div>
+
+                                         <div class="col-md-2">
+                                            <label>Degree Level:<span style="color: red; font-size:larger ">*</span></label>
+                                            <div class="form-group ">
+                            
+                            
+                                                {{form.Degree_level}}
+                                                <!-- <select class="custom-select ">
+                                                                    <option value="opt1 ">Select your level</option>
+                                                                    <option value="opt2 ">BSc</option>
+                                                                    <option value="opt3 ">MSc</option>
+                                                                    <option value="opt4 ">PHD</option>
+                            
+                                                                </select> -->
+                            
+                                            </div>
+                            
+                     
+                                        </div>
+                                        <div class="col-md-2" id = 'other{{ form.Degree_level.auto_id }}'>
+                                            <div class="form-group ">
+                                                <label>CGPA:<span style="color: red; font-size:larger ">*</span></label>
+                                                {{form.cumulative_gpa}}
+                                                <!-- <input type="text " name="university " placeholder="field of study " class="form-control "> -->
+                                            </div>
+                                        </div>
+                                       
+                            
+                                        <div class="col-md-2">
+                                            <div class="form-group ">
+                                                <label>From:(Gregorian Calendar)<span style="color: red; font-size:larger ">*</span></label>
+                                                <div class="form-group ">
+                                                    {{form.From}}
+                            
+                                                    <!-- <input class="form-control " type="date " name="date "> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group ">
+                                                <label>To:(Gregorian Calendar)<span style="color: red; font-size:larger ">*</span></label>
+                                                <div class="form-group ">
+                                                    {{form.To}}
+                                                    <!-- <input class="form-control " type="date " name="date "> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                            
+                            
+                                    </div>
+                                    <div id="new_edu" style="margin-left: 20px; margin-right:20px"></div>
+                                    {% endfor %}
+                                </fieldset>
+
+                                
+                                {% if eduset.errors  %}
+                                     {{eduset.errors}}
+                                {% endif %}
+                                    
+                              
+
+                            </div>
+
+
+                                <div class="card " style="margin-left: 20px; margin-right:20px ">
+                    <h3 style="margin: 20px; ">Experience</h3>
+                    <fieldset>
+                        <div style="margin: 20px; ">
+                            <div class=" row form-row2 spacer ">
+                                {{ expset.management_form }} {% for form in expset %}
+
+                                <span class="hidden ">{{ form.id }}</span>
+                                <!-- {{ forloop.counter }} -->
+
+                                {% for hidden in form.hidden_fields %} {{ hidden }} {% endfor %}
+
+                                <legend class="text-center font-size-lg font-weight-bold ">Work Experience&nbsp;
+                                    <a href="# " id="add-form-row " class="btn bg-transparent border-teal text-teal rounded-round border-2 btn-icon mr-3 add-form-row2 ">
+                                        <i class="icon-plus3 "></i>
+                                    </a>
+                                </legend>
+                                <div class="col-md-3 ">
+                                    <div class="form-group ">
+                                        <label>Organinzation/Company:<span style="color: red; font-size:larger ">*</span></label> {{form.Company}}
+                                        <!-- <input type="text " name="experience-company " placeholder="input the organization/Company " class="form-control "> -->
+                                    </div>
+                                </div>
+                                <div class="col-md-3 ">
+                                    <div class="form-group ">
+                                        <label>Position:<span style="color: red; font-size:larger ">*</span></label> {{form.Position}}
+                                        <!-- <input type="text " name="position " placeholder="job position " class="form-control "> -->
+                                    </div>
+                                </div>
+                                <div class="col-md-2 ">
+                                    <label>Years of experience:<span style="color: red; font-size:larger ">*</span></label>
+                                    <div class="form-group ">
+                                        {{form.YearofExp}}
+                                        <!-- <select class="custom-select ">
+                                                <option value="opt1 ">Select years of experience</option>
+                                                <option value="opt2 ">0-2 Years</option>
+                                                <option value="opt3 ">3-4 Years</option>
+                                                <option value="opt4 ">5-9 Years</option>
+                                                <option value="opt5 ">10+ Years</option>
+                                                
+                                            </select> -->
+
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2 ">
+                                    <div class="form-group ">
+                                        <label>Start Date:(Gregorian Calendar)<span style="color: red; font-size:larger ">*</span></label> {{form.Start}}
+
+                                        <!-- <input class="form-control " type="date " name="date "> -->
+                                    </div>
+                                </div>
+                                <div class="col-md-2 ">
+                                    <div class="form-group ">
+                                        <label>End Date:(Gregorian Calendar)<span style="color: red; font-size:larger ">*</span></label> {{form.End}}
+                                        <!-- <input class="form-control " type="date " name="date "> -->
+                                    </div>
+                                </div>
+
+                                {% endfor %}
+                            </div>
+                            <div id="new_exprince "></div>
+                        </div>
+                    </fieldset>
+
+                    {% if expset.errors %} {{expset.errors}} {% endif %}
+                </div>
+
+
+                         
+  <div class="card" style="margin-left: 20px; margin-right:20px">
+
+                            <h3 style="margin: 20px;" >Language Skills:</h3>
+
+                            
+                            <fieldset>
+                                {{ lanset.management_form }}
+                                {% for form in lanset %}
+
+ <div style="margin: 20px;">
+                                <div class=" row form-row1 spacer">
+
+                                    <legend class="text-center font-size-lg font-weight-bold">Language Skills&nbsp;
+                                        <a href="#" id="add-language"
+                                            class="btn bg-transparent border-teal text-teal rounded-round border-2 btn-icon mr-3 add-form-row1 ">
+                                            <i class="icon-plus3"></i>
+                                        </a>
+                                    </legend>
+
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Language:<span class="text-danger">*</span></label>
+                                            {{form.Language}}
+                                            <!-- <input type="text" name="experience-company" placeholder="input the language" class="form-control"> -->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label>Listening:<span class="text-danger">*</span></label>
+                                        <div class="form-group">
+                                            {{form.Listening}}
+                                            <!-- <select class="custom-select">
+			                                <option value="opt1">Select your level</option>
+			                                <option value="opt2">Excellent</option>
+			                                <option value="opt3">Very Good</option>
+                                            <option value="opt4">Good</option>
+                                            <option value="opt5">Poor</option>
+			                                
+			                            </select> -->
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label>Writing:<span class="text-danger">*</span></label>
+                                        <div class="form-group">
+                                            {{form.Writing}}
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label>Speaking:<span class="text-danger">*</span></label>
+                                        <div class="form-group">
+                                            {{form.Speaking}}
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label>Reading:<span class="text-danger">*</span></label>
+                                        <div class="form-group">
+                                            {{form.Reading}}
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="new_language"></div>
+</div>
+                                {% endfor %}
+
+
+      
+                            </fieldset>
+                            {% if lanset.errors  %}
+                        {{lanset.errors}}
+       {%endif%}
+    </div>
+
+
+     <div class="card" style="margin-left: 20px; margin-right:20px">
+                            <h3  style="margin: 20px;" >References</h3>
+    <fieldset>
+    
+        <div class="row" style="margin-left: 20px; margin-right:20px">
+            <div class="col-md-4">
+                <legend class="font-weight-semibold font-size-lg">Reference #1 Information
+                </legend>
+                <div class="form-group">
+                    <label>Full Name:<span style="color: red; font-size:larger ">*</span></label>
+                    {{perform.Name}}
+                    <!-- <input type="text " class="form-control " placeholder="name "> -->
+                </div>
+                                
+                                {% if perform.Name.errors  %}
+                                    
+                                
+                                    
+                <div class="alert alert-danger alert-dismissible">
+									<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+									<span class="font-weight-semibold">Oh snap!</span>  {{perform.Name.errors}} <a href="#" class="alert-link">try submitting again</a>.
+                                </div>
+                                
+                                {% endif %}
+    
+    
+                <div class="form-group ">
+                    <label>Phone Number:<span style="color: red; font-size:larger ">*</span></label>
+                    {{perform.PhoneNumber}}
+                    <!-- <input type="text " value="09 " class="form-control "> -->
+                </div>
+
+                
+                {% if perform.PhoneNumber.errors %}
+                    
+              
+                    
+    
+                <div class="alert alert-danger alert-dismissible">
+									<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+									<span class="font-weight-semibold">Oh snap!</span>  {{perform.PhoneNumber.errors}} <a href="#" class="alert-link">try submitting again</a>.
+                                </div>
+                                  {% endif %}
+    
+                <div class="form-group ">
+                    <label>Email:<span style="color: red; font-size:larger ">*</span></label>
+                    {{perform.EmailAdd}}
+                    <!-- <input type="text " placeholder="eugene@kopyov.com " class="form-control "> -->
+                </div>
+                  {% if perform.EmailAdd.errors %}
+                <div class="alert alert-danger alert-dismissible">
+									<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+									<span class="font-weight-semibold">Oh snap!</span>  {{perform.EmailAdd.errors}} <a href="#" class="alert-link">try submitting again</a>.
+                                </div>
+                                  {% endif %}
+            </div>
+
+            <div class="col-md-4 ">
+                <legend class="font-weight-semibold font-size-lg ">Reference #2 Information
+                </legend>
+                <div class="form-group ">
+                    <label>Full Name:<span style="color: red; font-size:larger ">*</span></label>
+                    {{perform.Name_r}}
+                    <!-- <input type="text " class="form-control " placeholder="name "> -->
+                </div>
+                {% if perform.Name_r.errors %}
+                <div class="alert alert-danger alert-dismissible">
+									<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+									<span class="font-weight-semibold">Oh snap!</span>  {{perform.Name_r.errors}} <a href="#" class="alert-link">try submitting again</a>.
+                                </div>
+                                {% endif %}
+    
+    
+                <div class="form-group ">
+                    <label>Phone Number:<span style="color: red; font-size:larger ">*</span></label>
+                    {{perform.PhoneNumber_r}}
+                    <!-- <input type="text " value="09 " class="form-control "> -->
+                </div>
+
+                       {% if perform.PhoneNumber_r.errors %}
+    <div class="alert alert-danger alert-dismissible">
+									<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+									<span class="font-weight-semibold">Oh snap!</span>  {{perform.PhoneNumber_r.errors}} <a href="#" class="alert-link">try submitting again</a>.
+							    </div>
+      {% endif %}
+                <div class="form-group ">
+                    <label>Email:<span style="color: red; font-size:larger ">*</span></label>
+                    {{perform.EmailAdd_r}}
+                    <!-- <input type="text " placeholder="eugene@kopyov.com " class="form-control "> -->
+                </div>
+
+                {% if perform.EmailAdd_r.errors %}
+                                <div class="alert alert-danger alert-dismissible">
+									<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+									<span class="font-weight-semibold">Oh snap!</span>  {{perform.EmailAdd_r.errors}} <a href="#" class="alert-link">try submitting again</a>.
+                                </div>
+                {% endif %}
+            </div>
+            <div class="col-md-4 ">
+                <legend class="font-weight-semibold font-size-lg ">Reference #3 Information
+                </legend>
+                <div class="form-group ">
+                    <label>Full Name:<span style="color: red; font-size:larger ">*</span></label>
+                    {{perform.Name_r1}}
+                    <!-- <input type="text " class="form-control " placeholder="name "> -->
+                </div>
+                {% if perform.Name_r1.errors %}
+    <div class="alert alert-danger alert-dismissible">
+									<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+									<span class="font-weight-semibold">Oh snap!</span>  {{perform.Name_r1.errors}} <a href="#" class="alert-link">try submitting again</a>.
+                                </div>
+                 {% endif %}
+
+
+    
+                <div class="form-group ">
+                    <label>Phone Number:<span style="color: red; font-size:larger ">*</span></label>
+                    {{perform.PhoneNumber_r1}}
+                    <!-- <input type="text " value="09 " class="form-control "> -->
+                </div>
+                   {% if perform.PhoneNumber_r1.errors %}
+                                <div class="alert alert-danger alert-dismissible">
+									<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+									<span class="font-weight-semibold">Oh snap!</span>  {{perform.PhoneNumber_r1.errors}} <a href="#" class="alert-link">try submitting again</a>.
+                                </div>
+                    {% endif %}
+    
+                <div class="form-group ">
+                    <label>Email:<span style="color: red; font-size:larger ">*</span></label>
+                    {{perform.EmailAdd_r1}}
+                    <!-- <input type="text " placeholder="eugene@kopyov.com " class="form-control "> -->
+                         
+                    
+                </div>
+                {% if perform.EmailAdd_r1.errors %}
+<div class="alert alert-danger alert-dismissible">
+									<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+									<span class="font-weight-semibold">Oh snap!</span>  {{perform.EmailAdd_r1.errors}} <a href="#" class="alert-link">try submitting again</a>.
+                                </div>
+                                 {% endif %}
+            </div>
+    
+    
+    
+        </div>
+    
+    </fieldset>
+
+    </div>
+
+     <div class="card" style="margin-left: 20px; margin-right:20px">
+                            <h3  style="margin: 20px;">Cover Letter & Attachments</h3>
+
+
+
+                                <fieldset>
+                                    <div class="row" style="margin-left: 20px; margin-right:20px">
+                                        <div class="col-md-12">
+                                            <div class="form-group ">
+                                                <label>Cover Letter:(atleast 150 words)<span style="color: red; font-size:larger ">*</span></label>
+                                                {{perform.CoverLetter}}
+                                                <!-- <textarea name="experience-description " rows="10 " cols="6 " placeholder="your application letter " class="form-control "></textarea> -->
+                                            </div>
+                                {% if perform.CoverLetter.errors %}
+                                <div class="alert alert-danger alert-dismissible">
+									<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+									<span class="font-weight-semibold">Oh snap!</span>  {{perform.CoverLetter.errors}} <a href="#" class="alert-link">try submitting again</a>.
+							    </div>
+                                 {% endif %}
+                                
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group ">
+                                
+                                                <label>Your Degree:<span style="color: red; font-size:larger ">*</span></label>
+                                                {{perform.cv}}
+                                
+                                                <!-- <input type="file " class="form-input-styled " data-fouc> -->
+                                
+                                                <span class="form-text text-muted ">Accepted formats: only pdf Max file
+                                                    size 5Mb</span>
+                                            </div>
+                                             <p id="sizex"></p> 
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group ">
+                                
+                                                <label>Other Supportive Docs:</label> {{perform.docs}}
+                                
+                                                <!-- <input type="file " class="form-input-styled " data-fouc> -->
+                                
+                                                <span class="form-text text-muted ">Accepted formats: only pdf. Max file
+                                                    size 5Mb</span>
+                                                           
+                                                           {% if perform.docs.errors  %}
+                                                               
+                                                         
+                                                               
+                                                    	<div class="alert alert-danger alert-dismissible">
+									<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+									<span class="font-weight-semibold">Oh snap!</span>{{perform.docs.errors}} <a href="#" class="alert-link">try submitting again</a>.
+							    </div>  {% endif %}
+                                
+                                            </div>
+                                             <p id="size"></p> 
+                                        </div>
+                                
+                                    </div>
+
+                                    							
+                                
+                                
+                                    
+                                
+                                     
+                                
+                                </fieldset>
+                            <button type="submit" onsubmit="return validateForm()" id="submit-button"
+                                class="btn btn-block btn-primary">Submit Information</button>
+                        </form>
+                    </div>
+             
+
+
+            <!-- /saving state -->
+            <!-- Footer -->
+            <div class="navbar navbar-expand-lg navbar-light">
+                <div class="text-center d-lg-none w-100">
+                    <button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse"
+                        data-target="#navbar-footer">
+                        <i class="icon-unfold mr-2"></i>
+                        Footer
+                    </button>
+                </div>
+
+                <div class="navbar-collapse collapse" id="navbar-footer">
+                    <span class="navbar-text">
+                        Copyright &copy; 2020. Powered by <a href="http://www.techin.gov.et"
+                            target="_blank">Techin&#178</a>, All rights reserved.
+                    </span>
+
+                    <ul class="navbar-nav ml-lg-auto">
+                        <li class="nav-item"><a href="http://www.techin.gov.et" class="navbar-nav-link"
+                                target="_blank"><i class="icon-lifebuoy mr-2"></i>Home</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /footer -->
+
+      
+        <!-- /main content -->
+
+    </div>
+    <!-- /page content -->
+
+</body>
+
+<!-- Mirrored from demo.interface.club/limitless/demo/Template/layout_1/LTR/default/full/components_tabs.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Apr 2020 07:57:29 GMT -->
+
+</html>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script type="text/javascript">
+    function updateElementIndex(el, prefix, ndx) {
+        var id_regex = new RegExp('(' + prefix + '-\\d+)');
+        var replacement = prefix + '-' + ndx;
+        if ($(el).attr("for")) $(el).attr("for", $(el).attr("for").replace(id_regex, replacement));
+        if (el.id) el.id = el.id.replace(id_regex, replacement);
+        if (el.name) el.name = el.name.replace(id_regex, replacement);
+    }
+    function cloneMore(selector, prefix, forset) {
+        var newElement = $(selector).clone(true);
+        var total = $('#id_' + prefix + '-TOTAL_FORMS').val();
+        newElement.find(':input:not([type=button]):not([type=submit]):not([type=reset])').each(function () {
+            var name = $(this).attr('name')
+            if (name) {
+                name = name.replace('-' + (total - 1) + '-', '-' + total + '-');
+                var id = 'id_' + name;
+                $(this).attr({ 'name': name, 'id': id }).val('').removeAttr('checked');
+            }
+        });
+        newElement.find('label').each(function () {
+            var forValue = $(this).attr('for');
+            if (forValue) {
+                forValue = forValue.replace('-' + (total - 1) + '-', '-' + total + '-');
+                $(this).attr({ 'for': forValue });
+            }
+        });
+        total++;
+        $('#id_' + prefix + '-TOTAL_FORMS').val(total);
+        $(selector).after(newElement);
+        var conditionRow = $('.' + forset + ':not(:last)');
+        conditionRow.find('.btn.add-' + forset)
+            .removeClass('btn-success').addClass('btn-danger')
+            .removeClass('add-' + forset).addClass('remove-' + forset)
+            .html('-');
+        return false;
+    }
+    function deleteForm(prefix, btn, forset) {
+        var total = parseInt($('#id_' + prefix + '-TOTAL_FORMS').val());
+        if (total > 1) {
+            btn.closest('.' + forset).remove();
+            var forms = $('.' + forset);
+            $('#id_' + prefix + '-TOTAL_FORMS').val(forms.length);
+            for (var i = 0, formCount = forms.length; i < formCount; i++) {
+                $(forms.get(i)).find(':input').each(function () {
+                    updateElementIndex(this, prefix, i);
+                });
+            }
+        }
+        return false;
+    }
+    $(document).on('click', '.add-form-row', function (e) {
+        e.preventDefault();
+        cloneMore('.form-row:last', 'form2', 'form-row');
+        return false;
+    });
+    $(document).on('click', '.remove-form-row', function (e) {
+        e.preventDefault();
+        deleteForm('form2', $(this), 'form-row');
+        return false;
+    });
+    $(document).on('click', '.add-form-row1', function (e) {
+        e.preventDefault();
+        cloneMore('.form-row1:last', 'form3', 'form-row1');
+        return false;
+    });
+    $(document).on('click', '.remove-form-row1', function (e) {
+        e.preventDefault();
+        deleteForm('form3', $(this), 'form-row1');
+        return false;
+    });
+    $(document).on('click', '.add-form-row2', function (e) {
+        e.preventDefault();
+        cloneMore('.form-row2:last', 'form4', 'form-row2');
+        return false;
+    });
+    $(document).on('click', '.remove-form-row2', function (e) {
+        e.preventDefault();
+        deleteForm('form4', $(this), 'form-row2');
+        return false;
+    });
+
+</script>
+
+
+
+<script>
+
+
+ function gpavald(input, id){
+      var idxm = id;   
+    
+var  newStryxy = idxm.replace(/cumulative_gpa/g, "Degree_level");
+
+x = document.getElementById(newStryxy).value 
+console.log(x+'b4')
+
+
+if(x == "doctor of philosophy"){
+
+console.log(x+'af')
+document.getElementById(idxm).value = "NO CGPA REQUIRED ";
+
+}
+else{
+
+        let value = input.value;
+
+        if(value<=4 && value>=2 ){
+        let letters = value.replace(/[^0-9\.]/gi, '');
+        input.value = letters;
+        }
+        else{
+
+        document.getElementById(idxm).value = " ";
+
+document.getElementById(idxm).value = " ";
+
+
+        }
+
+        
+}
+
+        
+    }
+
+
+
+function Filevalidationg(input, id){
+
+       var  edu = input.value;
+       var me = 'other'+id;
+       var idx = id;
+
+        var  newStry = idx.replace(/Degree_level/g, "cumulative_gpa");
+
+console.log('zzzzzzzzzzz')
+      
+  if (edu == "doctor of philosophy"){
+       
+       var me = 'other'+id;
+       var idx = id;
+
+       
+
+
+      
+        document.getElementById(newStry).value = "NO CGPA REQUIRED ";
+
+    
+    // code block
+
+  }
+   
+  if(edu == 'bachelor' || edu == 'masters'  ){
+         
+       var me = 'other'+id;
+       var idx = id;
+    document.getElementById(newStry).valueAsDate = null;
+
+    // code block
+    
+    // document.getElementById(newStry).value = " ";
+  
+ 
+  }
+
+}
+
+
+</script>
+
+
+
+<script> 
+
+
+function  datevalidx(input, name,id ){
+
+    let myStr = id;
+        let newStr = myStr.replace(/To/g, "From");
+
+var fi = document.getElementById(myStr).value; 
+
+var fix = document.getElementById(newStr).value; 
+
+var x = input.value;
+
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+var yyyz = today.getFullYear()-1;
+todayp =  yyyz + '-' +  mm + '-' + dd ;
+
+today =  yyyy + '-' +  mm + '-' + dd ;
+
+
+if((fix && x < fix ) ||  today < x || today < fix    ){
+    document.getElementById(myStr).valueAsDate = null;
+     alert(  "Invalid Date "); }
+
+
+     else{
+console.log('hello')
+console.log(today < x )
+
+ 
+}
+
+}
+
+
+
+
+
+
+
+</script> 
+
+
+
+
+<script>
+
+    function onLoadBody(input) {
+    document.getElementById('control_EMAIL').readOnly = true;
+  } 
+
+    function expdate(input, name,id ){
+
+        let myStr = id;
+
+        let newdate = myStr.replace(/Start/g, "End");
+
+
+    var sdate = new Date($("#"+id).val());
+
+    var edate = new Date($("#"+newdate).val());
+
+
+    
+    var timeDiff = Math.abs(edate.getTime() - sdate.getTime());
+    var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+    var currentdate = new Date(); 
+
+
+    console.log(sdate)
+    console.log(edate>currentdate)
+    console.log(diffDays+ ' Days')
+
+    if( diffDays < 70  ||  sdate > edate  ||  sdate> currentdate  || edate> currentdate ){
+
+           document.getElementById(myStr).valueAsDate = null;
+
+             new Noty({
+                text:'<b>  &#x1F610; ' + '</b> the date picked is in the future  OR  , please follow the  chronological order of the date, invalid date ',
+                type: 'error'
+            }).show();
+            
+          // alert(  "Minimum  Experiences has to be at-lest 3 month , can be left blank if you dont have any ");
+        
+        }
+
+    else{
+
+        let exp = myStr.replace(/Start/g, "YearofExp");
+           
+        if(diffDays ){
+            let  mon =  (diffDays/30).toFixed(0);
+
+           document.getElementById(exp).value =  Math.round(mon)+' '+'months' ;
+
+}
+    }
+
+    }
+
+  function expdate2(input, name,id ){
+
+        let myStr = id;
+
+        let newdate = myStr.replace(/End/g, "Start");
+
+
+    var edate = new Date($("#"+id).val());
+
+    var sdate = new Date($("#"+newdate).val());
+
+
+    
+    var timeDiff = Math.abs(edate.getTime() - sdate.getTime());
+    var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+    var currentdate = new Date(); 
+
+
+    console.log(sdate)
+    console.log(edate>currentdate)
+    console.log(diffDays+ ' Days')
+
+    if( diffDays < 70  ||  sdate > edate  ||  sdate> currentdate  || edate> currentdate ){
+
+        
+           document.getElementById(myStr).valueAsDate = null;
+             new Noty({
+                text:'<b>  &#x1F610; ' + '</b> Minimum  Experiences has to be at-lest 3 month ',
+                type: 'error'
+            }).show();
+        //   alert(  "Minimum  Experiences has to be at-lest 3 month  ");
+        
+        }
+
+    else{
+
+        let exp = myStr.replace(/End/g, "YearofExp");
+           
+        if(diffDays ){
+        let  mon =  (diffDays/30).toFixed(0);
+        document.getElementById(exp).value =  Math.round(mon)+' '+'months' ;
+
+}
+    }
+
+  }
+
+
+function elementvalid(){
+
+      var stdate1 = new Date($("#id_form6-starting_date").val());
+      var endate2 = new Date($("#id_form6-end_date").val());
+
+console.log(stdate1)
+console.log(endate2)
+      var stdate3 = new Date($("#id_form7-starting_dates").val());
+      var endate4 = new Date($("#id_form7-end_dates").val());
+
+
+      var stdate5 = new Date($("#id_form8-starting_datep").val());
+      var endate6 = new Date($("#id_form8-end_datesp").val());
+
+      var currentdate = new Date(); 
+
+        var year = currentdate.getFullYear();
+        var month = currentdate.getMonth();
+        var day = currentdate.getDate();
+        var c = new Date(year - 4, month, day);
+        var cd = new Date(year - 3, month, day);
+        var cdx = new Date(year - 1, month, day);
+
+
+
+      if((stdate1>c)|| (endate2 > c  ) || (stdate1> endate2 && (typeof endate2 !== 'undefined' && endate2 )  ) || (stdate1 > stdate3  && (typeof stdate3 !== 'undefined' && stdate3 )) || (endate2 > stdate3 && (typeof endate2 !== 'undefined' && endate2 ) ) || (stdate1>stdate5  && (typeof stdate5 !== 'undefined' && stdate5 ))|| (stdate1>stdate5 && (typeof stdate5 !== 'undefined' && stdate5 ))){
+     //  document.getElementById(myStr).valueAsDate = null;
+
+       document.getElementById("id_form6-starting_date").valueAsDate = null;
+     //   document.getElementById("id_form6-end_date").valueAsDate = null;
+      
+
+
+
+    new Noty({
+                text:'<b>  &#x1F610; ' + '</b> the date picked is in the future  OR  , please follow the  chronological order of the date, invalid date ',
+                type: 'error'
+            }).show();
+
+      }
+
+      
+
+    
+      if(stdate3>cd || endate4 > cd || (stdate3> endate4 && (typeof endate4 !== 'undefined' && endate4 ) ) || (stdate3 > stdate5  &&   (typeof stdate5 !== 'undefined' && stdate5 ) ) ||   (endate4 > stdate5  &&  (typeof endate4 !== 'undefined' && endate4 ))    ){
+
+           document.getElementById("id_form7-starting_dates").valueAsDate = null;
+        //document.getElementById("id_form7-end_dates").valueAsDate = null;
+
+            new Noty({
+                text:'</b>  &#x1F610; ' + '</b> the date picked is in the future OR,please follow the  chronological order of the date, invalid date ',
+                type: 'error'
+            }).show();
+
+      }
+
+      if(stdate5>cdx || endate6 > cdx || (stdate5 > endate6 && (typeof endate6 !== 'undefined' && endate6 )  ) ){
+
+        document.getElementById("id_form8-starting_datep").valueAsDate = null;
+ //       document.getElementById("id_form8-end_datesp").valueAsDate = null;
+
+            new Noty({
+                text:'</b>  &#x1F610; ' + '</b> the date picked is in the future OR,please follow the  chronological order of the date, invalid date ',
+                type: 'error'
+            }).show();
+
+      }
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+function elementvalid1(){
+
+      var stdate1 = new Date($("#id_form6-starting_date").val());
+      var endate2 = new Date($("#id_form6-end_date").val());
+
+console.log(stdate1)
+console.log(endate2)
+      var stdate3 = new Date($("#id_form7-starting_dates").val());
+      var endate4 = new Date($("#id_form7-end_dates").val());
+
+
+      var stdate5 = new Date($("#id_form8-starting_datep").val());
+      var endate6 = new Date($("#id_form8-end_datesp").val());
+
+      var currentdate = new Date(); 
+
+        var year = currentdate.getFullYear();
+        var month = currentdate.getMonth();
+        var day = currentdate.getDate();
+        var c = new Date(year - 4, month, day);
+        var cd = new Date(year - 3, month, day);
+        var cdx = new Date(year - 1, month, day);
+
+
+
+      if((stdate1>c)|| (endate2 > c  ) || (stdate1> endate2 && (typeof endate2 !== 'undefined' && endate2 )  ) || (stdate1 > stdate3  && (typeof stdate3 !== 'undefined' && stdate3 )) || (endate2 > stdate3 && (typeof endate2 !== 'undefined' && endate2 ) ) || (stdate1>stdate5  && (typeof stdate5 !== 'undefined' && stdate5 ))|| (stdate1>stdate5 && (typeof stdate5 !== 'undefined' && stdate5 ))){
+     //  document.getElementById(myStr).valueAsDate = null;
+
+     //  document.getElementById("id_form6-starting_date").valueAsDate = null;
+        document.getElementById("id_form6-end_date").valueAsDate = null;
+      
+
+
+
+    new Noty({
+                text:'<b>  &#x1F610; ' + '</b> the date picked is in the future  OR  , please follow the  chronological order of the date, invalid date ',
+                type: 'error'
+            }).show();
+
+      }
+
+      
+
+    
+      if(stdate3>cd || endate4 > cd || (stdate3> endate4 && (typeof endate4 !== 'undefined' && endate4 ) ) || (stdate3 > stdate5  &&   (typeof stdate5 !== 'undefined' && stdate5 ) ) ||   (endate4 > stdate5  &&  (typeof endate4 !== 'undefined' && endate4 ))    ){
+
+      //     document.getElementById("id_form7-starting_dates").valueAsDate = null;
+        document.getElementById("id_form7-end_dates").valueAsDate = null;
+
+            new Noty({
+                text:'</b>  &#x1F610; ' + '</b> the date picked is in the future OR,please follow the  chronological order of the date, invalid date ',
+                type: 'error'
+            }).show();
+
+      }
+
+      if(stdate5>cdx || endate6 > cdx || (stdate5 > endate6 && (typeof endate6 !== 'undefined' && endate6 )  ) ){
+
+      //  document.getElementById("id_form8-starting_datep").valueAsDate = null;
+        document.getElementById("id_form8-end_datesp").valueAsDate = null;
+
+            new Noty({
+                text:'</b>  &#x1F610; ' + '</b> the date picked is in the future OR,please follow the  chronological order of the date, invalid date ',
+                type: 'error'
+            }).show();
+
+      }
+
+
+
+
+
+
+
+
+
+}
+
+
+
+function birthdate(){
+
+var currentdate = new Date(); 
+
+var bdate = new Date($("#id_form1-DateofBirth").val());
+
+var year = currentdate.getFullYear();
+var month = currentdate.getMonth();
+var day = currentdate.getDate();
+var c = new Date(year - 4, month, day);
+
+var age = currentdate.getFullYear() - bdate.getFullYear();
+
+
+if(age < 18){
+
+
+         document.getElementById("id_form1-DateofBirth").valueAsDate = null;
+
+       new Noty({
+                text:'</b>  &#x1F610; ' + '</b> Must be at least 18 years old to register, invalid date ',
+                type: 'error'
+            }).show();
+}
+if(age>100){
+   document.getElementById("id_form1-DateofBirth").valueAsDate = null;
+
+       new Noty({
+                text:'</b>  &#x1F610; ' + '</b> invalid date ',
+                type: 'error'
+            }).show();
+
+}
+
+
+
+}
+  
+
+function simref(){
+
+
+    var name1 = document.getElementById('id_form1-Name').value; 
+    var name2 = document.getElementById('id_form1-Name_r').value; 
+    var name3 = document.getElementById('id_form1-Name_r1').value; 
+
+    var phone1 = document.getElementById('id_form1-PhoneNumber').value; 
+    var phone2 = document.getElementById('id_form1-PhoneNumber_r').value; 
+    var phone3 = document.getElementById('id_form1-PhoneNumber_r1').value; 
+
+    var email1 = document.getElementById('id_form1-EmailAdd').value; 
+    var email2 = document.getElementById('id_form1-EmailAdd_r').value; 
+    var email3 = document.getElementById('id_form1-EmailAdd_r1').value;
+
+    
+
+
+    if( ((typeof name2 !== 'undefined' && name2 ) &&  name1 == name2) || ((typeof name3 !== 'undefined' && name3 ) && name2 == name3) || ((typeof name1 !== 'undefined' && name1 ) && name1 == name3) ){
+
+           document.getElementById("id_form1-Name").value = null;
+         //  document.getElementById("id_form1-Name_r").value = null;
+         //  document.getElementById("id_form1-Name_r1").value = null;
+
+       new Noty({
+                text:'</b> &#x1F9D0; ' + '</b> Must be 3 different names of Reference , invalid Name  ',
+                type: 'error'
+            }).show();
+}
+
+
+
+
+
+   if(((typeof phone2 !== 'undefined' && phone2) && phone1 == phone2) || ((typeof phone3 !== 'undefined' && phone3 ) && phone2 == phone3) || ((typeof phone1 !== 'undefined' && phone1) && phone1 == phone3) ){
+
+           document.getElementById("id_form1-PhoneNumber").value = null;
+          // document.getElementById("id_form1-PhoneNumber_r").value = null;
+          // document.getElementById("id_form1-PhoneNumber_r1").value = null;
+
+       new Noty({
+                text:'</b> &#x1F9D0; ' + '</b> Must be 3 different Phone Numbers  of Reference , invalid Phone Number   ',
+                type: 'error'
+            }).show();
+}
+
+   if(( (typeof email2!== 'undefined' && email2) && email1 == email2) || ((typeof email3 !== 'undefined' && email3) && email2 == email3) || ((typeof email1!== 'undefined' && email1) && email1 == email3) ){
+
+           document.getElementById("id_form1-EmailAdd").value = null;
+         //  document.getElementById("id_form1-EmailAdd_r").value = null;
+          // document.getElementById("id_form1-EmailAdd_r1").value = null;
+
+       new Noty({
+                text:'</b>  &#x1F9D0; ' + '</b> Must be 3 different Emails of Reference , invalid Email  ',
+                type: 'error'
+            }).show();
+}
+ 
+
+
+
+
+
+
+
+    }
+
+
+
+function simref1(){
+
+
+    var name1 = document.getElementById('id_form1-Name').value; 
+    var name2 = document.getElementById('id_form1-Name_r').value; 
+    var name3 = document.getElementById('id_form1-Name_r1').value; 
+
+    var phone1 = document.getElementById('id_form1-PhoneNumber').value; 
+    var phone2 = document.getElementById('id_form1-PhoneNumber_r').value; 
+    var phone3 = document.getElementById('id_form1-PhoneNumber_r1').value; 
+
+    var email1 = document.getElementById('id_form1-EmailAdd').value; 
+    var email2 = document.getElementById('id_form1-EmailAdd_r').value; 
+    var email3 = document.getElementById('id_form1-EmailAdd_r1').value;
+
+    
+
+
+    if( ((typeof name2 !== 'undefined' && name2 ) &&  name1 == name2) || ((typeof name3 !== 'undefined' && name3 ) && name2 == name3) || ((typeof name1 !== 'undefined' && name1 ) && name1 == name3) ){
+
+        //   document.getElementById("id_form1-Name").value = null;
+           document.getElementById("id_form1-Name_r").value = null;
+        //   document.getElementById("id_form1-Name_r1").value = null;
+
+       new Noty({
+                text:'</b> &#x1F9D0; ' + '</b> Must be 3 different names of Reference , invalid Name  ',
+                type: 'error'
+            }).show();
+}
+
+
+
+
+
+   if(((typeof phone2 !== 'undefined' && phone2) && phone1 == phone2) || ((typeof phone3 !== 'undefined' && phone3 ) && phone2 == phone3) || ((typeof phone1 !== 'undefined' && phone1) && phone1 == phone3) ){
+
+         //  document.getElementById("id_form1-PhoneNumber").value = null;
+           document.getElementById("id_form1-PhoneNumber_r").value = null;
+         //  document.getElementById("id_form1-PhoneNumber_r1").value = null;
+
+       new Noty({
+                text:'</b> &#x1F9D0; ' + '</b> Must be 3 different Phone Numbers  of Reference , invalid Phone Number   ',
+                type: 'error'
+            }).show();
+}
+
+   if(( (typeof email2!== 'undefined' && email2) && email1 == email2) || ((typeof email3 !== 'undefined' && email3) && email2 == email3) || ((typeof email1!== 'undefined' && email1) && email1 == email3) ){
+
+         //  document.getElementById("id_form1-EmailAdd").value = null;
+           document.getElementById("id_form1-EmailAdd_r").value = null;
+         //  document.getElementById("id_form1-EmailAdd_r1").value = null;
+
+       new Noty({
+                text:'</b>  &#x1F9D0; ' + '</b> Must be 3 different Emails of Reference , invalid Email  ',
+                type: 'error'
+            }).show();
+}
+ 
+
+
+
+
+
+
+
+    }
+
+
+
+
+function simref2(){
+
+
+    var name1 = document.getElementById('id_form1-Name').value; 
+    var name2 = document.getElementById('id_form1-Name_r').value; 
+    var name3 = document.getElementById('id_form1-Name_r1').value; 
+
+    var phone1 = document.getElementById('id_form1-PhoneNumber').value; 
+    var phone2 = document.getElementById('id_form1-PhoneNumber_r').value; 
+    var phone3 = document.getElementById('id_form1-PhoneNumber_r1').value; 
+
+    var email1 = document.getElementById('id_form1-EmailAdd').value; 
+    var email2 = document.getElementById('id_form1-EmailAdd_r').value; 
+    var email3 = document.getElementById('id_form1-EmailAdd_r1').value;
+
+    
+
+
+    if( ((typeof name2 !== 'undefined' && name2 ) &&  name1 == name2) || ((typeof name3 !== 'undefined' && name3 ) && name2 == name3) || ((typeof name1 !== 'undefined' && name1 ) && name1 == name3) ){
+
+        //   document.getElementById("id_form1-Name").value = null;
+//document.getElementById("id_form1-Name_r").value = null;
+           document.getElementById("id_form1-Name_r1").value = null;
+
+       new Noty({
+                text:'</b> &#x1F9D0; ' + '</b> Must be 3 different names of Reference , invalid Name  ',
+                type: 'error'
+            }).show();
+}
+
+
+
+
+
+   if(((typeof phone2 !== 'undefined' && phone2) && phone1 == phone2) || ((typeof phone3 !== 'undefined' && phone3 ) && phone2 == phone3) || ((typeof phone1 !== 'undefined' && phone1) && phone1 == phone3) ){
+
+        //   document.getElementById("id_form1-PhoneNumber").value = null;
+        //   document.getElementById("id_form1-PhoneNumber_r").value = null;
+           document.getElementById("id_form1-PhoneNumber_r1").value = null;
+
+       new Noty({
+                text:'</b> &#x1F9D0; ' + '</b> Must be 3 different Phone Numbers  of Reference , invalid Phone Number   ',
+                type: 'error'
+            }).show();
+}
+
+   if(( (typeof email2!== 'undefined' && email2) && email1 == email2) || ((typeof email3 !== 'undefined' && email3) && email2 == email3) || ((typeof email1!== 'undefined' && email1) && email1 == email3) ){
+
+        //   document.getElementById("id_form1-EmailAdd").value = null;
+         //  document.getElementById("id_form1-EmailAdd_r").value = null;
+           document.getElementById("id_form1-EmailAdd_r1").value = null;
+
+       new Noty({
+                text:'</b>  &#x1F9D0; ' + '</b> Must be 3 different Emails of Reference , invalid Email  ',
+                type: 'error'
+            }).show();
+}
+ 
+
+
+
+
+
+
+
+    }
+
+
+
+ function ValidateEmail(input){
+ 
+  var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+ 
+  //
+ 
+   let  x =  re.test(String(input.value).toLowerCase());
+
+   idx = input.id;
+
+
+    if(x == false ){
+document.getElementById( idx ).value = null;
+
+   new Noty({
+                text:'</b> &#x1F9D0; ' + '</b> Please Insert a Valid Email , invalid Email  ',
+                type: 'error'
+            }).show();
+
+    }
+ 
+}
+
+
+function phonenumber(input)
+{
+     let value = input.value;
+       let letters = value.replace(/[^0-9]+/gi, "");
+       input.value = letters;
+    
+  var phonenox = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+  let idx = input.id;
+  var phoneno = /^\(?([0]{1})\)?([9]{1})?([0-9]{8})$/;
+  
+  
+  if(value.match(phoneno)  && input.value.length == 10){
+     //PHONE NUMBER VALIDATON 
+
+   }
+   else{
+
+document.getElementById(idx).value = null;
+
+   new Noty({
+                text:'</b> &#x1F9D0; ' + '</b> Please Insert a Valid phone Number  , e.g 0913090252 ',
+                type: 'error'
+            }).show();
+
+   }
+
+
+
+
+  }
+</script>
+
+
+
+<script>
+
+function  datevalid(input, name,id ){
+         let myStr = id;
+        let newStr = myStr.replace(/From/g, "To");
+
+let fi = document.getElementById(myStr).value; 
+
+let fix = document.getElementById(newStr).value; 
+
+
+let x = input.value;
+
+
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+
+var yyyz = today.getFullYear()-1;
+
+today =  yyyy + '-' +  mm + '-' + dd ;
+todayp =  yyyz + '-' +  mm + '-' + dd ;
+
+
+
+
+ //var today = new Date();
+ // if (startDate.getTime() > today.getTime())
+
+if((fix ) && x > fix  ||  todayp <= x || today < fix   ){
+    console.log(fix)
+    document.getElementById(myStr).valueAsDate = null;
+     alert(  "Invalid Date "); }
+
+else{
+
+
+ 
+}
+
+
+
+
+
+
+}
+
+
+
+
+</script>
+
+
+
+
+
+<script> 
+    Filevalidation = () => { 
+        const fi = document.getElementById('id_form1-docs'); 
+        // Check if any file is selected. 
+        if (fi.files.length > 0) { 
+            for (let i = 0; i <= fi.files.length - 1; i++) { 
+  
+                const fsize = fi.files.item(i).size; 
+                const file = Math.round((fsize / 1024)); 
+                // The size of the file. 
+                if (file >= 5096) { 
+
+                    document.getElementById("id_form1-docs").value = null;
+                      document.getElementById('size').innerHTML = '<b>'
+                    + file + '</b> KB'; 
+
+                      new Noty({
+                text:'<b>' + file + '</b> KB' + '</b> File too Big, please select a file less than 5mb ',
+                type: 'error'
+            }).show();
+
+            
+                    
+                    
+                } else if (file < 8) { 
+                    alert( 
+                      "File too small, please select a file greater "); 
+                } else { 
+                    document.getElementById('size').innerHTML = '<b>'
+                    + file + '</b> KB'; 
+                    
+                } 
+            } 
+        } 
+    } 
+</script> 
+
+<script>
+    function sumx(input){ 
+
+if (input = ''){
+alert("Enter a Valid data ");
+        return false;
+
+}else{
+
+
+ alert("Enter a Valid data ");
+        return false;
+     new Noty({
+                text:'<b>' + file + '</b> KB' + '</b> File too Big, please select a file less than 5mb ',
+                type: 'error'
+            }).show();
+
+    }
+
+}
+</script>
+
+
+<script> 
+    Filevalidationx = () => { 
+        const fi = document.getElementById('id_form1-cv'); 
+        const fix = document.getElementById('id_form1-docs'); 
+
+        if (fi.files.length > 0) { 
+            for (let i = 0; i <= fi.files.length - 1; i++) { 
+  
+                const fsize = fi.files.item(i).size; 
+                const file = Math.round((fsize / 1024)); 
+                // The size of the file. 
+                if (file >= 5096) { 
+
+                    document.getElementById("id_form1-cv").value = null;
+
+                     document.getElementById('sizex').innerHTML = '<b>'
+                    + file + '</b> KB' + '</b> File too Big, please select a file less than 5mb '; 
+
+                                           new Noty({
+                text:'<b>' + file + '</b> KB' + '</b> File too Big, please select a file less than 5mb ',
+                type: 'error'
+            }).show();
+
+                    
+                } else if (file < 8) { 
+                    alert( 
+                      "File too small, please select a file greater "); 
+                } else { 
+
+                                  compare(fi, fix)
+                   .then(res => console.log('are same ? ', res));
+                    document.getElementById('sizex').innerHTML = '<b>'
+                    + file + '</b> KB'; 
+                } 
+            } 
+        } 
+
+
+
+
+   
+
+    } 
+
+
+
+function compare(file1, file2) {
+  // they don't have the same size, they are different
+  if(file1.size !== file2.size)
+    return Promise.resolve(false);
+  // load both as ArrayBuffers
+  return Promise.all([
+    readAsArrayBuffer(file1),
+    readAsArrayBuffer(file2)
+  ]).then(([buf1, buf2]) => {
+    // create views over our ArrayBuffers
+    const arr1 = new Uint8Array(buf1);
+    const arr2 = new Uint8Array(buf2);
+    return !arr1.some((val, i) =>
+      arr2[i] !== val // search for diffs
+    );
+  });
+}
+</script> 
+
+
+
+
+
+<script>
+
+     inp2.onchange = e => {
+  const file1 = id_form1-cv.files[0];
+  const file2 = id_form1-docs.files[0];
+  if(!file1 || !file2) return;
+  compare(file1, file2)
+    .then(res => console.log('are same ? ', res));
+};
+
+
+function compare(file1, file2) {
+  // they don't have the same size, they are different
+  if(file1.size !== file2.size)
+    return Promise.resolve(false);
+  // load both as ArrayBuffers
+  return Promise.all([
+    readAsArrayBuffer(file1),
+    readAsArrayBuffer(file2)
+  ]).then(([buf1, buf2]) => {
+    // create views over our ArrayBuffers
+    const arr1 = new Uint8Array(buf1);
+    const arr2 = new Uint8Array(buf2);
+    return !arr1.some((val, i) =>
+      arr2[i] !== val // search for diffs
+    );
+  });
+}
+
+function readAsArrayBuffer(file) {
+  // we could also have used a FileReader,
+  // but Response is conveniently already Promise based
+  return new Response(file).arrayBuffer();
+}
+</script>
+
+<script>
+    $(document).ready(function() {
+
+    {% if  perform.errors %}
+
+   $('#noty_error').on('click', function() {
+            new Noty({
+                text: 'Change a few things up and try submitting again.',
+                type: 'error'
+            }).show();
+        });
+
+
+
+      {% endif %}
+
+    })
+</script>
+
+<script>
+    function validateForm() {
+        var x = document.forms["perform"]["form1-Fname"].value;
+        if ((x == "" || x < 65 || x > 90) && (x < 97 || x > 123) && x != 32 && x != 8 && x != 9) {
+            alert("Name must be filled out");
+            return false;
+        }
+    }
+</script>
+
+<script language="javascript">
+    function isNumberKey(evt) {
+        var charCode = (evt.which) ? evt.which : event.keyCode
+        if (charCode > 31 && (charCode < 48 || charCode > 57))
+
+            return false;
+
+    }
+    function ValidateAlpha(evt) {
+        var keyCode = (evt.which) ? evt.which : evt.keyCode
+        if ((keyCode < 65 || keyCode > 90) && (keyCode < 97 || keyCode > 123) && keyCode != 32 && keyCode != 8 && keyCode != 9) {
+
+            return false;
+        }
+    }
+</script>
+
+<script>
+    function process(input) {
+        let value = input.value;
+        let letters = value.replace(/[^a-z]/gi, "");
+        input.value = letters;
+    }
+
+    function processx(input) {
+        let value = input.value;
+        let letters = value.replace(/[^0-9]+/gi, "");
+        input.value = letters;
+    }
+
+    function processs(input) {
+        let value = input.value;
+        let letters = value.replace(/[^a-zA-Z\ ]/gi, '')
+        input.value = letters;
+    }
+
+
+ function coverletter(input){
+word = input.value.length;
+idx = input.id
+var word = $('#'+idx).val().split(" ").length;
+if(word < 150 ){
+ $('#submit-button').attr('disabled', 'disabled');
+}else{
+
+    $('#submit-button').removeAttr('disabled');
+}
+
+ }
+
+   
+</script>

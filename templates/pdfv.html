@@ -1,0 +1,1758 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from demo.interface.club/limitless/demo/Template/layout_1/LTR/default/full/components_tabs.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Apr 2020 07:57:29 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<!-- /Added by HTTrack -->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,">
+    <title>TECHIN&#178 JOB PORTAL</title>
+
+    <!-- Global stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+    <link href="{% static 'global_assets/css/icons/icomoon/styles.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/bootstrap_limitless.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/layout.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/components.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/colors.min.css' %}" rel="stylesheet" type="text/css">
+    <!-- /global stylesheets -->
+
+    <!-- Core JS files -->
+    <script src="{% static 'global_assets/js/main/jquery.min.js' %}"></script>
+    <script src="{% static 'global_assets/js/main/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'global_assets/js/plugins/loaders/blockui.min.js' %}"></script>
+    <script src="{% static 'global_assets/js/plugins/ui/slinky.min.js' %}"></script>
+    <!-- /core JS files -->
+
+    <script src="{% static 'global_assets/js/plugins/tables/datatables/datatables.min.js' %}"></script>
+    <script src="{% static 'global_assets/js/plugins/forms/selects/select2.min.js' %}"></script>
+    <script src="{% static 'global_assets/js/demo_pages/datatables_basic.js' %}"></script>
+
+    <!-- Theme JS files -->
+    <script src="{% static 'global_assets/js/plugins/visualization/d3/d3.min.js ' %}"></script>
+    <script src="{% static 'global_assets/js/plugins/visualization/d3/d3_tooltip.js ' %}"></script>
+    <script src="{% static 'global_assets/js/plugins/forms/styling/switchery.min.js ' %}"></script>
+    <script src="{% static 'global_assets/js/plugins/ui/moment/moment.min.js ' %}"></script>
+    <script src="{% static 'global_assets/js/plugins/pickers/daterangepicker.js ' %}"></script>
+
+    <script src="{% static 'assets/js/app.js' %}"></script>
+    <script src="{% static 'global_assets/js/demo_pages/table_responsive.js' %}"></script>
+    <!-- <script src="{% static 'global_assets/js/demo_pages/dashboard.js ' %}"></script>
+    <script src="{% static 'global_assets/js/demo_charts/pages/dashboard/light/streamgraph.js ' %}"></script>
+    <script src="{% static 'global_assets/js/demo_charts/pages/dashboard/light/sparklines.js ' %}"></script>
+    <script src="{% static 'global_assets/js/demo_charts/pages/dashboard/light/lines.js ' %}"></script>
+    <script src="{% static 'global_assets/js/demo_charts/pages/dashboard/light/areas.js ' %}"></script>
+    <script src="{% static 'global_assets/js/demo_charts/pages/dashboard/light/donuts.js ' %}"></script>
+    <script src="{% static 'global_assets/js/demo_charts/pages/dashboard/light/bars.js ' %}"></script>
+    <script src="{% static 'global_assets/js/demo_charts/pages/dashboard/light/progress.js ' %}"></script>
+    <script src="{% static 'global_assets/js/demo_charts/pages/dashboard/light/heatmaps.js ' %}"></script>
+    <script src="{% static 'global_assets/js/demo_charts/pages/dashboard/light/pies.js ' %}"></script>
+    <script src="{% static 'global_assets/js/demo_charts/pages/dashboard/light/bullets.js ' %}"></script> -->
+    <!-- /theme JS files -->
+    <script src="{% static 'global_assets/js/demo_pages/form_inputs.js' %}"></script>
+    <script src="{% static 'global_assets/js/plugins/forms/styling/uniform.min.js' %}"></script>
+
+
+
+</head>
+
+
+<body>
+
+    <!-- Main navbar -->
+    {% include 'header.html' %}
+    <!-- /main navbar -->
+
+
+    <!-- /page header -->
+
+
+    <!-- Page content -->
+    <div class="page-content pt-0">
+
+        <!-- Main content -->
+        <div class="content-wrapper">
+
+            <!-- Content area -->
+            <div class="content">
+
+                <!-- Main charts -->
+
+                <!-- /main charts -->
+
+
+                <!-- Dashboard content -->
+                <div class="content">
+
+                    <!-- Widgets list -->
+                    <div class="row">
+                        <div class="col-md-6 col-xl-3">
+
+                            
+<!-- {% if messages %}
+								<div class="alert alert-danger alert-dismissible">
+                                    <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+                                     {% for message in messages %}
+									<span class="font-weight-semibold">Oh snap!</span> {% if message.tags %}  {% endif %}>{{ message }}<a href="#" class="alert-link">try submitting again</a>.
+ {% endfor %}
+
+                                </div>
+                                
+                                {% endif %} -->
+
+                            <!-- User details (with sample pattern) -->
+                            <div class="card">
+                                <div class="card-body bg-blue text-center card-img-top" style="background-image: url({% static 'global_assets/images/backgrounds/panel_bg.png' %}); background-size: contain;">
+                                    <div class="card-img-actions d-inline-block mb-3">
+
+
+                                        {% if profilex.profile_pic %}
+
+
+
+                                        <img class="img-fluid rounded-circle" src="{{profilex.profile_pic.url}}" style="height: 170px; width:170px;" width="170" height="170" alt=""> {% else %}
+                                        <img class="img-fluid rounded-circle" src="{% static 'global_assets/images/demo/users/face11.jpg' %}" style="height: 170px; width:170px;" width="170" height="170" alt=""> {% endif %}
+                                        <div class="card-img-actions-overlay card-img rounded-circle">
+                                            <!-- <a href="#"
+                                                class="btn btn-outline bg-white text-white border-white border-2 btn-icon rounded-round"> -->
+                                            <!-- <i class="icon-plus3"></i> -->
+                                            <!-- </a> -->
+
+                                        </div>
+                                    </div>
+
+
+
+
+                                    <h6 class="font-weight-semibold mb-0">{{profile.Fname}} {{profile.Mname}} </h6>
+                                    <!-- <span class="d-block opacity-75">Head of UX</span> -->
+                                    <div class="d-sm-flex flex-sm-wrap mb-3 text-left">
+                                        <div class="font-weight-semibold">Profile Picture:</div>
+
+                                        <form method="post" action="{% url 'upload_url' %}"  enctype="multipart/form-data">
+                                            {% csrf_token %}
+
+                                            <div class="row">
+
+                                                <div class="col-lg-9">
+                                                    <input type="file" name="myfile" accept="image/x-png,image/gif,image/jpeg" required class="form-control-uniform" data-fouc>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <button type="submit" class="btn btn-dark">upload</button>
+
+                                                </div>
+                                            </div>
+                                            <!-- <div class="col-lg-9">
+                                            <input type="file" class="btn btn-dark" name="myfile">
+                                        </div>
+                                    
+                                          
+
+                                    
+
+                                        <div class="col-lg-3">
+<button type="submit" class="btn btn-dark">upload</button>
+                                        </div> -->
+                                            <!-- <div class="col-lg-3">
+
+                                            <button type="submit" class="btn btn-dark">upload</button>
+
+                                        </div> -->
+                                        </form>
+                                    </div>
+
+
+                                    <!-- <ul class="list-inline list-inline-condensed mt-3 mb-0">
+                                        <li class="list-inline-item">
+                                            <a href="#" class="btn btn-outline bg-white btn-icon text-white border-white border-2 rounded-round">
+                                                <i class="icon-google-drive"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="#" class="btn btn-outline bg-white btn-icon text-white border-white border-2 rounded-round">
+                                                <i class="icon-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="#" class="btn btn-outline bg-white btn-icon text-white border-white border-2 rounded-round">
+                                                <i class="icon-github"></i>
+                                            </a>
+                                        </li>
+                                    </ul> -->
+                                </div>
+
+                                <div class="card-body border-top-0">
+                                    <div class="d-sm-flex flex-sm-wrap mb-3">
+                                        <div class="font-weight-semibold">Full name:</div>
+                                        <div class="ml-sm-auto mt-2 mt-sm-0">{{profile.Fname}} {{profile.Mname}}</div>
+                                    </div>
+
+                                    <div class="d-sm-flex flex-sm-wrap mb-3">
+                                        <div class="font-weight-semibold">Phone number:</div>
+                                        <div class="ml-sm-auto mt-2 mt-sm-0">{{profile.PhoneNo}}</div>
+                                    </div>
+
+
+
+                                    <div class="d-sm-flex flex-sm-wrap">
+                                        <div class="font-weight-semibold">Personal Email:</div>
+                                        <div class="ml-sm-auto mt-2 mt-sm-0"><a href="#">{{profile.Email}}</a></div>
+                                    </div>
+                                    <br>
+                                    <div class="d-sm-flex flex-sm-wrap mb-3">
+                                        <div class="font-weight-semibold">City:</div>
+                                        <div class="ml-sm-auto mt-2 mt-sm-0">{{profile.City}}</div>
+                                    </div>
+
+                                    <div class="d-sm-flex flex-sm-wrap mb-3">
+                                        <div class="font-weight-semibold">Nationality:</div>
+                                        <div class="ml-sm-auto mt-2 mt-sm-0">{{profile.Nationality}}</div>
+                                    </div>
+
+                                    <div class="d-sm-flex flex-sm-wrap">
+                                        <div class="font-weight-semibold">Gender:</div>
+                                        <div class="ml-sm-auto mt-2 mt-sm-0"><a href="#">{{profile.Gender}}</a></div>
+                                    </div>
+                                    <br>
+                                    <div class="d-sm-flex flex-sm-wrap mb-3">
+                                        <div class="font-weight-semibold">Date of Birth:</div>
+                                        <div class="ml-sm-auto mt-2 mt-sm-0">{{profile.City}}</div>
+                                    </div>
+
+                                    <div class="d-sm-flex flex-sm-wrap mb-3">
+                                        <div class="font-weight-semibold">Place of Birth:</div>
+                                        <div class="ml-sm-auto mt-2 mt-sm-0">{{profile.Nationality}}</div>
+                                    </div>
+
+                                    <div class="d-sm-flex flex-sm-wrap">
+                                        <div class="font-weight-semibold">Disability:</div>
+                                        <div class="ml-sm-auto mt-2 mt-sm-0"><a href="#">{{profile.Gender}}</a></div>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+                            <!-- /user details (with sample pattern) -->
+
+                        </div>
+
+
+
+                        <!-- <div class="col-md-6 col-xl-3">
+                            <div class="card">
+                                <div class="card-header bg-dark text-white d-flex justify-content-between">
+                                    <span class="font-size-sm text-uppercase font-weight-semibold">EXAM STATUS</span>
+                                    <span class="font-size-sm text-uppercase font-weight-semibold">NOT YET</span>
+                                </div>
+                                <div class="card-body">
+                                    <h1 class="card-title text-center" style="font-size: 5vw;">0 / 0</h1>
+                                </div>
+
+                                <div class="card-footer bg-transparent d-flex justify-content-between border-top-0 pt-0" style="margin-left: 5vw;">
+                                    <a href="{% url 'quiz_index' %}" class="btn bg-danger-400">Go to Exam Page <i
+                                            class="icon-arrow-right14 ml-2"></i></a>
+                                </div>
+                            </div>
+                        </div> -->
+
+
+                        <div class="col-lg-9">
+                            <!-- lowlevel education table -->
+                        
+                            <!-- /lowlevel education table -->
+
+                            <!-- high level education table -->
+                            <div class="card">
+                                <div class="card-header header-elements-inline">
+                                    <h3 class="card-title">Higher Educational Details:</h3>
+                                    <div class="header-elements">
+                                        <div class="list-icons">
+                                            <a class="list-icons-item" data-action="collapse"></a>
+                                            <a class="list-icons-item" data-action="reload"></a>
+                                            <!-- <a class="list-icons-item" data-action="remove"></a> -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- <div class="card-body">
+                                    Low-level educational details (Elementary, Secondary and Preparatory)
+                                </div> -->
+
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead style="font-weight:bold" ;>
+                                            <tr>
+                                                <th>
+                                                    <h6 style="font-weight:bold" ;>University/Institution</h6>
+                                                </th>
+                                                <th>
+                                                    <h6 style="font-weight:bold" ;>Qualification</h6>
+                                                </th>
+                                                <th>
+                                                    <h6 style="font-weight:bold" ;>Degree Level</h6>
+                                                </th>
+                                                <th>
+                                                    <h6 style="font-weight:bold" ;>CGPA</h6>
+                                                </th>
+                                                <th>
+                                                    <h6 style="font-weight:bold" ;>From</h6>
+                                                </th>
+                                                <th>
+                                                    <h6 style="font-weight:bold" ;>To</h6>
+                                                </th>
+                                                
+                                                {% if statusx  %}
+                                             
+
+                                                <th>
+                                                    <button type="button" data-toggle="modal" data-target="#modal_forx" class="btn btn-success">+Add</button>
+                                                </th>
+                                                {% else %}
+                                               
+                                                    <th>
+                                                        <button type="button" data-toggle="modal" data-target="#modal_form_edu" class="btn btn-success">+Add</button>
+                                                    </th>
+                                                {% endif %}
+                                                    
+                                              
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            
+                                            {% for  single  in edu  %}
+                                                <tr>
+                                                    <td>{{single.University}}</td>
+                                                    <td>{{single.FieldofStudy}}</td>
+                                                    <td>{{single.Degree_level}}</td>
+                                                    <td>{{single.cumulative_gpa}}</td>
+                                                    <td>{{single.From}}</td>
+                                                    <td>{{single.To}}</td>
+                                                    <!-- <td>
+                                                        <div class="list-icons">
+                                                            <a href="#" class="list-icons-item text-primary-600"><i class="icon-pencil7"></i></a>
+                                                            <a href="#" class="list-icons-item text-danger-600"><i class="icon-trash"></i></a>
+                                                
+                                                        </div>
+                                                    </td> -->
+                                                </tr>
+                                            {% endfor %}
+                                                
+                                         
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- /high level education table -->
+
+                            <!-- language skill table -->
+                            <div class="card">
+                                <div class="card-header header-elements-inline">
+                                    <h3 class="card-title">Language Skill Details:</h3>
+                                    <div class="header-elements">
+                                        <div class="list-icons">
+                                            <a class="list-icons-item" data-action="collapse"></a>
+                                            <a class="list-icons-item" data-action="reload"></a>
+                                            <!-- <a class="list-icons-item" data-action="remove"></a> -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- <div class="card-body">
+                                    Low-level educational details (Elementary, Secondary and Preparatory)
+                                </div> -->
+
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead style="font-weight:bold" ;>
+                                            <tr>
+                                                <th>
+                                                    <h6 style="font-weight:bold" ;>Language</h6>
+                                                </th>
+                                                <th>
+                                                    <h6 style="font-weight:bold" ;>Listening</h6>
+                                                </th>
+                                                <th>
+                                                    <h6 style="font-weight:bold" ;>Writing</h6>
+                                                </th>
+                                                <th>
+                                                    <h6 style="font-weight:bold" ;>Speaking</h6>
+                                                </th>
+                                                <th>
+                                                    <h6 style="font-weight:bold" ;>Reading</h6>
+                                                </th>
+
+                                                {% if statusx  %}
+
+
+
+
+                <th>
+                    <button type="button" data-toggle="modal" data-target="#modal_forx" class="btn btn-success">+Add</button>
+                </th>
+                                              
+                                                {% else %}
+                                                <th>
+                                                    <button type="button" data-toggle="modal" data-target="#modal_form_lan " class="btn btn-success">+Add</button>
+                                                </th>
+                                                
+                                                {% endif %}
+                                                
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            
+                                            {% for single_lan  in  lan  %}
+                                                
+                                            
+                                                
+                                            <tr>
+                                                <td>{{single_lan.Language}}</td>
+                                                <td>{{single_lan.Writing}}</td>
+                                                <td>{{single_lan.Listening}}</td>
+                                                <td>{{single_lan.Speaking}}</td>
+                                                <td>{{single_lan.Reading}}</td>
+
+                                                <td>
+                                                    <div class="list-icons">
+
+                                                            <button type="button" data-toggle="modal" data-target="#{{single_lan.id}}lan" class="btn btn-success">+Add</button>
+                                                        <a type="button"  data-toggle="modal" data-target="#{{single_lan.id}}lan" class="list-icons-item text-primary-600"><i class="icon-pencil7"></i></a>
+                                                        <a href="#" class="list-icons-item text-danger-600"><i class="icon-trash"></i></a>
+
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                                      <div id="{{single_lan.id}}lan" class="modal fade" tabindex="-1">
+                                                                            <div class="modal-dialog">
+                                                                                <div class="modal-content">
+                                                                                    <div class="modal-header">
+                                                                                        <h5 class="modal-title"><i class="fab fa-language"></i>language form</h5>
+                                                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                                    </div>
+                                                                                    
+                                                                                    <form method="POST" action="{% url 'lan_url' %}">
+                                                                                        {% csrf_token %}
+                                                                                        <div class="modal-body">
+                                                                                            {{ lanset.management_form }}
+                                                                                            {% for form in lanset %}
+                                                                                            <div class="form-group">
+                                                                                                <div class="row">
+                                                                                                    <div class="col-sm-12">
+                                                                                                    <label>Language:</label>
+                                                                                                    {{form.Language}}
+                                                                                                    </div>
+                                                                        
+                                                                                                    <div class="col-sm-12">
+                                                                                                    <label>Listening:</label>
+                                                                                                    {{form.Listening}}
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                        
+                                                                                            <div class="form-group">
+                                                                                                <div class="row">
+                                                                                                    <div class="col-sm-12">
+                                                                                                        <label>Writing:</label>
+                                                                                                      
+                                                                                                        {{single_lan.Writing}}
+                                                                                                    </div>
+                                                                        
+                                                                                                    <div class="col-sm-12">
+                                                                                                    <label>Speaking:</label>
+                                                                                                    {{form.Speaking}}
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                        <div class="form-group">
+                                                                            <div class="row">
+                                                                                <div class="col-sm-12">
+                                                                                    <label>Reading:</label>
+                                                                                    {{form.Reading}}
+                                                                                </div>
+                                                                        
+                                                                                
+                                                                            </div>
+                                                                        </div>
+                                                                        {%endfor%}
+                                                                                        </div>
+                                                                        
+                                                                                        <div class="modal-footer">
+                                                                                            <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                                                                                            <button type="submit" name="lan" class="btn bg-primary">Submit form</button>
+                                                                                        </div>
+                                                                                    </form>
+                                                                                 
+                                                                                </div>
+                                                                            </div>
+                                    </div>
+
+{% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- /language skill table -->
+
+                            <!-- work exp table -->
+                            <div class="card">
+                                <div class="card-header header-elements-inline">
+                                    <h3 class="card-title">Work Experience Details:</h3>
+                                    <div class="header-elements">
+                                        <div class="list-icons">
+                                            <a class="list-icons-item" data-action="collapse"></a>
+                                            <a class="list-icons-item" data-action="reload"></a>
+                                            <!-- <a class="list-icons-item" data-action="remove"></a> -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- <div class="card-body">
+                                    Low-level educational details (Elementary, Secondary and Preparatory)
+                                </div> -->
+
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead style="font-weight:bold" ;>
+                                            <tr>
+                                                <th>
+                                                    <h6 style="font-weight:bold" ;>Employer Organization/Company</h6>
+                                                </th>
+                                                <th>
+                                                    <h6 style="font-weight:bold" ;>Job Position</h6>
+                                                </th>
+                                                <th>
+                                                    <h6 style="font-weight:bold" ;>Years of Experience</h6>
+                                                </th>
+                                                <th>
+                                                    <h6 style="font-weight:bold" ;>Start date</h6>
+                                                </th>
+                                                <th>
+                                                    <h6 style="font-weight:bold" ;>End date</h6>
+                                                </th>
+{% if statusx  %}
+
+
+<th>
+    <button type="button" data-toggle="modal" data-target="#modal_forx" class="btn btn-success">+Add</button>
+</th>
+{% else %}
+
+<th>
+    <button type="button" data-toggle="modal" data-target="#modal_form_vertical" class="btn btn-success">+Add</button>
+</th>
+{% endif %}
+                                                
+                                               
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            
+                                            {% if exp  %}
+                                                
+                                           
+                                                
+                                            {% for single_exp  in exp  %}
+                                                
+                                          
+                                                
+                                            <tr>
+                                                <td>{{single_exp.Company}}</td>
+                                                <td>{{single_exp.Position}}</td>
+                                                <td>{{single_exp.YearofExp}}</td>
+                                                <td>{{single_exp.Start}}</td>
+                                                <td>{{single_exp.End}}</td>
+
+                                                <td>
+                                                    <div class="list-icons">
+                                                        <a href="#" class="list-icons-item text-primary-600"><i class="icon-pencil7"></i></a>
+                                                        <a href="#" class="list-icons-item text-danger-600"><i class="icon-trash"></i></a>
+
+                                                    </div>
+                                                </td>
+                                            </tr>
+{% endfor %}
+{% endif %}                                        </tbody>
+                                    </table>
+
+
+                                    <div id="modal_form_verticalx" class="modal fade" tabindex="-1">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">Work Experiance form</h5>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+                                    
+                                                <form method="POST" action="{% url 'exp_url' %}">
+                                                    {% csrf_token %}
+                                                    <div class="modal-body">
+                                                        {{ expset.management_form }}
+                                                        {% for form in expset %}
+                                                        <div class="form-group">
+                                                            <div class="row">
+                                                                <div class="col-sm-6">
+                                                                    <label>Organinzation/Company</label>
+                                                                    {{form.Company}}
+                                                                </div>
+                                    
+                                                                <div class="col-sm-6">
+                                                                    <label>Position</label>
+                                                                    {{form.Position}}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                    
+                                                        <div class="form-group">
+                                                            <div class="row">
+                                                                <div class="col-sm-6">
+                                                                    <label>Start Date:</label>
+                                                                    {{form.Start}}
+                                                                </div>
+                                    
+                                                                <div class="col-sm-6">
+                                                                    <label>End Date:</label>
+                                                                    {{form.End}}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                    
+                                    
+                                                    </div>
+                                                    {%endfor%}
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                                                        <button type="submit" name="exp" class="btn bg-primary">Submit form</button>
+                                                    </div>
+                                                </form>
+                                    
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="modal_form_vertical" class="modal fade" tabindex="-1">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">Work Experiance form</h5>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+                                          
+                                                <form method="POST" action="{% url 'exp_url' %}" >
+                                                    {% csrf_token %}
+                                                    <div class="modal-body">
+                                                        {{ expset.management_form }}
+                                                        {% for form in expset %}
+                                                        <div class="form-group">
+                                                            <div class="row">
+                                                                <div class="col-sm-6">
+                                                                    <label>Organinzation/Company</label>
+                                                                    {{form.Company}}
+                                                                </div>
+                                    
+                                                                <div class="col-sm-6">
+                                                                    <label>Position</label>
+                                                                    {{form.Position}}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                          
+                                                        <div class="form-group">
+                                                            <div class="row">
+                                                                <div class="col-sm-4">
+                                                                <label>Start Date:</label>
+                                                                {{form.Start}}
+                                                                </div>
+                                    
+                                                                <div class="col-sm-4">
+                                                                <label>Experience:</label>
+                                                                {{form.YearofExp}}
+                                                                </div>
+
+                                                                  <div class="col-sm-4">
+                                                                <label>End Date:</label>
+                                                                {{form.End}}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                    
+                                                        
+                                                    </div>
+                                    {%endfor%}
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                                                        <button type="submit" name="exp" class="btn bg-primary">Submit form</button>
+                                                    </div>
+                                                </form>
+                                             
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="modal_form_edu" class="modal fade" tabindex="-1">
+                                                                            <div class="modal-dialog">
+                                                                                <div class="modal-content">
+                                                                                    <div class="modal-header">
+                                                                                        <h5 class="modal-title">Education  form</h5>
+                                                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                                    </div>
+                                                                              
+                                                                                    <form method="POST" action="{% url 'edu_url' %}">
+                                                                                    {% csrf_token %}
+                                                                                        <div class="modal-body">
+                                                                                            {{ eduset.management_form }} {% for form in eduset %}
+                                                                                            <div class="form-group">
+                                                                                                <div class="row">
+                                                                                                    <div class="col-sm-6">
+                                                                                                        <label>University/Institution:<span style="color: red; font-size:larger ">*</span></label>
+                                                                                                        {{form.University.value}}
+                                                                                                    </div>
+                                                                        
+                                                                                                    <div class="col-sm-6">
+                                                                                                        <label>Qualification:<span style="color: red; font-size:larger ">*</span></label>
+                                                                                                        {{form.FieldofStudy}}
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                        
+                                                                                            <div class="form-group" id="otherFieldDiv">
+                                                                                                <div class="row">
+                                                                                                    <div class="col-sm-6">
+                                                                                                    <label>CGPA:<span style="color: red; font-size:larger ">*</span></label>
+                                                                                                    {{form.cumulative_gpa}}
+                                                                                                    </div>
+                                                                        
+                                                                                                    
+                                                                                                    <div class="col-sm-6">
+                                                                                                <label>Degree Level:<span style="color: red; font-size:larger ">*</span></label>
+                                                                                                    {{form.Degree_level}}
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                        
+                                                                        <div class="form-group">
+                                                                            <div class="row">
+                                                                                <div class="col-sm-6">
+                                                                                    <label>From:<span style="color: red; font-size:larger ">*</span></label>
+                                                                                    {{form.From}}
+                                                                                </div>
+                                                                        
+                                                                        
+                                                                                <div class="col-sm-6">
+                                                                                    <label>To:<span style="color: red; font-size:larger ">*</span></label>
+                                                                                    {{form.To}}
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        {%endfor%}
+                                                                                        </div>
+                                                                        
+                                                                                        <div class="modal-footer">
+                                                                                            <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                                                                                            <button type="submit" name="edu" onsubmit="return validateForm()" class="btn bg-primary">Submit form</button>
+                                                                                        </div>
+                                                                                    </form>
+                                                                                    
+                                                                                </div>
+                                                                            </div>
+                                    </div>
+
+                                    <div id="modal_form_lan" class="modal fade" tabindex="-1">
+                                                                            <div class="modal-dialog">
+                                                                                <div class="modal-content">
+                                                                                    <div class="modal-header">
+                                                                                        <h5 class="modal-title"><i class="fab fa-language"></i>language form</h5>
+                                                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                                    </div>
+                                                                                    
+                                                                                    <form method="POST" action="{% url 'lan_url' %}">
+                                                                                        {% csrf_token %}
+                                                                                        <div class="modal-body">
+                                                                                            {{ lanset.management_form }}
+                                                                                            {% for form in lanset %}
+                                                                                            <div class="form-group">
+                                                                                                <div class="row">
+                                                                                                    <div class="col-sm-12">
+                                                                                                    <label>Language:</label>
+                                                                                                    {{form.Language}}
+                                                                                                    </div>
+                                                                        
+                                                                                                    <div class="col-sm-12">
+                                                                                                    <label>Listening:</label>
+                                                                                                    {{form.Listening}}
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                        
+                                                                                            <div class="form-group">
+                                                                                                <div class="row">
+                                                                                                    <div class="col-sm-12">
+                                                                                                        <label>Writing:</label>
+                                                                                                        {{form.Writing}}
+                                                                                                    </div>
+                                                                        
+                                                                                                    <div class="col-sm-12">
+                                                                                                    <label>Speaking:</label>
+                                                                                                    {{form.Speaking}}
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                        <div class="form-group">
+                                                                            <div class="row">
+                                                                                <div class="col-sm-12">
+                                                                                    <label>Reading:</label>
+                                                                                    {{form.Reading}}
+                                                                                </div>
+                                                                        
+                                                                                
+                                                                            </div>
+                                                                        </div>
+                                                                        {%endfor%}
+                                                                                        </div>
+                                                                        
+                                                                                        <div class="modal-footer">
+                                                                                            <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                                                                                            <button type="submit" name="lan" class="btn bg-primary">Submit form</button>
+                                                                                        </div>
+                                                                                    </form>
+                                                                                 
+                                                                                </div>
+                                                                            </div>
+                                    </div>
+
+
+                                    <div id="modal_forx" class="modal fade" tabindex="-1">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 style="text-align:center;" class="modal-title"></i>Deniled </h5>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+                                    <div class="modal-body">
+                                                <p style="text-align:center;" >
+                                                    you have have currently on going application
+                                                    
+                                                </p>
+                                                <p style="text-align:center;">
+                                                    you can only add or edit once the application is done
+                                                </p>
+                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                     <div id="registerModal" class="modal fade" tabindex="-1">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 style="text-align:center;" class="modal-title"></i>Deniled </h5>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+                                    <div class="modal-body">
+                                              {% if messages   %}
+								<div class="alert alert-danger alert-dismissible">
+                                    <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+                                    {% for message in messages %}
+                                      {%  if 'register' in message.tags %}  
+                                        <span class="font-weight-semibold">Oh snap!</span> {{ message }}<a href="#" class="alert-link">try submitting again</a>
+                                          {%  elif 'login' in message.tags %}  
+                                        <span class="font-weight-semibold">Oh snap!</span> {{ message }}<a href="#" class="alert-link">try submitting again</a>
+                                        {% endif %}
+                                      {% endfor %}
+
+                                </div>
+                                
+                                {% endif %}
+
+                                                <!-- <p style="text-align:center;" >
+                                                    you have have currently on going application
+                                                    
+                                                </p>
+                                                <p style="text-align:center;">
+                                                    you can only add or edit once the application is done
+                                                </p> -->
+                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="login" class="modal fade" tabindex="-1">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 style="text-align:center;" class="modal-title"></i>Deniled </h5>
+                                                    <button type="button"  class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+                                    <div class="modal-body">
+                                              {% if 'login' in message.tags %}
+								<div class="alert alert-danger alert-dismissible">
+                                    <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+                                    {% for message in messages %}
+									   <span class="font-weight-semibold">Oh snap!</span> {% if message.tags %}  {% endif %}>{{ message }}<a href="#" class="alert-link">try submitting again</a>.
+                                   {% endfor %}
+
+                                </div>
+                                
+                                {% endif %}
+
+                                                <!-- <p style="text-align:center;" >
+                                                    you have have currently on going application
+                                                    
+                                                </p>
+                                                <p style="text-align:center;">
+                                                    you can only add or edit once the application is done
+                                                </p> -->
+                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /work exp table -->
+
+                            <!-- Degree document table -->
+                            <!-- <div class="card">
+                                <div class="card-header header-elements-inline">
+                                    <h3 class="card-title">Attached Documents:</h3>
+                                    <div class="header-elements">
+                                        <div class="list-icons">
+                                            <a class="list-icons-item" data-action="collapse"></a>
+                                            <a class="list-icons-item" data-action="reload"></a>
+                                         
+                                        </div>
+                                    </div>
+                                </div> -->
+
+                                <!-- <div class="card-body">
+                                    Low-level educational details (Elementary, Secondary and Preparatory)
+                                </div> -->
+
+                                <!-- <div class="table-responsive">
+                                    <table class="table">
+                                        <thead style="font-weight:bold" ;>
+                                            <tr>
+                                                <th>
+                                                    <h6 style="font-weight:bold" ;>Documents Type</h6>
+                                                </th>
+                                                <th>
+                                                    <h6 style="font-weight:bold" ;>Attached File</h6>
+                                                </th>
+
+                                                <th>
+                                                    <button type="button" class="btn btn-success">+Add</button>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Degree</td>
+                                                <td>degree.pdf</td>
+                                                <td>
+                                                    <div class="list-icons">
+                                                        <a href="#" class="list-icons-item text-primary-600"><i class="icon-pencil7"></i></a>
+                                                        <a href="#" class="list-icons-item text-danger-600"><i class="icon-trash"></i></a>
+
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div> -->
+                            </div>
+                            <!-- /Degree document table -->
+
+                        </div>
+                        <!-- Dark header, transparent footer -->
+
+                    </div>
+                    <!-- /widgets list -->
+
+                </div>
+                <!-- /dashboard content -->
+
+            </div>
+            <!-- /content area -->
+
+        </div>
+        <!-- /main content -->
+
+    </div>
+    <!-- /page content -->
+
+
+    <!-- Footer -->
+    <div class="navbar navbar-expand-lg navbar-light">
+        <div class="text-center d-lg-none w-100">
+            <button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse" data-target="#navbar-footer">
+                <i class="icon-unfold mr-2"></i>
+                Footer
+            </button>
+        </div>
+
+        <div class="navbar-collapse collapse" id="navbar-footer">
+            <span class="navbar-text">
+                Copyright &copy; 2020. Powered by <a href="http://www.techin.gov.et" target="_blank">Techin&#178</a>, All
+                rights reserved.
+            </span>
+
+            <ul class="navbar-nav ml-lg-auto">
+                <li class="nav-item"><a href="http://www.techin.gov.et" class="navbar-nav-link" target="_blank"><i
+                            class="icon-lifebuoy mr-2"></i>Home</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- /footer -->
+
+
+<script>
+    function process(input) {
+        let value = input.value;
+        let letters = value.replace(/[^a-z]/gi, "");
+        input.value = letters;
+    }
+
+    function processx(input) {
+        let value = input.value;
+        let letters = value.replace(/[^0-9]+/gi, "");
+        input.value = letters;
+    }
+    function processy(input) {
+        let value = input.value;
+        let letters = value.replace(/[^0-9\\.]+/g, '');
+        input.value = letters;
+    }
+    
+   
+
+   
+</script>
+
+
+<script>
+    $(document).ready(function() {
+        {% if messages %}
+            {% for message in messages %}
+                {% if 'login' in message.tags %}
+                    $('#registerModal').modal('toggle');
+                {% elif 'register' in message.tags %}
+                    $('#registerModal').modal('toggle');
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+
+
+      $("#closemodal").click(function(){
+            $("#registerModal").modal('hide');
+            window.location.reload(true);
+        });
+
+
+    })
+</script>
+
+<script>
+        $('#registerModal').on('hidden', function () {
+        window.location.reload(true);
+    })
+</script>
+
+
+
+
+    <script>
+
+$("#seeAnotherField").change(function() {
+  if ($(this).val() == "Doctor of Philosophy") {
+        $('#otherFieldDiv').hide();
+    $('#otherField').removeAttr('required');
+    
+
+  } else {
+      
+
+    $('#otherFieldDiv').show();
+    $('#otherField').attr('required', '');
+    
+
+  }
+});
+</script>
+
+
+
+
+
+<script>
+ function gpavald(input, id){
+      var idxm = id;   
+    
+var  newStryxy = idxm.replace(/cumulative_gpa/g, "Degree_level");
+
+x = document.getElementById(newStryxy).value 
+console.log(x+'b4')
+
+
+if(x == "doctor of philosophy"){
+
+console.log(x+'af')
+document.getElementById(idxm).value = "NO CGPA REQUIRED ";
+
+}
+else{
+
+        let value = input.value;
+
+        if(value<=4){
+        let letters = value.replace(/[^0-9\.]/gi, '');
+        input.value = letters;
+        }
+        else{
+
+        document.getElementById(idxm).value = " ";
+
+document.getElementById(idxm).value = " ";
+
+
+        }
+
+        
+}
+
+        
+    }
+
+
+
+function Filevalidationg(input, id){
+
+       var  edu = input.value;
+       var me = 'other'+id;
+       var idx = id;
+
+        var  newStry = idx.replace(/Degree_level/g, "cumulative_gpa");
+
+console.log('zzzzzzzzzzz')
+      
+  if (edu == "doctor of philosophy"){
+       
+       var me = 'other'+id;
+       var idx = id;
+
+       
+
+
+        document.getElementById(newStry).disabled = true;
+        document.getElementById(newStry).value = "NO CGPA REQUIRED ";
+
+    
+    // code block
+
+  }
+   
+  if(edu == 'bachelor' || edu == 'masters'  ){
+         
+       var me = 'other'+id;
+       var idx = id;
+
+
+    // code block
+     document.getElementById(newStry).disabled = false;
+    // document.getElementById(newStry).value = " ";
+  
+ 
+  }
+
+}
+
+
+</script>
+
+
+
+<script> 
+
+
+function  datevalidx(input, name,id ){
+
+    let myStr = id;
+        let newStr = myStr.replace(/To/g, "From");
+
+var fi = document.getElementById(myStr).value; 
+
+var fix = document.getElementById(newStr).value; 
+
+var x = input.value;
+
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+var yyyz = today.getFullYear()-1;
+todayp =  yyyz + '-' +  mm + '-' + dd ;
+
+today =  yyyy + '-' +  mm + '-' + dd ;
+
+
+if((fix && x < fix ) ||  today < x || today < fix    ){
+    document.getElementById(myStr).valueAsDate = null;
+     alert(  "Invalid Date "); }
+
+
+     else{
+console.log('hello')
+console.log(today < x )
+
+ 
+}
+
+}
+
+
+
+
+
+
+
+</script> 
+
+
+
+
+<script>
+
+    function expdate(input, name,id ){
+
+        let myStr = id;
+
+        let newdate = myStr.replace(/Start/g, "End");
+
+
+    var sdate = new Date($("#"+id).val());
+
+    var edate = new Date($("#"+newdate).val());
+
+
+    
+    var timeDiff = Math.abs(edate.getTime() - sdate.getTime());
+    var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+    var currentdate = new Date(); 
+
+
+    console.log(sdate)
+    console.log(edate>currentdate)
+    console.log(diffDays+ ' Days')
+
+    if( diffDays < 70  ||  sdate > edate  ||  sdate> currentdate  || edate> currentdate ){
+
+           document.getElementById(myStr).valueAsDate = null;
+           alert(  "Minimum  Experiences has to be at-lest 3 month ");
+        
+        }
+
+    else{
+
+        let exp = myStr.replace(/Start/g, "YearofExp");
+           
+        if(diffDays ){
+            let  mon =  (diffDays/30).toFixed(0);
+
+           document.getElementById(exp).value =  Math.round(mon)+' '+'months' ;
+
+}
+    }
+
+    }
+
+  function expdate2(input, name,id ){
+
+        let myStr = id;
+
+        let newdate = myStr.replace(/End/g, "Start");
+
+
+    var edate = new Date($("#"+id).val());
+
+    var sdate = new Date($("#"+newdate).val());
+
+
+    
+    var timeDiff = Math.abs(edate.getTime() - sdate.getTime());
+    var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+    var currentdate = new Date(); 
+
+
+    console.log(sdate)
+    console.log(edate>currentdate)
+    console.log(diffDays+ ' Days')
+
+    if( diffDays < 70  ||  sdate > edate  ||  sdate> currentdate  || edate> currentdate ){
+
+           document.getElementById(myStr).valueAsDate = null;
+           alert(  "Minimum  Experiences has to be at-lest 3 month ,  ");
+        
+        }
+
+    else{
+
+        let exp = myStr.replace(/End/g, "YearofExp");
+           
+        if(diffDays ){
+        let  mon =  (diffDays/30).toFixed(0);
+        document.getElementById(exp).value =  Math.round(mon)+' '+'months' ;
+
+}
+    }
+
+  }
+
+
+function elementvalid(){
+
+      var stdate1 = new Date($("#id_form6-starting_date").val());
+      var endate2 = new Date($("#id_form6-end_date").val());
+
+console.log(stdate1)
+console.log(endate2)
+      var stdate3 = new Date($("#id_form7-starting_dates").val());
+      var endate4 = new Date($("#id_form7-end_dates").val());
+
+
+      var stdate5 = new Date($("#id_form8-starting_datep").val());
+      var endate6 = new Date($("#id_form8-end_datesp").val());
+
+      var currentdate = new Date(); 
+
+        var year = currentdate.getFullYear();
+        var month = currentdate.getMonth();
+        var day = currentdate.getDate();
+        var c = new Date(year - 4, month, day);
+        var cd = new Date(year - 3, month, day);
+        var cdx = new Date(year - 1, month, day);
+
+
+
+      if((stdate1>c)|| (endate2 > c  ) || (stdate1> endate2 && (typeof endate2 !== 'undefined' && endate2 )  ) || (stdate1 > stdate3  && (typeof stdate3 !== 'undefined' && stdate3 )) || (endate2 > stdate3 && (typeof endate2 !== 'undefined' && endate2 ) ) || (stdate1>stdate5  && (typeof stdate5 !== 'undefined' && stdate5 ))|| (stdate1>stdate5 && (typeof stdate5 !== 'undefined' && stdate5 ))){
+     //  document.getElementById(myStr).valueAsDate = null;
+
+       document.getElementById("id_form6-starting_date").valueAsDate = null;
+        document.getElementById("id_form6-end_date").valueAsDate = null;
+      
+
+
+
+    new Noty({
+                text:'<b>  &#x1F610; ' + '</b> the date picked is in the future  OR  , please follow the  chronological order of the date, invalid date ',
+                type: 'error'
+            }).show();
+
+      }
+
+      
+
+    
+      if(stdate3>cd || endate4 > cd || (stdate3> endate4 && (typeof endate4 !== 'undefined' && endate4 ) ) || (stdate3 > stdate5  && stdate5) ||   (endate4 > stdate5  && stdate5)    ){
+
+           document.getElementById("id_form7-starting_dates").valueAsDate = null;
+        document.getElementById("id_form7-end_dates").valueAsDate = null;
+
+            new Noty({
+                text:'</b>  &#x1F610; ' + '</b> the date picked is in the future OR,please follow the  chronological order of the date, invalid date ',
+                type: 'error'
+            }).show();
+
+      }
+
+      if(stdate5>cdx || endate6 > cdx || (stdate5 > endate6 && endate6 ) ){
+
+        document.getElementById("id_form8-starting_datep").valueAsDate = null;
+        document.getElementById("id_form8-end_datesp").valueAsDate = null;
+
+            new Noty({
+                text:'</b>  &#x1F610; ' + '</b> the date picked is in the future OR,please follow the  chronological order of the date, invalid date ',
+                type: 'error'
+            }).show();
+
+      }
+
+
+
+
+
+
+
+
+
+}
+
+
+function birthdate(){
+
+var currentdate = new Date(); 
+
+var bdate = new Date($("#id_form1-DateofBirth").val());
+
+var year = currentdate.getFullYear();
+var month = currentdate.getMonth();
+var day = currentdate.getDate();
+var c = new Date(year - 4, month, day);
+
+var age = currentdate.getFullYear() - bdate.getFullYear();
+
+
+if(age < 18){
+
+
+         document.getElementById("id_form1-DateofBirth").valueAsDate = null;
+
+       new Noty({
+                text:'</b>  &#x1F610; ' + '</b> Must be at least 18 years old to register, invalid date ',
+                type: 'error'
+            }).show();
+}
+if(age>100){
+   document.getElementById("id_form1-DateofBirth").valueAsDate = null;
+
+       new Noty({
+                text:'</b>  &#x1F610; ' + '</b> invalid date ',
+                type: 'error'
+            }).show();
+
+}
+
+
+
+}
+  
+
+function simref(){
+
+
+    var name1 = document.getElementById('id_form1-Name').value; 
+    var name2 = document.getElementById('id_form1-Name_r').value; 
+    var name3 = document.getElementById('id_form1-Name_r1').value; 
+
+    var phone1 = document.getElementById('id_form1-PhoneNumber').value; 
+    var phone2 = document.getElementById('id_form1-PhoneNumber_r').value; 
+    var phone3 = document.getElementById('id_form1-PhoneNumber_r1').value; 
+
+    var email1 = document.getElementById('id_form1-EmailAdd').value; 
+    var email2 = document.getElementById('id_form1-EmailAdd_r').value; 
+    var email3 = document.getElementById('id_form1-EmailAdd_r1').value;
+
+    
+
+
+    if( ((typeof name2 !== 'undefined' && name2 ) &&  name1 == name2) || ((typeof name3 !== 'undefined' && name3 ) && name2 == name3) || ((typeof name1 !== 'undefined' && name1 ) && name1 == name3) ){
+
+           document.getElementById("id_form1-Name").value = null;
+           document.getElementById("id_form1-Name_r").value = null;
+           document.getElementById("id_form1-Name_r1").value = null;
+
+       new Noty({
+                text:'</b> &#x1F9D0; ' + '</b> Must be 3 different names of Reference , invalid Name  ',
+                type: 'error'
+            }).show();
+}
+
+
+
+
+
+   if(((typeof phone2 !== 'undefined' && phone2) && phone1 == phone2) || ((typeof phone3 !== 'undefined' && phone3 ) && phone2 == phone3) || ((typeof phone1 !== 'undefined' && phone1) && phone1 == phone3) ){
+
+           document.getElementById("id_form1-PhoneNumber").value = null;
+           document.getElementById("id_form1-PhoneNumber_r").value = null;
+           document.getElementById("id_form1-PhoneNumber_r1").value = null;
+
+       new Noty({
+                text:'</b> &#x1F9D0; ' + '</b> Must be 3 different Phone Numbers  of Reference , invalid Phone Number   ',
+                type: 'error'
+            }).show();
+}
+
+   if(( (typeof email2!== 'undefined' && email2) && email1 == email2) || ((typeof email3 !== 'undefined' && email3) && email2 == email3) || ((typeof email1!== 'undefined' && email1) && email1 == email3) ){
+
+           document.getElementById("id_form1-EmailAdd").value = null;
+           document.getElementById("id_form1-EmailAdd_r").value = null;
+           document.getElementById("id_form1-EmailAdd_r1").value = null;
+
+       new Noty({
+                text:'</b>  &#x1F9D0; ' + '</b> Must be 3 different Emails of Reference , invalid Email  ',
+                type: 'error'
+            }).show();
+}
+ 
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+ function ValidateEmail(input){
+ 
+  var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+ 
+  //
+ 
+   let  x =  re.test(String(input.value).toLowerCase());
+
+   idx = input.id;
+
+
+    if(x == false ){
+document.getElementById( idx ).value = null;
+
+   new Noty({
+                text:'</b> &#x1F9D0; ' + '</b> Please Insert a Valid Email , invalid Email  ',
+                type: 'error'
+            }).show();
+
+    }
+ 
+}
+
+
+function phonenumber(input)
+{
+     let value = input.value;
+       let letters = value.replace(/[^0-9]+/gi, "");
+       input.value = letters;
+    
+  var phonenox = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+  let idx = input.id;
+  var phoneno = /^\(?([0]{1})\)?([9]{1})?([0-9]{8})$/;
+  
+  
+  if(value.match(phoneno)  && input.value.length == 10){
+     //PHONE NUMBER VALIDATON 
+
+   }
+   else{
+
+document.getElementById(idx).value = null;
+
+   new Noty({
+                text:'</b> &#x1F9D0; ' + '</b> Please Insert a Valid phone Number  , e.g 0913090252 ',
+                type: 'error'
+            }).show();
+
+   }
+
+
+
+
+  }
+</script>
+
+
+
+<script>
+
+function  datevalid(input, name,id ){
+         let myStr = id;
+        let newStr = myStr.replace(/From/g, "To");
+
+let fi = document.getElementById(myStr).value; 
+
+let fix = document.getElementById(newStr).value; 
+
+
+let x = input.value;
+
+
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+
+var yyyz = today.getFullYear()-1;
+
+today =  yyyy + '-' +  mm + '-' + dd ;
+todayp =  yyyz + '-' +  mm + '-' + dd ;
+
+
+
+
+ //var today = new Date();
+ // if (startDate.getTime() > today.getTime())
+
+if((fix ) && x > fix  ||  todayp <= x || today < fix   ){
+    console.log(fix)
+    document.getElementById(myStr).valueAsDate = null;
+     alert(  "Invalid Date "); }
+
+else{
+
+
+ 
+}
+
+
+
+
+
+
+}
+
+
+
+
+</script>
+
+
+
+
+
+<script> 
+    Filevalidation = () => { 
+        const fi = document.getElementById('id_form1-docs'); 
+        // Check if any file is selected. 
+        if (fi.files.length > 0) { 
+            for (let i = 0; i <= fi.files.length - 1; i++) { 
+  
+                const fsize = fi.files.item(i).size; 
+                const file = Math.round((fsize / 1024)); 
+                // The size of the file. 
+                if (file >= 5096) { 
+
+                    document.getElementById("id_form1-docs").value = null;
+                      document.getElementById('size').innerHTML = '<b>'
+                    + file + '</b> KB'; 
+
+                      new Noty({
+                text:'<b>' + file + '</b> KB' + '</b> File too Big, please select a file less than 5mb ',
+                type: 'error'
+            }).show();
+
+            
+                    
+                    
+                } else if (file < 8) { 
+                    alert( 
+                      "File too small, please select a file greater "); 
+                } else { 
+                    document.getElementById('size').innerHTML = '<b>'
+                    + file + '</b> KB'; 
+                    
+                } 
+            } 
+        } 
+    } 
+</script> 
+
+<script>
+    function sumx(input){ 
+
+if (input = ''){
+alert("Enter a Valid data ");
+        return false;
+
+}else{
+
+
+ alert("Enter a Valid data ");
+        return false;
+     new Noty({
+                text:'<b>' + file + '</b> KB' + '</b> File too Big, please select a file less than 5mb ',
+                type: 'error'
+            }).show();
+
+    }
+
+}
+</script>
+
+
+<script> 
+    Filevalidationx = () => { 
+        const fi = document.getElementById('id_form1-cv'); 
+        const fix = document.getElementById('id_form1-docs'); 
+
+        if (fi.files.length > 0) { 
+            for (let i = 0; i <= fi.files.length - 1; i++) { 
+  
+                const fsize = fi.files.item(i).size; 
+                const file = Math.round((fsize / 1024)); 
+                // The size of the file. 
+                if (file >= 5096) { 
+
+                    document.getElementById("id_form1-cv").value = null;
+
+                     document.getElementById('sizex').innerHTML = '<b>'
+                    + file + '</b> KB' + '</b> File too Big, please select a file less than 5mb '; 
+
+                                           new Noty({
+                text:'<b>' + file + '</b> KB' + '</b> File too Big, please select a file less than 5mb ',
+                type: 'error'
+            }).show();
+
+                    
+                } else if (file < 8) { 
+                    alert( 
+                      "File too small, please select a file greater "); 
+                } else { 
+
+                                  compare(fi, fix)
+                   .then(res => console.log('are same ? ', res));
+                    document.getElementById('sizex').innerHTML = '<b>'
+                    + file + '</b> KB'; 
+                } 
+            } 
+        } 
+
+
+
+
+   
+
+    } 
+
+
+
+function compare(file1, file2) {
+  // they don't have the same size, they are different
+  if(file1.size !== file2.size)
+    return Promise.resolve(false);
+  // load both as ArrayBuffers
+  return Promise.all([
+    readAsArrayBuffer(file1),
+    readAsArrayBuffer(file2)
+  ]).then(([buf1, buf2]) => {
+    // create views over our ArrayBuffers
+    const arr1 = new Uint8Array(buf1);
+    const arr2 = new Uint8Array(buf2);
+    return !arr1.some((val, i) =>
+      arr2[i] !== val // search for diffs
+    );
+  });
+}
+</script> 
+
+
+</body>
+
+<!-- Mirrored from demo.interface.club/limitless/demo/Template/layout_4/LTR/default/full/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 15 Oct 2020 13:17:01 GMT -->
+
+</html>
